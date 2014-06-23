@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <SupplyChain>
+    <value>Asian</value>
+  </SupplyChain>
+  <SupplyChain>
+    <value>NA CM</value>
+  </SupplyChain>
+  <SupplyChain>
+    <value>NA PG</value>
+  </SupplyChain>
+  <SupplyChain>
+    <value>LA PG</value>
+  </SupplyChain>
+  <SupplyChain>
+    <value>European PG</value>
+  </SupplyChain>
+</dataroot>

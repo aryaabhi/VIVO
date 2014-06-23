@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <TDCElement>
+    <value>RM</value>
+  </TDCElement>
+  <TDCElement>
+    <value>PM</value>
+  </TDCElement>
+  <TDCElement>
+    <value>MOE</value>
+  </TDCElement>
+  <TDCElement>
+    <value>GMC</value>
+  </TDCElement>
+  <TDCElement>
+    <value>FPLC</value>
+  </TDCElement>
+  <TDCElement>
+    <value>PSNME</value>
+  </TDCElement>
+  <TDCElement>
+    <value>Other Non TDC</value>
+  </TDCElement>
+</dataroot>

@@ -1,0 +1,103 @@
+<?xml version="1.0" standalone="yes" ?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata">
+	<tblReportTags>
+		<EMPS>SubGBU</EMPS>
+		<EMPSTag>tblProjects.Category</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Business</EMPS>
+		<EMPSTag>tblProjects.Business</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Business Form</EMPS>
+		<EMPSTag>tblProjects.BusinessForm</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>TDC Element</EMPS>
+		<EMPSTag>tblProjects.CostBucket as TDCElement</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>TDC Sub Element</EMPS>
+		<EMPSTag>tblProjects.TDCSubElement</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Plant</EMPS>
+		<EMPSTag>tblProjects.Plant</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Project ID</EMPS>
+		<EMPSTag>tblProjects.ProjectID</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Project Name</EMPS>
+		<EMPSTag>tblProjects.ProjectName</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Project Leader</EMPS>
+		<EMPSTag>tblPersonnel.ProjectLeader</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Pillars</EMPS>
+		<EMPSTag>tblProjects.OtherBusiness as Pillars</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Status</EMPS>
+		<EMPSTag>tblProjects.Status</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Project Stage</EMPS>
+		<EMPSTag>tblProjects.ProjectStage</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Committed To Forecast</EMPS>
+		<EMPSTag>tblProjects.CommittedForecast</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>In Standards</EMPS>
+		<EMPSTag>tblProjects.Standards</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Project Start Date</EMPS>
+		<EMPSTag>tblProjects.ProjectStartMonthYearLiteral as ProjectStart</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Saving Start Date</EMPS>
+		<EMPSTag>tblProjects.SavingsStartMonthYearLiteral as SavingStart</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Total Recoverable Amount</EMPS>
+		<EMPSTag>tblProjects.RecoverableLosses</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Project Cost</EMPS>
+		<EMPSTag>tblProjects.CostAmt as [Project Cost]</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Probability</EMPS>
+		<EMPSTag>tblProjects.Probability</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Probability Adjusted Amount</EMPS>
+		<EMPSTag>tblTDC.ProbAdjustedAmt</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Time Adjusted Amount</EMPS>
+		<EMPSTag>tblTDC.TimeAdjustedAmt</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Total Adjusted Amount</EMPS>
+		<EMPSTag>tblTDC.TotalAdjustedAmt</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Description</EMPS>
+		<EMPSTag>tblProjects.Description</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Loss Type</EMPS>
+		<EMPSTag>tblProjects.LossType</EMPSTag>
+	</tblReportTags>
+	<tblReportTags>
+		<EMPS>Department</EMPS>
+		<EMPSTag>tblProjects.Department</EMPSTag>
+	</tblReportTags>
+</dataroot>

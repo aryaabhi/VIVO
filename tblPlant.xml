@@ -1,0 +1,63 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <tblPlant>
+    <subGBU>HomeCare</subGBU>
+    <PlantDesc>All</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>HomeCare</subGBU>
+    <PlantDesc>St.Louis</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>HomeCare</subGBU>
+    <PlantDesc>Brockville</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>HomeCare</subGBU>
+    <PlantDesc>Kansas City</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>HomeCare</subGBU>
+    <PlantDesc>Contract Mfg.</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>HomeCare</subGBU>
+    <PlantDesc>All PG Central</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>HomeCare</subGBU>
+    <PlantDesc>US RDCs</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>HomeCare</subGBU>
+    <PlantDesc>US PP DCs</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>HomeCare</subGBU>
+    <PlantDesc>Canadian RDC</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>HomeCare</subGBU>
+    <PlantDesc>Hudd</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>FabricCare</subGBU>
+    <PlantDesc>Alex</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>FabricCare</subGBU>
+    <PlantDesc>Augusta</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>FabricCare</subGBU>
+    <PlantDesc>Avenel</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>FabricCare</subGBU>
+    <PlantDesc>Lima</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <subGBU>FabricCare</subGBU>
+    <PlantDesc>RDC</PlantDesc>
+  </tblPlant>
+</dataroot>

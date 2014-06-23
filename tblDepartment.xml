@@ -1,0 +1,63 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <Department>
+    <value>Cascade Making</value>
+  </Department>
+  <Department>
+    <value>Cascade Packing</value>
+  </Department>
+  <Department>
+    <value>Admin</value>
+  </Department>
+  <Department>
+    <value>Avenel</value>
+  </Department>
+  <Department>
+    <value>Brockville HC</value>
+  </Department>
+  <Department>
+    <value>Contract Mfg.</value>
+  </Department>
+  <Department>
+    <value>Customer Home Care</value>
+  </Department>
+  <Department>
+    <value>Dry Laundry- Alex-Augusta</value>
+  </Department>
+  <Department>
+    <value>GM Operations</value>
+  </Department>
+  <Department>
+    <value>HR</value>
+  </Department>
+  <Department>
+    <value>IT</value>
+  </Department>
+  <Department>
+    <value>Kansas City</value>
+  </Department>
+  <Department>
+    <value>Liquids Making</value>
+  </Department>
+  <Department>
+    <value>Liquids Packing</value>
+  </Department>
+  <Department>
+    <value>OSWH - MOE</value>
+  </Department>
+  <Department>
+    <value>OSWH - PSW</value>
+  </Department>
+  <Department>
+    <value>Overheads</value>
+  </Department>
+  <Department>
+    <value>Seatainers</value>
+  </Department>
+  <Department>
+    <value>Spot &amp; Shuttle</value>
+  </Department>
+  <Department>
+    <value>Variations</value>
+  </Department>
+</dataroot>

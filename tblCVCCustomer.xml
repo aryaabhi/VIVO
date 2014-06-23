@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <CVCCustomer>
+    <value>Wal-Mart\SAMS</value>
+  </CVCCustomer>
+  <CVCCustomer>
+    <value>Target</value>
+  </CVCCustomer>
+  <CVCCustomer>
+    <value>Kroger</value>
+  </CVCCustomer>
+  <CVCCustomer>
+    <value>Costco</value>
+  </CVCCustomer>
+  <CVCCustomer>
+    <value>Albertsons</value>
+  </CVCCustomer>
+  <CVCCustomer>
+    <value>KMART</value>
+  </CVCCustomer>
+  <CVCCustomer>
+    <value>Dollar Store</value>
+  </CVCCustomer>
+  <CVCCustomer>
+    <value>Others</value>
+  </CVCCustomer>
+</dataroot>
