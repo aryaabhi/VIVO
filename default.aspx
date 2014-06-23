@@ -14,26 +14,26 @@
 	</HEAD>
 	<body>
         <div class="container">
-        <!-- Push Wrapper -->
-        <div class="mp-pusher" id="mp-pusher">
-        <!-- mp-menu -->
-        <%
-            Response.WriteFile("Navigation.html")
-        %>	
-        <div class="scroller">
-            <!-- this is for emulating position fixed of the nav -->
-            <div class="scroller-inner">
-                <!-- Top Navigation -->
-                <div class="codrops-top clearfix">
-                    <a href="#" id="trigger"><span>Menu</span></a>
-                    <span class="right"><a href="#"><span><img height="18px" src="imgs/2014_05_28_logo.png" /></span></a></span>
-                </div>
-                <header class="codrops-header">
-                    <h1>VIVO <span>Project Tracking and Analysis Tool</span></h1>
-                </header>
-            </div><!-- /scroller-inner -->
-        </div><!-- /scroller -->
-        </div><!-- /pusher -->
+            <!-- Push Wrapper -->
+            <div class="mp-pusher" id="mp-pusher">
+                <!-- mp-menu -->
+                <%
+                    Response.WriteFile("Navigation.html")
+                %>	
+                <div class="scroller">
+                    <!-- this is for emulating position fixed of the nav -->
+                    <div class="scroller-inner">
+                    <!-- Top Navigation -->
+                        <div class="codrops-top clearfix">
+                        <a href="#" id="trigger"><span>Menu</span></a>
+                            <span class="right"><a href="#"><span><img height="18px" src="imgs/2014_05_28_logo.png" /></span></a></span>
+                        </div>
+                        <header class="codrops-header">
+                            <h1>VIVO <span>Project Tracking and Analysis Tool</span></h1>
+                        </header>
+                    </div><!-- /scroller-inner -->
+                </div><!-- /scroller -->
+            </div><!-- /pusher -->
     </div><!-- /container -->
 <!-- /mp-menu -->
         <script src="js/classie.js"></script>

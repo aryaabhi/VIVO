@@ -22,7 +22,7 @@ html, body, .container, .scroller {
 .container {
 	position: relative;
 	overflow: hidden;
-	background: #CAD6E3; /*#34495e;*/
+	background: #336ca6; /*#CAD6E3 #91cfa1 -> First color is light blue and next is original*/ 
 }
 
 .menu-trigger {
@@ -143,7 +143,9 @@ html, body, .container, .scroller {
 
 .mp-pusher::after,
 .mp-level::after {
-	background: rgba(0,0,0,0.3);
+	background: #336ca6;
+	-webkit-transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
+	-moz-transition: op;
 	-webkit-transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
 	-moz-transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
 	transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
