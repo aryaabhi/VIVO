@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <tblYears>
+    <YearInteger>2012</YearInteger>
+  </tblYears>
+  <tblYears>
+    <YearInteger>2013</YearInteger>
+  </tblYears>
+  <tblYears>
+    <YearInteger>2014</YearInteger>
+  </tblYears>
+  <tblYears>
+    <YearInteger>2015</YearInteger>
+  </tblYears>
+  <tblYears>
+    <YearInteger>2016</YearInteger>
+  </tblYears>
+  <tblYears>
+    <YearInteger>2017</YearInteger>
+  </tblYears>
+  <tblYears>
+    <YearInteger>2018</YearInteger>
+  </tblYears>
+</dataroot>

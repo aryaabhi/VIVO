@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <CASHElement>
+    <value>Inventory</value>
+  </CASHElement>
+  <CASHElement>
+    <value>Capital</value>
+  </CASHElement>
+  <CASHElement>
+    <value>Other</value>
+  </CASHElement>
+</dataroot>

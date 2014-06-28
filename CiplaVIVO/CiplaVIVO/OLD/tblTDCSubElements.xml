@@ -1,0 +1,63 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <TDCSubElement>
+    <TDCElement>RM</TDCElement>
+    <value>RM Pricing</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>RM</TDCElement>
+    <value>RM Design</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>PM</TDCElement>
+    <value>PM Pricing</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>PM</TDCElement>
+    <value>PM Design</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>MOE</TDCElement>
+    <value>MOE</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>GMC</TDCElement>
+    <value>GMC</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>FPLC</TDCElement>
+    <value>PSW</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>FPLC</TDCElement>
+    <value>Freight</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>FPLC</TDCElement>
+    <value>GLC</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>PSNME</TDCElement>
+    <value>PSNME</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>Other TDC</TDCElement>
+    <value>Other TDC</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>Other Non TDC</TDCElement>
+    <value>Other Non TDC</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>Cash</TDCElement>
+    <value>Inventory</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>Cash</TDCElement>
+    <value>Others</value>
+  </TDCSubElement>
+  <TDCSubElement>
+    <TDCElement>MSA</TDCElement>
+    <value>MSA</value>
+  </TDCSubElement>
+</dataroot>

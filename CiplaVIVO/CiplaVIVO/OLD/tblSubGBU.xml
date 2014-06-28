@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <SubGBU>
+    <value>FabricCare</value>
+  </SubGBU>
+  <SubGBU>
+    <value>HomeCare</value>
+  </SubGBU>
+  <SubGBU>
+    <value>TestCare</value>
+  </SubGBU>
+</dataroot>

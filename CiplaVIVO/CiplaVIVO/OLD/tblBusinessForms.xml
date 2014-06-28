@@ -1,0 +1,115 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <BusinessForm>
+    <Business>All</Business>
+    <value />
+  </BusinessForm>
+  <BusinessForm>
+    <Business>HandDish</Business>
+    <value>All</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>HandDish</Business>
+    <value>HandDish Base</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>HandDish</Business>
+    <value>HandDish Dish Brush</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>HandDish</Business>
+    <value>HandDish Dissolver</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>HandDish</Business>
+    <value>HandDish Wipes</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>ADW(Cascade)</Business>
+    <value>ADW Powder</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>ADW(Cascade)</Business>
+    <value>All</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>ADW(Cascade)</Business>
+    <value>ADW Gel</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>ADW(Cascade)</Business>
+    <value>ADW Unit Doze</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>ADW(Cascade)</Business>
+    <value>ADW Additives</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Aircare(Febreze)</Business>
+    <value>All</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Aircare(Febreze)</Business>
+    <value>Febreze Base</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Aircare(Febreze)</Business>
+    <value>Febreze Air Effects</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Aircare(Febreze)</Business>
+    <value>Febreze Scent Stories</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Aircare(Febreze)</Business>
+    <value>Febreze Plug Ins</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Mr. Clean</Business>
+    <value>All</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Mr. Clean</Business>
+    <value>Mr. Clean APC</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Mr. Clean</Business>
+    <value>Mr. Clean Mop</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Mr. Clean</Business>
+    <value>Mr. Clean AutoDry</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Mr. Clean</Business>
+    <value>Mr. Clean Magic Reach</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Mr. Clean</Business>
+    <value>Mr. Clean Magic Eraser</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Swiffer</Business>
+    <value>All</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Swiffer</Business>
+    <value>Swiffer Base</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Swiffer</Business>
+    <value>Swiffer Duster</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Swiffer</Business>
+    <value>Swiffer Wetjet</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Swiffer</Business>
+    <value>Swiffer Carpet</value>
+  </BusinessForm>
+  <BusinessForm>
+    <Business>Swiffer</Business>
+    <value>Swiffer Vacuum</value>
+  </BusinessForm>
+</dataroot>

@@ -1,0 +1,690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{CD8E53D2-B177-494B-AE08-1CEEF98E43D7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CiplaVIVO</RootNamespace>
+    <AssemblyName>CiplaVIVO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>WebForms_Basic.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>WebForms_Basic.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.1\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.Routing" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="css\chosen-sprite%402x.png" />
+    <Content Include="css\chosen-sprite.png" />
+    <Content Include="css\chosen.css" />
+    <Content Include="css\component.css" />
+    <Content Include="css\demo.css" />
+    <Content Include="css\icons.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="css\prism.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\vCategory.aspx" />
+    <Content Include="fonts\codropsicons\codropsicons.svg" />
+    <Content Include="fonts\codropsicons\license.txt" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\linecons\linecons.dev.svg" />
+    <Content Include="fonts\linecons\linecons.svg" />
+    <Content Include="fonts\linecons\lte-ie7.js" />
+    <Content Include="imgs\2014_05_28_logo.png" />
+    <Content Include="imgs\chosen-sprite%402x.png" />
+    <Content Include="imgs\chosen-sprite.png" />
+    <Content Include="js\chosen.jquery.js" />
+    <Content Include="js\classie.js" />
+    <Content Include="js\mlpushmenu.js" />
+    <Content Include="js\modernizr.custom.04022.js" />
+    <Content Include="js\modernizr.custom.js" />
+    <Content Include="js\prism.js" />
+    <Content Include="OLD\Admin.aspx" />
+    <Content Include="OLD\chosen-sprite%402x.png" />
+    <Content Include="OLD\chosen-sprite.png" />
+    <Content Include="OLD\CustomSearch.aspx" />
+    <Content Include="OLD\default.aspx" />
+    <Content Include="OLD\Global.asax" />
+    <Content Include="OLD\header.htm" />
+    <Content Include="OLD\ie_workaround.js" />
+    <Content Include="OLD\LEDB.sql" />
+    <Content Include="OLD\LEPersonalList.aspx" />
+    <Content Include="OLD\Navigation.html" />
+    <Content Include="OLD\ProjectAddition.aspx" />
+    <Content Include="OLD\ProjectCopy.aspx" />
+    <Content Include="OLD\ProjectModification.aspx" />
+    <Content Include="OLD\ProjectModificationConfirm.aspx" />
+    <Content Include="OLD\ReportAllByYear.aspx" />
+    <Content Include="OLD\ReportAllbyYearExcel.aspx" />
+    <Content Include="OLD\ReportByBusiness.aspx" />
+    <Content Include="OLD\ReportbyBusinessExcel.aspx" />
+    <Content Include="OLD\ReportByCash.aspx" />
+    <Content Include="OLD\ReportByCashExcel.aspx" />
+    <Content Include="OLD\ReportByCVC.aspx" />
+    <Content Include="OLD\ReportByCVCExcel.aspx" />
+    <Content Include="OLD\ReportByPillars.aspx" />
+    <Content Include="OLD\ReportByPillarsExcel.aspx" />
+    <Content Include="OLD\ReportbyPlant.aspx" />
+    <Content Include="OLD\ReportbyPlantExcel.aspx" />
+    <Content Include="OLD\ReportBySC.aspx" />
+    <Content Include="OLD\ReportBySCExcel.aspx" />
+    <Content Include="OLD\ReportByTDCElement.aspx" />
+    <Content Include="OLD\ReportByTDCElementExcel.aspx" />
+    <Content Include="OLD\ReportByTDCSubElement.aspx" />
+    <Content Include="OLD\ReportByTDCSubElementExcel.aspx" />
+    <Content Include="OLD\ReportCDSN.aspx" />
+    <Content Include="OLD\ReportCDSNExcel.aspx" />
+    <Content Include="OLD\ReportSummary.aspx" />
+    <Content Include="OLD\ReportSummaryExcel.aspx" />
+    <Content Include="OLD\ReportSummaryMonthly.aspx" />
+    <Content Include="OLD\ReportSummaryMonthlyExcel.aspx" />
+    <Content Include="OLD\ReportSummaryMonthlyPlant.aspx" />
+    <Content Include="OLD\ReportSummaryMonthlyPlantExcel.aspx" />
+    <Content Include="OLD\ReportSummaryPlant.aspx" />
+    <Content Include="OLD\ReportSummaryPlantExcel.aspx" />
+    <Content Include="OLD\scripts.js" />
+    <Content Include="OLD\searchoutput.aspx" />
+    <Content Include="OLD\searchoutputexcel.aspx" />
+    <Content Include="OLD\SearchResultExcel.aspx" />
+    <Content Include="OLD\SearchResults.aspx" />
+    <Content Include="OLD\tblBusiness.aspx" />
+    <Content Include="OLD\tblBusiness.xml" />
+    <Content Include="OLD\tblBusinessForms.aspx" />
+    <Content Include="OLD\tblBusinessForms.xml" />
+    <Content Include="OLD\tblCashElement.aspx" />
+    <Content Include="OLD\tblCashElement.xml" />
+    <Content Include="OLD\tblCashSubElement.aspx" />
+    <Content Include="OLD\tblCashSubElement.xml" />
+    <Content Include="OLD\tblCVCCustomer.aspx" />
+    <Content Include="OLD\tblCVCCustomer.xml" />
+    <Content Include="OLD\tblCVCElement.aspx" />
+    <Content Include="OLD\tblCVCElement.xml" />
+    <Content Include="OLD\tblCVCSupplier.aspx" />
+    <Content Include="OLD\tblCVCSupplier.xml" />
+    <Content Include="OLD\tblDepartment.aspx" />
+    <Content Include="OLD\tblDepartment.xml" />
+    <Content Include="OLD\tblLossType.aspx" />
+    <Content Include="OLD\tblLossType.xml" />
+    <Content Include="OLD\tblMonths.xml" />
+    <Content Include="OLD\tblOtherBusiness.aspx" />
+    <Content Include="OLD\tblOtherBusiness.xml" />
+    <Content Include="OLD\tblPersonnel.aspx" />
+    <Content Include="OLD\tblPersonnel.xml" />
+    <Content Include="OLD\tblPlant.aspx" />
+    <Content Include="OLD\tblPlant.xml" />
+    <Content Include="OLD\tblReportTags.aspx" />
+    <Content Include="OLD\tblReportTags.xml" />
+    <Content Include="OLD\tblSCSupplyChain.aspx" />
+    <Content Include="OLD\tblSCSupplyChain.xml" />
+    <Content Include="OLD\tblStatus.aspx" />
+    <Content Include="OLD\tblStatus.xml" />
+    <Content Include="OLD\tblSubGBU.aspx" />
+    <Content Include="OLD\tblSubGBU.xml" />
+    <Content Include="OLD\tblTDCElements.aspx" />
+    <Content Include="OLD\tblTDCElements.xml" />
+    <Content Include="OLD\tblTDCSubElements.aspx" />
+    <Content Include="OLD\tblTDCSubElements.xml" />
+    <Content Include="OLD\tblYears.aspx" />
+    <Content Include="OLD\tblYears.xml" />
+    <Content Include="OLD\vCategory.aspx" />
+    <Content Include="OLD\VolumeAdd.aspx" />
+    <Content Include="OLD\VolumeView.aspx" />
+    <Content Include="OLD\VolumeViewExcel.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\codropsicons\.DS_Store" />
+    <Content Include="fonts\codropsicons\codropsicons.eot" />
+    <Content Include="fonts\codropsicons\codropsicons.ttf" />
+    <Content Include="fonts\codropsicons\codropsicons.woff" />
+    <Content Include="fonts\linecons\linecons.eot" />
+    <Content Include="fonts\linecons\linecons.ttf" />
+    <Content Include="fonts\linecons\linecons.woff" />
+    <Content Include="js\.DS_Store" />
+    <Content Include="OLD\web.config" />
+    <Content Include="OLD\Web.sitemap" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.vb" />
+    <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="About.aspx.designer.vb">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About.aspx.vb">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.vb">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.vb">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="OLD\CustomSearch.aspx.vb">
+      <DependentUpon>CustomSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\LEPersonalList.aspx.vb">
+      <DependentUpon>LEPersonalList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ProjectAddition.aspx.vb">
+      <DependentUpon>ProjectAddition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ProjectCopy.aspx.vb">
+      <DependentUpon>ProjectCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ProjectModification.aspx.vb">
+      <DependentUpon>ProjectModification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ProjectModificationConfirm.aspx.vb">
+      <DependentUpon>ProjectModificationConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportAllByYear.aspx.vb">
+      <DependentUpon>ReportAllByYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportAllByYearExcel.aspx.vb">
+      <DependentUpon>ReportAllbyYearExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByBusiness.aspx.vb">
+      <DependentUpon>ReportByBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByBusinessExcel.aspx.vb">
+      <DependentUpon>ReportbyBusinessExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByCash.aspx.vb">
+      <DependentUpon>ReportByCash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByCashExcel.aspx.vb">
+      <DependentUpon>ReportByCashExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByCVC.aspx.vb">
+      <DependentUpon>ReportByCVC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByCVCExcel.aspx.vb">
+      <DependentUpon>ReportByCVCExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByPillars.aspx.vb">
+      <DependentUpon>ReportByPillars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByPillarsExcel.aspx.vb">
+      <DependentUpon>ReportByPillarsExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByPlant.aspx.vb">
+      <DependentUpon>ReportbyPlant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByPlantExcel.aspx.vb">
+      <DependentUpon>ReportbyPlantExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportBySC.aspx.vb">
+      <DependentUpon>ReportBySC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportBySCExcel.aspx.vb">
+      <DependentUpon>ReportBySCExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByTDCElement.aspx.vb">
+      <DependentUpon>ReportByTDCElement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByTDCElementExcel.aspx.vb">
+      <DependentUpon>ReportByTDCElementExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByTDCSubElement.aspx.vb">
+      <DependentUpon>ReportByTDCSubElement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportByTDCSubElementExcel.aspx.vb">
+      <DependentUpon>ReportByTDCSubElementExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportCDSN.aspx.vb">
+      <DependentUpon>ReportCDSN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportCDSNExcel.aspx.vb">
+      <DependentUpon>ReportCDSNExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportSummary.aspx.vb">
+      <DependentUpon>ReportSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportSummaryExcel.aspx.vb">
+      <DependentUpon>ReportSummaryExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportSummaryMonthly.aspx.vb">
+      <DependentUpon>ReportSummaryMonthly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportSummaryMonthlyExcel.aspx.vb">
+      <DependentUpon>ReportSummaryMonthlyExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportSummaryMonthlyPlant.aspx.vb">
+      <DependentUpon>ReportSummaryMonthlyPlant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportSummaryMonthlyPlantExcel.aspx.vb">
+      <DependentUpon>ReportSummaryMonthlyPlantExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportSummaryPlant.aspx.vb">
+      <DependentUpon>ReportSummaryPlant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\ReportSummaryPlantExcel.aspx.vb">
+      <DependentUpon>ReportSummaryPlantExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\SearchOutput.aspx.vb">
+      <DependentUpon>searchoutput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\SearchOutputExcel.aspx.vb">
+      <DependentUpon>searchoutputexcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\SearchResultExcel.aspx.vb">
+      <DependentUpon>SearchResultExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\SearchResults.aspx.vb">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblBusiness.aspx.vb">
+      <DependentUpon>tblBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblBusinessForms.aspx.vb">
+      <DependentUpon>tblBusinessForms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblCashElement.aspx.vb">
+      <DependentUpon>tblCashElement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblCashSubElement.aspx.vb">
+      <DependentUpon>tblCashSubElement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblCVCCustomer.aspx.vb">
+      <DependentUpon>tblCVCCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblCVCElement.aspx.vb">
+      <DependentUpon>tblCVCElement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblCVCSupplier.aspx.vb">
+      <DependentUpon>tblCVCSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblDepartment.aspx.vb">
+      <DependentUpon>tblDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblLossType.aspx.vb">
+      <DependentUpon>tblLossType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblOtherBusiness.aspx.vb">
+      <DependentUpon>tblOtherBusiness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblPersonnel.aspx.vb">
+      <DependentUpon>tblPersonnel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblPlant.aspx.vb">
+      <DependentUpon>tblPlant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblReportTags.aspx.vb">
+      <DependentUpon>tblReportTags.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblSCSupplyChain.aspx.vb">
+      <DependentUpon>tblSCSupplyChain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblStatus.aspx.vb">
+      <DependentUpon>tblStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblSubGBU.aspx.vb">
+      <DependentUpon>tblSubGBU.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblTDCElements.aspx.vb">
+      <DependentUpon>tblTDCElements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblTDCSubElements.aspx.vb">
+      <DependentUpon>tblTDCSubElements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\tblYears.aspx.vb">
+      <DependentUpon>tblYears.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\vCategory.aspx.vb">
+      <DependentUpon>vCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\VolumeAdd.aspx.vb">
+      <DependentUpon>VolumeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\VolumeView.aspx.vb">
+      <DependentUpon>VolumeView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OLD\VolumeViewExcel.aspx.vb">
+      <DependentUpon>VolumeViewExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.vb">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.vb">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.vb">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.vb">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Site.Master" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60463</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60463/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

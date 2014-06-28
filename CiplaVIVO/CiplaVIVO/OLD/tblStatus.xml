@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <tblStatus>
+    <Status>Cancelled</Status>
+  </tblStatus>
+  <tblStatus>
+    <Status>Completed</Status>
+  </tblStatus>
+  <tblStatus>
+    <Status>Hold</Status>
+  </tblStatus>
+  <tblStatus>
+    <Status>In Progress</Status>
+  </tblStatus>
+  <tblStatus>
+    <Status>Planned</Status>
+  </tblStatus>
+  <tblStatus>
+    <Status>Requires Strategic Choice</Status>
+  </tblStatus>
+</dataroot>
