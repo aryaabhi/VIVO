@@ -6,18 +6,23 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - CIPLA VIVO</title>
 
+    <style type="text/css" media="all">
+        .chosen-rtl .chosen-drop { left: -9000px; }
+    </style>
+    
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
+    
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
 <body>
-    <form runat="server">
+        <form runat="server">
+
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -25,6 +30,7 @@
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
                 <asp:ScriptReference Name="respond" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
@@ -39,34 +45,122 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
-        </div>
-
-    </form>
+        <div class="container">
+            <!-- Push Wrapper -->
+            <div class="mp-pusher" id="mp-pusher">
+                <!-- mp-menu -->
+                    <nav id="mp-menu" class="mp-menu">
+                        <div class="mp-level">
+                            <h2 class="icon icon-world">ViVo</h2>
+                                <ul>
+                                    <li class="icon icon-arrow-left">
+                                        <a class="icon icon-news" href="#">Projects</a>
+                                        <div class="mp-level">
+                                            <h2 class="icon icon-news">Projects</h2>
+                                            <a class="mp-back" href="#">back</a>
+                                            <ul>
+                                                <li><a href="ProjectAddition.aspx?subGBU=HomeCare&amp;Business=">Add New Project</a></li>
+                                                <li><a href="ReportAllByYear.aspx">List All</a></li>
+                                                <li><a href="ReportAllByYear.aspx">Edit</a></li>
+                                                <li><a href="ReportAllByYear.aspx">Delete</a></li>
+                                                <li><a href="ProjectCopy.aspx">Copy</a></li>
+                                            </ul>
+                                       </div>
+                                    </li>
+                                    <li class="icon icon-arrow-left">
+                                        <a class="icon icon-paperplane" href="#">Volume</a>
+                                        <div class="mp-level">
+                                            <h2 class="icon icon-paperplane">Volume</h2>
+                                                <a class="mp-back" href="#">back</a>
+                                            <ul>
+                                                <li><a href="VolumeView.aspx">View Current Volumes</a></li>
+                                                <li><a href="VolumeAdd.aspx">Add Volume</a></li>
+                                        </ul>
+                                        </div>
+                                    </li>
+                                    <li class="icon icon-arrow-left">
+                                        <a class="icon icon-display" href="#">Reports</a>
+                                        <div class="mp-level">
+                                                <h2 class="icon icon-display">Reports</h2>
+                                                <a class="mp-back" href="#">back</a>
+                                                <ul>
+                                                    <li class="icon icon-arrow-left">
+                                                        <a class="icon icon-phone" href="#">BY BUSINESS</a>
+                                                        <div class="mp-level">
+                                                            <h2>By Business</h2>
+                                                            <a class="mp-back" href="#">back</a>
+                                                            <ul>
+                                                                <li><a href="ReportSummary.aspx">Summary Sheet</a></li>
+                                                                <li><a href="ReportSummaryMonthly.aspx">Summary Sheet by Month</a></li>
+                                                                <li><a href="reportbybusiness.aspx?Business=HandDish">Hand Dish </a></li>
+                                                                <li><a href="reportbybusiness.aspx?Business=ADW(Cascade)">ADW (Cascade)</a></li>
+                                                                <li><a href="reportbybusiness.aspx?Business=AirCare(Febreze)">AirCare (Febreze)</a></li>
+                                                                <li><a href="reportbybusiness.aspx?Business=Mr. Clean">Mr. Clean</a></li>
+                                                                <li><a href="reportbybusiness.aspx?Business=Swiffer">Swiffer</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="icon icon-arrow-left">
+                                                        <a class="icon icon-tv" href="#">BY PLANT</a>
+                                                        <div class="mp-level">
+                                                            <h2>BY PLANT</h2>
+                                                            <a class="mp-back" href="#">back</a>
+                                                            <ul>
+                                                                <li><a href="ReportSummaryPlant.aspx">Summary Sheet</a></li>
+                                                                <li><a href="ReportSummaryMonthlyPlant.aspx">Summary Sheet by Month</a></li>
+                                                                <li><a href="ReportByPlant.aspx?plant=St.Louis">St. Louis</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li class="icon icon-arrow-left">
+                                                        <a class="icon icon-camera" href="#">BY TYPE</a>
+                                                        <div class="mp-level">
+                                                            <h2>BY TYPE</h2>
+                                                            <a class="mp-back" href="#">back</a>
+                                                            <ul>
+                                                                <li><a href="ReportByTDCSubElement.aspx?TDCSubElement=Purchasing">Purchasing</a></li>
+                                                                <li><a href="ReportByTDCElement.aspx?TDCElement=RM">Raw Material</a></li>
+                                                                <li><a href="ReportByTDCElement.aspx?TDCElement=PM">Packaging Material</a></li>
+                                                                <li><a href="ReportByTDCElement.aspx?TDCElement=MOE">MOE</a></li>
+                                                                <li><a href="ReportByTDCElement.aspx?TDCElement=FPLC">FPLC</a></li>
+                                                                <li><a href="ReportByPillars.aspx?TDCElement=ValueAdd">Value Add</a></li>
+                                                                <li><a href="ReportByPillars.aspx?TDCElement=MSM">MSM</a></li>
+                                                                <li><a href="ReportByCash.aspx">Cash Projects</a></li>
+                                                                <li><a href="ReportByCVC.aspx">NOS/CVC Projects</a></li>
+                                                                <li><a href="ReportBySC.aspx">Supply Chain Time Projects</a></li>
+                                                                <li><a href="ReportCDSN.aspx">CDSN Action Plans</a></li>
+                                                                <li><a href="CustomSearch.aspx"> Create your own report</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                            <div class="scroller">
+                                <!-- this is for emulating position fixed of the nav -->
+                                <div class="scroller-inner">
+                                <!-- Top Navigation -->
+                                    <div class="codrops-top clearfix">
+                                        <a href="#" id="trigger"><span>Menu</span></a>
+                                            <span class="right"><a href="#"><span><img height="18px" src="imgs/2014_05_28_logo.png" /></span></a></span>
+                                     </div>
+                                    <div>
+                                         <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                                         </asp:ContentPlaceHolder>
+                                    </div>
+                                </div><!-- /scroller-inner -->
+                             </div><!-- /scroller -->
+                        </div><!-- /pusher -->
+                     </div><!-- /container -->
+                  </form>
+    <!-- /mp-menu -->
+    <script src="Scripts/classie.js"></script>
+	<script src="Scripts/mlpushmenu.js"></script>
+	<script>
+	    new mlPushMenu(document.getElementById('mp-menu'), document.getElementById('trigger'));
+	</script>
 </body>
 </html>

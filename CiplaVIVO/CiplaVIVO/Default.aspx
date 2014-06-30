@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="Home Page" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.vb" Inherits="CiplaVIVO._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+        <header class="codrops-header">
+                            <h1>VIVO <span>Project Tracking and Analysis Tool</span></h1>
+                        </header>
 
     <div class="jumbotron">
         <h1>ASP.NET</h1>

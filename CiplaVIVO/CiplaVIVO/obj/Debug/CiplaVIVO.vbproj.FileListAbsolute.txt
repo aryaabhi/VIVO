@@ -23,3 +23,7 @@ C:\VIVO\CiplaVIVO\CiplaVIVO\obj\Debug\CiplaVIVO.vbproj.GenerateResource.Cache
 C:\VIVO\CiplaVIVO\CiplaVIVO\obj\Debug\CiplaVIVO.dll
 C:\VIVO\CiplaVIVO\CiplaVIVO\obj\Debug\WebForms_Basic.xml
 C:\VIVO\CiplaVIVO\CiplaVIVO\obj\Debug\CiplaVIVO.pdb
+C:\VIVO\CiplaVIVO\CiplaVIVO\bin\EntityFramework.dll
+C:\VIVO\CiplaVIVO\CiplaVIVO\bin\EntityFramework.SqlServer.dll
+C:\VIVO\CiplaVIVO\CiplaVIVO\bin\EntityFramework.xml
+C:\VIVO\CiplaVIVO\CiplaVIVO\bin\EntityFramework.SqlServer.xml
