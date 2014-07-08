@@ -18,6 +18,17 @@ Public Class vCategory
         Dim cmd As New SqlCommand(strQuery)
         GridView1.DataSource = GetData(cmd)
         GridView1.DataBind()
+        BindTable()
+    End Sub
+
+    Private Sub BindTable()
+        Dim cells As TableCellCollection = GridView1.HeaderRow.Cells
+        cells(0).Attributes.Add("data-hide", "phone,tablet")
+        cells(1).Attributes.Add("data-class", "expand")
+        cells(1).Attributes.Add("data-toggle", "true")
+        cells(2).Attributes.Add("data-hide", "phone,tablet")
+        cells(3).Attributes.Add("data-hide", "phone,tablet")
+        cells(4).Attributes.Add("data-hide", "phone,tablet")
     End Sub
 
     Private Function GetData(ByVal cmd As SqlCommand) As DataTable
@@ -45,6 +56,7 @@ Public Class vCategory
         cmd.Parameters.Add("@CategoryID", SqlDbType.VarChar).Value = Field3
         GridView1.DataSource = GetData(cmd)
         GridView1.DataBind()
+        BindTable()
     End Sub
 
     Protected Sub EditRecord(ByVal sender As Object, ByVal e As GridViewEditEventArgs)
@@ -73,6 +85,7 @@ Public Class vCategory
         GridView1.EditIndex = -1
         GridView1.DataSource = GetData(cmd)
         GridView1.DataBind()
+        BindTable()
     End Sub
 
     Protected Sub DeleteRecord(ByVal sender As Object, ByVal e As EventArgs)
@@ -85,13 +98,23 @@ Public Class vCategory
         cmd.Parameters.Add("@PlantID", SqlDbType.VarChar).Value = lnkRemove.CommandArgument
         GridView1.DataSource = GetData(cmd)
         GridView1.DataBind()
+        BindTable()
     End Sub
 
     Protected Sub OnPaging(ByVal sender As Object, ByVal e As GridViewPageEventArgs)
         BindData()
         GridView1.PageIndex = e.NewPageIndex
         GridView1.DataBind()
+        BindTable()
     End Sub
+
+    Private Sub TableCellCollection(p1 As Object)
+        Throw New NotImplementedException
+    End Sub
+
+    Private Function cells() As WebControls.TableCellCollection
+        Throw New NotImplementedException
+    End Function
 
 End Class
 

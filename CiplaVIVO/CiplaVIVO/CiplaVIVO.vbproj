@@ -130,15 +130,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AddPage.html" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\chosen-sprite%402x.png" />
     <Content Include="Content\chosen-sprite.png" />
     <Content Include="Content\chosen.css" />
     <Content Include="Content\CiplaVIVO.css" />
     <Content Include="Content\component.css" />
+    <Content Include="Content\demo-addpage.css" />
     <Content Include="Content\demo.css" />
     <Content Include="Content\icons.css" />
+    <Content Include="Content\normalize-addpage.css" />
     <Content Include="Content\normalize.css" />
+    <Content Include="Content\style-addpage.css" />
     <Content Include="fonts\codropsicons\codropsicons.svg" />
     <Content Include="fonts\codropsicons\license.txt" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -148,15 +152,22 @@
     <Content Include="imgs\2014_05_28_logo.png" />
     <Content Include="imgs\chosen-sprite%402x.png" />
     <Content Include="imgs\chosen-sprite.png" />
+    <Content Include="imgs\loadingAnim.gif" />
     <Content Include="ProjectAddition.aspx" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\chosen.jquery.js" />
     <Content Include="Scripts\classie.js" />
+    <Content Include="Scripts\footable.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
     <Content Include="Scripts\mlpushmenu.js" />
     <Content Include="Scripts\modernizr.custom.04022.js" />
     <Content Include="Scripts\modernizr.custom.js" />
     <Content Include="Scripts\prism.js" />
     <Content Include="Admin.aspx" />
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -167,11 +178,7 @@
     <Content Include="fonts\linecons\linecons.eot" />
     <Content Include="fonts\linecons\linecons.ttf" />
     <Content Include="fonts\linecons\linecons.woff" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -209,7 +216,6 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

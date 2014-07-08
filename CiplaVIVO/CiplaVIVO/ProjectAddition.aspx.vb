@@ -28,10 +28,7 @@ Public Class ProjectAddition
     End Sub
 
     Sub PopulateDropDown()
-        Dim nav As XPathNavigator
-        Dim docNav As XPathDocument
-        Dim NodeIter As XPathNodeIterator
-        Dim strExpression As String
+       
         '---------cboPersonnel
         myDataSet = New DataSet
         myDataSet.ReadXml(Server.MapPath("tblPersonnel.xml"))
@@ -233,7 +230,6 @@ Public Class ProjectAddition
         Dim tempTime As Integer
         Dim Recoverable As Double
         Dim Cost As Double
-        Dim Probability As Double
         Dim SavingStartMonth As Double
         Dim SavingStartYear As Double
 
@@ -295,20 +291,11 @@ Public Class ProjectAddition
 
     Sub SaveNewProject(ByVal sender As Object, ByVal e As System.EventArgs)
 
-        Dim DS As DataSet
         Dim MyCommand As SqlCommand
         Dim SavingBeginLiteral As String
         Dim ProjectBeginLiteral As String
-        Dim StatusDatePlanned As Date
-        Dim StatusDateInProgress As Date
-        Dim StatusDateCompleted As Date
-        Dim StatusDateFailed As Date
-        Dim TempDate As Date
-        Dim TempDate1 As Date
-        Dim TempDate2 As Date
         Dim TempDate3 As Date
         Dim TempDate4 As Date
-        Dim txtReasonChange As String
         Dim chkBoxChecked As Integer
         Dim chkBoxChecked1 As Integer
         Dim chkBoxChecked2 As Integer
@@ -537,7 +524,6 @@ Public Class ProjectAddition
         Catch Exp As SqlException
             Dim errorMessages As String
             Dim i As Integer
-
             For i = 0 To Exp.Errors.Count - 1
                 errorMessages += "Index #" & i.ToString() & ControlChars.NewLine _
                                & "Message: " & Exp.Errors(i).Message & ControlChars.NewLine _

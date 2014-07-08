@@ -316,8 +316,8 @@
 					<asp:validationsummary id="Validationsummary1" runat="server" ShowMessageBox="true" ShowSummary="false" HeaderText="You must enter/select a value in the following &#13;&#10;fields:" EnableClientScript="true"></asp:validationsummary>
 				</div>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
-	  		<script src="js/chosen.jquery.js" type="text/javascript"></script>
-	  		<script src="js/prism.js" type="text/javascript" charset="utf-8"></script>
+	  		<script src="Scripts/chosen.jquery.js" type="text/javascript"></script>
+	  		<script src="Scripts/prism.js" type="text/javascript" charset="utf-8"></script>
 	  		<script type="text/javascript">
 	  		    var config = {
 	  		        '.chosen-select': {},
