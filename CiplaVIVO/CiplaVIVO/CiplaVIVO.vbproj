@@ -129,41 +129,44 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="AddPage.html" />
-    <Content Include="Contact.aspx" />
+    <Content Include="zblank.html" />
+    <Content Include="zbuttons.html" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\chosen-sprite%402x.png" />
     <Content Include="Content\chosen-sprite.png" />
     <Content Include="Content\chosen.css" />
-    <Content Include="Content\CiplaVIVO.css" />
-    <Content Include="Content\component.css" />
-    <Content Include="Content\demo-addpage.css" />
-    <Content Include="Content\demo.css" />
-    <Content Include="Content\icons.css" />
-    <Content Include="Content\normalize-addpage.css" />
     <Content Include="Content\normalize.css" />
-    <Content Include="Content\style-addpage.css" />
+    <Content Include="Content\plugins\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Content\plugins\morris\morris-0.4.3.min.css" />
+    <Content Include="Content\plugins\social-buttons\social-buttons.css" />
+    <Content Include="Content\plugins\timeline\timeline.css" />
+    <Content Include="Content\sb-admin.css" />
+    <Content Include="zflot.html" />
+    <Content Include="font-awesome\css\font-awesome.css" />
+    <Content Include="font-awesome\css\font-awesome.min.css" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\codropsicons\codropsicons.svg" />
     <Content Include="fonts\codropsicons\license.txt" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\linecons\linecons.dev.svg" />
     <Content Include="fonts\linecons\linecons.svg" />
     <Content Include="fonts\linecons\lte-ie7.js" />
+    <Content Include="zforms.html" />
+    <Content Include="zgrid.html" />
     <Content Include="imgs\2014_05_28_logo.png" />
     <Content Include="imgs\chosen-sprite%402x.png" />
     <Content Include="imgs\chosen-sprite.png" />
     <Content Include="imgs\loadingAnim.gif" />
+    <Content Include="zindex.html" />
+    <Content Include="zmorris.html" />
+    <Content Include="znotifications.html" />
+    <Content Include="zpanels-wells.html" />
     <Content Include="ProjectAddition.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\chosen.jquery.js" />
-    <Content Include="Scripts\classie.js" />
-    <Content Include="Scripts\footable.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
-    <Content Include="Scripts\jquery.blockUI.js" />
-    <Content Include="Scripts\mlpushmenu.js" />
-    <Content Include="Scripts\modernizr.custom.04022.js" />
-    <Content Include="Scripts\modernizr.custom.js" />
-    <Content Include="Scripts\prism.js" />
     <Content Include="Admin.aspx" />
     <Content Include="packages.config">
       <SubType>Designer</SubType>
@@ -178,36 +181,23 @@
     <Content Include="fonts\linecons\linecons.eot" />
     <Content Include="fonts\linecons\linecons.ttf" />
     <Content Include="fonts\linecons\linecons.woff" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\WebForms\DetailsView.js" />
-    <Content Include="Scripts\WebForms\Focus.js" />
-    <Content Include="Scripts\WebForms\GridView.js" />
-    <Content Include="Scripts\WebForms\Menu.js" />
-    <Content Include="Scripts\WebForms\MenuStandards.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
-    <Content Include="Scripts\WebForms\SmartNav.js" />
-    <Content Include="Scripts\WebForms\TreeView.js" />
-    <Content Include="Scripts\WebForms\WebForms.js" />
-    <Content Include="Scripts\WebForms\WebParts.js" />
-    <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\plugins\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\plugins\dataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\plugins\flot\excanvas.min.js" />
+    <Content Include="Scripts\plugins\flot\jquery.flot.js" />
+    <Content Include="Scripts\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Scripts\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Scripts\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Scripts\plugins\metisMenu\jquery.metisMenu.js" />
+    <Content Include="Scripts\plugins\morris\morris.js" />
+    <Content Include="Scripts\plugins\morris\raphael-2.1.0.min.js" />
+    <Content Include="Scripts\sb-admin.js" />
+    <Content Include="ztables.html" />
     <Content Include="Test.aspx" />
+    <Content Include="ztypography.html" />
     <Content Include="vCategory.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -215,7 +205,37 @@
     <Content Include="Bundle.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Project_Readme.html" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="font-awesome\less\bordered-pulled.less" />
+    <Content Include="font-awesome\less\core.less" />
+    <Content Include="font-awesome\less\fixed-width.less" />
+    <Content Include="font-awesome\less\font-awesome.less" />
+    <Content Include="font-awesome\less\icons.less" />
+    <Content Include="font-awesome\less\larger.less" />
+    <Content Include="font-awesome\less\list.less" />
+    <Content Include="font-awesome\less\mixins.less" />
+    <Content Include="font-awesome\less\path.less" />
+    <Content Include="font-awesome\less\rotated-flipped.less" />
+    <Content Include="font-awesome\less\spinning.less" />
+    <Content Include="font-awesome\less\stacked.less" />
+    <Content Include="font-awesome\less\variables.less" />
+    <Content Include="font-awesome\scss\font-awesome.scss" />
+    <Content Include="font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="font-awesome\scss\_core.scss" />
+    <Content Include="font-awesome\scss\_fixed-width.scss" />
+    <Content Include="font-awesome\scss\_icons.scss" />
+    <Content Include="font-awesome\scss\_larger.scss" />
+    <Content Include="font-awesome\scss\_list.scss" />
+    <Content Include="font-awesome\scss\_mixins.scss" />
+    <Content Include="font-awesome\scss\_path.scss" />
+    <Content Include="font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="font-awesome\scss\_spinning.scss" />
+    <Content Include="font-awesome\scss\_stacked.scss" />
+    <Content Include="font-awesome\scss\_variables.scss" />
+    <None Include="zProject_Readme.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -226,20 +246,6 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
-    <Compile Include="About.aspx.designer.vb">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="About.aspx.vb">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Contact.aspx.designer.vb">
-      <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Contact.aspx.vb">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>

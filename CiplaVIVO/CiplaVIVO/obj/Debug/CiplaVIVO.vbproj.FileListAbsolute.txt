@@ -2,17 +2,10 @@ C:\VIVO\CiplaVIVO\CiplaVIVO\bin\CiplaVIVO.dll.config
 C:\VIVO\CiplaVIVO\CiplaVIVO\bin\CiplaVIVO.dll
 C:\VIVO\CiplaVIVO\CiplaVIVO\bin\CiplaVIVO.pdb
 C:\VIVO\CiplaVIVO\CiplaVIVO\bin\WebForms_Basic.xml
-C:\VIVO\CiplaVIVO\CiplaVIVO\bin\Antlr3.Runtime.dll
-C:\VIVO\CiplaVIVO\CiplaVIVO\bin\AspNet.ScriptManager.bootstrap.dll
-C:\VIVO\CiplaVIVO\CiplaVIVO\bin\AspNet.ScriptManager.jQuery.dll
 C:\VIVO\CiplaVIVO\CiplaVIVO\bin\Microsoft.AspNet.FriendlyUrls.dll
-C:\VIVO\CiplaVIVO\CiplaVIVO\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
-C:\VIVO\CiplaVIVO\CiplaVIVO\bin\Microsoft.ScriptManager.MSAjax.dll
-C:\VIVO\CiplaVIVO\CiplaVIVO\bin\Microsoft.ScriptManager.WebForms.dll
 C:\VIVO\CiplaVIVO\CiplaVIVO\bin\Microsoft.Web.Infrastructure.dll
 C:\VIVO\CiplaVIVO\CiplaVIVO\bin\Newtonsoft.Json.dll
 C:\VIVO\CiplaVIVO\CiplaVIVO\bin\System.Web.Optimization.dll
-C:\VIVO\CiplaVIVO\CiplaVIVO\bin\WebGrease.dll
 C:\VIVO\CiplaVIVO\CiplaVIVO\bin\System.Web.Optimization.xml
 C:\VIVO\CiplaVIVO\CiplaVIVO\bin\Antlr3.Runtime.pdb
 C:\VIVO\CiplaVIVO\CiplaVIVO\bin\Newtonsoft.Json.xml
@@ -27,3 +20,4 @@ C:\VIVO\CiplaVIVO\CiplaVIVO\bin\EntityFramework.dll
 C:\VIVO\CiplaVIVO\CiplaVIVO\bin\EntityFramework.SqlServer.dll
 C:\VIVO\CiplaVIVO\CiplaVIVO\bin\EntityFramework.xml
 C:\VIVO\CiplaVIVO\CiplaVIVO\bin\EntityFramework.SqlServer.xml
+C:\VIVO\CiplaVIVO\CiplaVIVO\bin\Microsoft.Web.Infrastructure.xml
