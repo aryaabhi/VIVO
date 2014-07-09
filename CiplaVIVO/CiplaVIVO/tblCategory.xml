@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <tblCategory>
+    <Department>Manufacturing</Department>
+    <value>All</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>Manufacturing</Department>
+    <value>Plant 1</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>Manufacturing</Department>
+    <value>Plant 2</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>Manufacturing</Department>
+    <value>Plant 3</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>Manufacturing</Department>
+    <value>Plant 4</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>Depot</Department>
+    <value>All</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>HO</Department>
+    <value>All</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>HO</Department>
+    <value>BCT</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>HO</Department>
+    <value>PBP</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>HO</Department>
+    <value>Raj Plaza</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>HO</Department>
+    <value>Pooja</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>IPD</Department>
+    <value>All</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>IT</Department>
+    <value>All</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>Supply Chain</Department>
+    <value>All</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>Procurement</Department>
+    <value>All</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>Business Development</Department>
+    <value>All</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>LLs</Department>
+    <value>All</value>
+  </tblCategory>
+  <tblCategory>
+    <Department>Associates</Department>
+    <value>All</value>
+  </tblCategory>
+</dataroot>

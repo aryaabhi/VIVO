@@ -130,6 +130,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddPage.html" />
+    <Content Include="tblBusinessUnit.xml" />
+    <Content Include="tblCashElement.xml" />
+    <Content Include="tblCashSubElement.xml" />
+    <Content Include="tblCurrency.xml" />
+    <Content Include="tblCVCCustomer.xml" />
+    <Content Include="tblCVCElement.xml" />
+    <Content Include="tblCVCSupplier.xml" />
+    <Content Include="tblDepartment.xml" />
+    <Content Include="tblLossType.xml" />
+    <Content Include="tblMonths.xml" />
+    <Content Include="tblOtherBusiness.xml" />
+    <Content Include="tblPersonnel.xml" />
+    <Content Include="tblReportTags.xml" />
+    <Content Include="tblSCSupplyChain.xml" />
+    <Content Include="tblStatus.xml" />
+    <Content Include="tblTDCElements.xml" />
+    <Content Include="tblTDCSubElements.xml" />
+    <Content Include="tblYears.xml" />
     <Content Include="zblank.html" />
     <Content Include="zbuttons.html" />
     <Content Include="Content\bootstrap.css" />

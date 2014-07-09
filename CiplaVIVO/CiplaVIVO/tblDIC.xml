@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <tblDIC>
+    <DIC>Directs</DIC>
+    <value>All</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Directs</DIC>
+    <value>Plant 1</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Directs</DIC>
+    <value>Plant 2</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Directs</DIC>
+    <value>Plant 3</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Directs</DIC>
+    <value>Plant 4</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Indirects</DIC>
+    <value>All</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Indirects</DIC>
+    <value>Asasll</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Indirects</DIC>
+    <value>BCasasT</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Indirects</DIC>
+    <value>PBP</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Indirects</DIC>
+    <value>Raj Plaza</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Indirects</DIC>
+    <value>Pooja</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Indirects</DIC>
+    <value>AAdfdfll</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Indirects</DIC>
+    <value>Alfdgdl</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Indirects</DIC>
+    <value>Ahgjhgjll</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Capex</DIC>
+    <value>All</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Capex</DIC>
+    <value>Alfgdgl</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Capex</DIC>
+    <value>Adfgfdgll</value>
+  </tblDIC>
+  <tblDIC>
+    <DIC>Capex</DIC>
+    <value>Adgfdgll</value>
+  </tblDIC>
+</dataroot>

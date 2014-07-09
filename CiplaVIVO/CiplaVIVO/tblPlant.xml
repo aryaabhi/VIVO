@@ -1,63 +1,75 @@
 <?xml version="1.0" standalone="yes"?>
 <dataroot>
   <tblPlant>
-    <subGBU>HomeCare</subGBU>
+    <Department>Manufacturing</Department>
     <PlantDesc>All</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>HomeCare</subGBU>
+    <Department>Manufacturing</Department>
     <PlantDesc>St.Louis</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>HomeCare</subGBU>
+    <Department>Manufacturing</Department>
     <PlantDesc>Brockville</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>HomeCare</subGBU>
+    <Department>Manufacturing</Department>
     <PlantDesc>Kansas City</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>HomeCare</subGBU>
+    <Department>Manufacturing</Department>
     <PlantDesc>Contract Mfg.</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>HomeCare</subGBU>
-    <PlantDesc>All PG Central</PlantDesc>
+    <Department>Depot</Department>
+    <PlantDesc>All</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>HomeCare</subGBU>
-    <PlantDesc>US RDCs</PlantDesc>
+    <Department>HO</Department>
+    <PlantDesc>All</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>HomeCare</subGBU>
-    <PlantDesc>US PP DCs</PlantDesc>
+    <Department>HO</Department>
+    <PlantDesc>BCT</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>HomeCare</subGBU>
-    <PlantDesc>Canadian RDC</PlantDesc>
+    <Department>HO</Department>
+    <PlantDesc>PBP</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>HomeCare</subGBU>
-    <PlantDesc>Hudd</PlantDesc>
+    <Department>HO</Department>
+    <PlantDesc>Raj Plaza</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>FabricCare</subGBU>
-    <PlantDesc>Alex</PlantDesc>
+    <Department>HO</Department>
+    <PlantDesc>Pooja</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>FabricCare</subGBU>
-    <PlantDesc>Augusta</PlantDesc>
+    <Department>IPD</Department>
+    <PlantDesc>All</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>FabricCare</subGBU>
-    <PlantDesc>Avenel</PlantDesc>
+    <Department>IT</Department>
+    <PlantDesc>All</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>FabricCare</subGBU>
-    <PlantDesc>Lima</PlantDesc>
+    <Department>Supply Chain</Department>
+    <PlantDesc>All</PlantDesc>
   </tblPlant>
   <tblPlant>
-    <subGBU>FabricCare</subGBU>
-    <PlantDesc>RDC</PlantDesc>
+    <Department>Procurement</Department>
+    <PlantDesc>All</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <Department>Business Development</Department>
+    <PlantDesc>All</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <Department>LLs</Department>
+    <PlantDesc>All</PlantDesc>
+  </tblPlant>
+  <tblPlant>
+    <Department>Associates</Department>
+    <PlantDesc>All</PlantDesc>
   </tblPlant>
 </dataroot>

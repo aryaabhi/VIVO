@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<dataroot>
+  <tblCurrency>
+    <Currency>US $</Currency>
+    <value>60</value>
+  </tblCurrency>
+  <tblCurrency>
+    <Currency>GB £</Currency>
+    <value>100</value>
+  </tblCurrency>
+  <tblCurrency>
+    <Currency>RSA $</Currency>
+    <value>20</value>
+  </tblCurrency>
+  <tblCurrency>
+    <Currency>Chinese RMB</Currency>
+    <value>12</value>
+  </tblCurrency>
+  <tblCurrency>
+    <Currency>Euro</Currency>
+    <value>50</value>
+  </tblCurrency>
+</dataroot>
