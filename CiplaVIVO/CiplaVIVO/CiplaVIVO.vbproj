@@ -130,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddPage.html" />
+    <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="tblBusinessUnit.xml" />
     <Content Include="tblCashElement.xml" />
     <Content Include="tblCashSubElement.xml" />
@@ -264,6 +265,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="App_Start\VivoClass.vb" />
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>

@@ -2,24 +2,195 @@
 
 <%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
 
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no"/>
+    <title><%: Page.Title %> - CIPLA VIVO</title>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        <h1>Mobile Master Page</h1>
-        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
-        <section class="content-wrapper main-content clear-fix">
-            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
-        </section>
-        <friendlyUrls:ViewSwitcher ID="ViewSwitcher1" runat="server" />
+    <form method="post" runat="server">
+       <div id="wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="default.aspx">CIPLA VIVO</a>
+            </div>
+            <!-- /.navbar-header -->
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default navbar-static-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="dashboard.aspx"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Manage Projects<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="ProjectAddition?subGBU=HomeCare&Business=">Add a Project</a>
+                                </li>
+                                <li>
+                                    <a href="ReportAllbyYear.aspx">Edit a Project</a>
+                                </li>
+                                <li>
+                                    <a href="ReportAllbyYear.aspx">Delete a Project</a>
+                                </li>
+                                <li>
+                                    <a href="ProjectCopy.aspx">Copy a Project</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Reports<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="ReportSummary.aspx">Summary Sheet</a>
+                                </li>
+                                <li>
+                                    <a href="ReportSummarybyMonth.aspx">Summary Sheet by Month</a>
+                                </li>
+                                <li>
+                                    <a href="ReportbyBusiness.aspx">By Business Unit</a>
+                                </li>
+                                <li>
+                                    <a href="ReportbyDepartment.aspx">By Department</a>
+                                </li>
+                                <li>
+                                    <a href="ReportbyExpenseHead.aspx">By Expense Head</a>
+                                </li>
+                                <li>
+                                    <a href="ReportbyTeamMember.aspx">By Team Member</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Administration<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="vBusinessUnit.aspx">Manage Business Unit</a>
+                                </li>
+                                <li>
+                                    <a href="vDepartment.aspx">Manage Department</a>
+                                </li>
+                                <li>
+                                    <a href="vCategory.aspx">Manage Location/Category</a>
+                                </li>
+                                <li>
+                                    <a href="vExpenseHead.aspx">Manage Expense Head</a>
+                                </li>
+                                <li>
+                                    <a href="vDosage.aspx">Manage Dosage</a>
+                                </li>
+                                <li>
+                                    <a href="vPackCode.aspx">Manage Pack Code</a>
+                                </li>
+                                <li>
+                                    <a href="vMfgCode.aspx">Manage Mfg. Code</a>
+                                </li>
+                                <li>
+                                    <a href="vBulkCode.aspx">Manage Bulk Code</a>
+                                </li>
+                                <li>
+                                    <a href="vTherapy.aspx">Manage Therapy</a>
+                                </li>
+                                 <li>
+                                    <a href="vTeamMember.aspx">Manage Team Member</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search Project...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                    </ul>
+                    <!-- /#side-menu -->
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+              <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+        </div>
+                   <friendlyUrls:ViewSwitcher ID="ViewSwitcher1" runat="server" />
+
+        <!-- /#page-wrapper -->
+
     </div>
+    <!-- /#wrapper -->
+      
     </form>
-</body>
+    <!-- /mp-menu -->
+    
+    <!-- Core Scripts - Include with every page -->
+    <script src="scripts/jquery-2.1.1.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <!-- Page-Level Plugin Scripts - Dashboard -->
+    <script src="~/scripts/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="~/scripts/plugins/morris/morris.js"></script>
+    <!-- Page-Level Plugin Scripts - Tables -->
+    <script src="~/scripts/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="~/scripts/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <!-- SB Admin Scripts - Include with every page -->
+    <script src="scripts/sb-admin.js"></script>
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable();
+        });
+    </script>
+
+    </body>
 </html>
 
