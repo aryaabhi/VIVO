@@ -184,15 +184,7 @@
     <!-- SB Admin Scripts - Include with every page -->
     <script src="scripts/sb-admin.js"></script>
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-        $(document).ready(function () {
-            $('#GridView1')
-                .on('order.dt', function () { eventFired('Order'); })
-                .on('search.dt', function () { eventFired('Search'); })
-                .on('page.dt', function () { eventFired('Page'); })
-                .dataTable();
-        });
-    </script>
+    
 
     </body>
 </html>

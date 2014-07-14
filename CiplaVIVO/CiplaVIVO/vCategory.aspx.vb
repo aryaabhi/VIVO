@@ -4,15 +4,19 @@ Public Class vCategory
     Inherits System.Web.UI.Page
     Dim Viv As New VivoClass
     Dim TableName As String = "Category"
+    Dim SelectedSort As String
+
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
+            SelectedSort = Session("Sort")
             BindData()
         End If
     End Sub
 
     Private Sub BindData()
-        GridView1.DataSource = Viv.BindData(TableName)
+        If Session("Sort") = "" Then Session("Sort") = "PlantID"
+        GridView1.DataSource = Viv.BindData(TableName, Session("Sort"))
         GridView1.DataBind()
     End Sub
 
@@ -53,4 +57,9 @@ Public Class vCategory
         GridView1.DataBind()
     End Sub
 
+    Sub SortData(sender As Object, e As System.Web.UI.WebControls.GridViewSortEventArgs)
+        SelectedSort = e.SortExpression
+        Session("Sort") = SelectedSort
+        BindData()
+    End Sub
 End Class

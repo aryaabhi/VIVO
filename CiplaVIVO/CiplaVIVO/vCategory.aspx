@@ -7,7 +7,8 @@
                 </div>
                 <div class="panel-body">
                     <!--The GridView for the table-->
-                    <asp:GridView ID="GridView1" runat="server" 
+
+                    <asp:GridView ID="GridView1" runat="server" AllowSorting="true" OnSorting="SortData"
                             class="table table-striped table-bordered table-hover"
                             AutoGenerateColumns="false" 
                             AllowPaging ="true"  
@@ -18,7 +19,7 @@
                             onrowcancelingedit="CancelEdit" 	
                             PageSize = "10" >
     			    <Columns>
-					    <asp:TemplateField HeaderText = "PlantID" ItemStyle-CssClass="hidden-phone" HeaderStyle-CssClass="hidden-phone" FooterStyle-CssClass="hidden-phone">
+					    <asp:TemplateField HeaderText = "PlantID" SortExpression="PlantID" ItemStyle-CssClass="hidden-phone" HeaderStyle-CssClass="hidden-phone" FooterStyle-CssClass="hidden-phone">
 					        <ItemTemplate>
 					            <asp:Label ID="txtField1" runat="server"
 					            Text='<%# Eval("PlantID")%>'></asp:Label>
@@ -28,7 +29,7 @@
 					        </FooterTemplate>
 					    </asp:TemplateField>
 					
-					    <asp:TemplateField HeaderText = "Plant/Location" FooterStyle-CssClass="hidden-phone">
+					    <asp:TemplateField HeaderText = "Plant/Location" SortExpression="Plant" FooterStyle-CssClass="hidden-phone">
 					        <ItemTemplate>
 					            <asp:Label ID="txtField2" runat="server" Text='<%# Eval("Plant")%>'></asp:Label>
 					        </ItemTemplate>
@@ -40,7 +41,7 @@
 					        </FooterTemplate>
 					    </asp:TemplateField>
 					
-					    <asp:TemplateField HeaderText = "Category" FooterStyle-CssClass="hidden-phone">
+					    <asp:TemplateField HeaderText = "Category" SortExpression="CategoryID" FooterStyle-CssClass="hidden-phone">
 					        <ItemTemplate>
 					            <asp:Label ID="txtField3" runat="server"
 					                Text='<%# Eval("CategoryID")%>'></asp:Label>

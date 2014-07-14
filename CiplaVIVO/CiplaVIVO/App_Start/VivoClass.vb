@@ -22,8 +22,8 @@ Public Class VivoClass
         Return dt
     End Function
 
-    Public Function BindData(ByVal TableName As String) As DataTable
-        Dim strQuery As String = "select PlantID, Plant, CategoryID from vPlant"
+    Public Function BindData(ByVal TableName As String, ByVal SortExpression As String) As DataTable
+        Dim strQuery As String = "select PlantID, Plant, CategoryID from vPlant order by " + SortExpression
         Dim cmd As New SqlCommand(strQuery)
         Return GetData(cmd)
     End Function
