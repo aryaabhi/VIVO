@@ -135,7 +135,7 @@
                                     <a href="vTherapy.aspx">Manage Therapy</a>
                                 </li>
                                  <li>
-                                    <a href="vTeamMember.aspx">Manage Team Member</a>
+                                    <a href="vPersonnel.aspx">Manage Team Member</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

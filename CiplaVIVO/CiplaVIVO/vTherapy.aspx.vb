@@ -1,9 +1,9 @@
 ﻿Imports CiplaVIVO.VivoClass
 
-Public Class vCategory
+Public Class vTherapy
     Inherits System.Web.UI.Page
     Dim Viv As New VivoClass
-    Public TableName As String = "Category"
+    Public TableName As String = "Therapy"
     Dim SelectedSort As String
 
 
@@ -15,16 +15,15 @@ Public Class vCategory
     End Sub
 
     Private Sub BindData()
-        'If Session("Sort") = "" Then Session("Sort") = "CategoryID"
-        'GridView1.DataSource = Viv.BindData("Category", Session("Sort"))
-        GridView1.DataSource = Viv.BindData("Category", "CategoryID")
+        'If Session("Sort") = "" Then Session("Sort") = "TherapyID"
+        'GridView1.DataSource = Viv.BindData("Therapy", Session("Sort"))
+        GridView1.DataSource = Viv.BindData("Therapy", "TherapyID")
         GridView1.DataBind()
     End Sub
 
     Protected Sub AddRecord(ByVal sender As Object, ByVal e As EventArgs)
         Dim Field2 As String = DirectCast(GridView1.FooterRow.FindControl("txtField2"), TextBox).Text
-        Dim Field3 As String = DirectCast(GridView1.FooterRow.FindControl("txtField3"), TextBox).Text
-        GridView1.DataSource = Viv.Insert("", Field2, Field3, "Category")
+        GridView1.DataSource = Viv.Insert("", Field2, "", "Therapy")
         GridView1.DataBind()
     End Sub
 
@@ -40,15 +39,14 @@ Public Class vCategory
     Protected Sub UpdateRecord(ByVal sender As Object, ByVal e As GridViewUpdateEventArgs)
         Dim Field1 As String = DirectCast(GridView1.Rows(e.RowIndex).FindControl("txtField1"), Label).Text
         Dim Field2 As String = DirectCast(GridView1.Rows(e.RowIndex).FindControl("txtField2"), TextBox).Text
-        Dim Field3 As String = DirectCast(GridView1.Rows(e.RowIndex).FindControl("txtField3"), TextBox).Text
         GridView1.EditIndex = -1
-        GridView1.DataSource = Viv.Update(Field1, Field2, Field3, "Category")
+        GridView1.DataSource = Viv.Update(Field1, Field2, "", "Therapy")
         GridView1.DataBind()
     End Sub
 
     Protected Sub DeleteRecord(ByVal sender As Object, ByVal e As EventArgs)
         Dim lnkRemove As LinkButton = DirectCast(sender, LinkButton)
-        GridView1.DataSource = Viv.Delete(lnkRemove.CommandArgument, "", "", "Category")
+        GridView1.DataSource = Viv.Delete(lnkRemove.CommandArgument, "", "", "Therapy")
         GridView1.DataBind()
     End Sub
 

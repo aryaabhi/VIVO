@@ -149,6 +149,16 @@
     <Content Include="tblTDCElements.xml" />
     <Content Include="tblTDCSubElements.xml" />
     <Content Include="tblYears.xml" />
+    <Content Include="vExpenseHead.aspx" />
+    <Content Include="vBulkCode.aspx" />
+    <Content Include="vPersonnel.aspx" />
+    <Content Include="vCurrency.aspx" />
+    <Content Include="vTherapy.aspx" />
+    <Content Include="vPackCode.aspx" />
+    <Content Include="vMfgCode.aspx" />
+    <Content Include="vDosage.aspx" />
+    <Content Include="vDepartment.aspx" />
+    <Content Include="vBusinessUnit.aspx" />
     <Content Include="zblank.html" />
     <Content Include="zbuttons.html" />
     <Content Include="Content\bootstrap.css" />
@@ -315,6 +325,76 @@
     <Compile Include="Test.aspx.vb">
       <DependentUpon>Test.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="vExpenseHead.aspx.designer.vb">
+      <DependentUpon>vExpenseHead.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vExpenseHead.aspx.vb">
+      <DependentUpon>vExpenseHead.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vBulkCode.aspx.designer.vb">
+      <DependentUpon>vBulkCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vBulkCode.aspx.vb">
+      <DependentUpon>vBulkCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPersonnel.aspx.designer.vb">
+      <DependentUpon>vPersonnel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vPersonnel.aspx.vb">
+      <DependentUpon>vPersonnel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vCurrency.aspx.designer.vb">
+      <DependentUpon>vCurrency.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vCurrency.aspx.vb">
+      <DependentUpon>vCurrency.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vTherapy.aspx.designer.vb">
+      <DependentUpon>vTherapy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vTherapy.aspx.vb">
+      <DependentUpon>vTherapy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPackCode.aspx.designer.vb">
+      <DependentUpon>vPackCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vPackCode.aspx.vb">
+      <DependentUpon>vPackCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vMfgCode.aspx.designer.vb">
+      <DependentUpon>vMfgCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vMfgCode.aspx.vb">
+      <DependentUpon>vMfgCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vDosage.aspx.designer.vb">
+      <DependentUpon>vDosage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vDosage.aspx.vb">
+      <DependentUpon>vDosage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vDepartment.aspx.designer.vb">
+      <DependentUpon>vDepartment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vDepartment.aspx.vb">
+      <DependentUpon>vDepartment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vBusinessUnit.aspx.designer.vb">
+      <DependentUpon>vBusinessUnit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vBusinessUnit.aspx.vb">
+      <DependentUpon>vBusinessUnit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="vCategory.aspx.designer.vb">
       <DependentUpon>vCategory.aspx</DependentUpon>

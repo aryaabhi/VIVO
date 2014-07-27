@@ -1,9 +1,9 @@
-﻿<%@ Page Language="vb" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="vCategory.aspx.vb" Inherits="CiplaVIVO.vCategory" %>
+﻿<%@ Page Language="vb" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="vPackCode.aspx.vb" Inherits="CiplaVIVO.vPackCode" %>
 	    <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">                
             <div class="row">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Category
+                    PackCode
                 </div>
                 <div class="panel-body">
                     <!--The GridView for the table-->
@@ -19,46 +19,32 @@
                             onrowcancelingedit="CancelEdit" 	
                             PageSize = "10" >
     			    <Columns>
-					    <asp:TemplateField HeaderText = "CategoryID" SortExpression="CategoryID" ItemStyle-CssClass="hidden-phone" HeaderStyle-CssClass="hidden-phone" FooterStyle-CssClass="hidden-phone">
+					    <asp:TemplateField HeaderText = "PackCodeID" SortExpression="PackCodeID" ItemStyle-CssClass="hidden-phone" HeaderStyle-CssClass="hidden-phone" FooterStyle-CssClass="hidden-phone">
 					        <ItemTemplate>
 					            <asp:Label ID="txtField1" runat="server"
-					            Text='<%# Eval("CategoryID")%>'></asp:Label>
+					            Text='<%# Eval("PackCodeID")%>'></asp:Label>
 					        </ItemTemplate>
 					        <FooterTemplate>
-					            <asp:label ID="txtField1" text="CategoryID" MaxLength = "5" runat="server"></asp:label>
+					            <asp:label ID="txtField1" text="" MaxLength = "5" runat="server"></asp:label>
 					        </FooterTemplate>
 					    </asp:TemplateField>
 					
-					    <asp:TemplateField HeaderText = "Category" SortExpression="Category" FooterStyle-CssClass="hidden-phone">
+					    <asp:TemplateField HeaderText = "PackCode" SortExpression="PackCode" FooterStyle-CssClass="hidden-phone">
 					        <ItemTemplate>
-					            <asp:Label ID="txtField2" runat="server" Text='<%# Eval("Category")%>'></asp:Label>
+					            <asp:Label ID="txtField2" runat="server" Text='<%# Eval("PackCode")%>'></asp:Label>
 					        </ItemTemplate>
 					        <EditItemTemplate>
-					            <asp:TextBox ID="txtField2" runat="server" Text='<%# Eval("Category")%>'></asp:TextBox>
+					            <asp:TextBox ID="txtField2" runat="server" Text='<%# Eval("PackCode")%>'></asp:TextBox>
 					        </EditItemTemplate> 
 					        <FooterTemplate>
 					            <asp:TextBox ID="txtField2" runat="server"></asp:TextBox>
 					        </FooterTemplate>
 					    </asp:TemplateField>
 					
-					    <asp:TemplateField HeaderText = "Department" SortExpression="DepartmentID" FooterStyle-CssClass="hidden-phone">
-					        <ItemTemplate>
-					            <asp:Label ID="txtField3" runat="server"
-					                Text='<%# Eval("DepartmentID")%>'></asp:Label>
-					        </ItemTemplate>
-					        <EditItemTemplate>
-					            <asp:TextBox ID="txtField3" runat="server"
-					                Text='<%# Eval("DepartmentID")%>'></asp:TextBox>
-					        </EditItemTemplate> 
-					        <FooterTemplate>
-					            <asp:TextBox ID="txtField3" runat="server"></asp:TextBox>
-					        </FooterTemplate>
-					    </asp:TemplateField>
-					
 					    <asp:TemplateField ItemStyle-CssClass="hidden-phone" HeaderStyle-CssClass="hidden-phone" FooterStyle-CssClass="hidden-phone">
 					        <ItemTemplate>
 					            <asp:LinkButton ID="lnkRemove" runat="server"
-					                CommandArgument = '<%# Eval("CategoryID")%>'
+					                CommandArgument = '<%# Eval("PackCodeID")%>'
 					                OnClientClick = "return confirm('Do you want to delete?')"
 					            Text = "Delete" OnClick = "DeleteRecord"></asp:LinkButton>
 					        </ItemTemplate>
