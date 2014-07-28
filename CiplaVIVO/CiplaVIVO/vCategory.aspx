@@ -41,15 +41,19 @@
 					        </FooterTemplate>
 					    </asp:TemplateField>
 					
-					    <asp:TemplateField HeaderText = "Department" SortExpression="DepartmentID" FooterStyle-CssClass="hidden-phone">
+					    <asp:TemplateField HeaderText = "Department" SortExpression="Department" FooterStyle-CssClass="hidden-phone">
 					        <ItemTemplate>
-					            <asp:Label ID="txtField3" runat="server"
-					                Text='<%# Eval("DepartmentID")%>'></asp:Label>
+					            <asp:Label ID="txtField4" runat="server" Text='<%# Eval("Department")%>'></asp:Label>
 					        </ItemTemplate>
-					        <EditItemTemplate>
-					            <asp:TextBox ID="txtField3" runat="server"
-					                Text='<%# Eval("DepartmentID")%>'></asp:TextBox>
-					        </EditItemTemplate> 
+					    </asp:TemplateField>
+
+                        <asp:TemplateField Visible="true">
+					        <ItemTemplate>
+					            <asp:Label Visible="true" ID="txtField3" runat="server" Text='<%# Eval("DepartmentID")%>'></asp:Label>
+					        </ItemTemplate>
+                            <EditItemTemplate>
+					         <asp:TextBox ID="txtField3" runat="server" Text='<%# Eval("DepartmentID")%>'></asp:TextBox>
+                            </EditItemTemplate> 
 					        <FooterTemplate>
 					            <asp:TextBox ID="txtField3" runat="server"></asp:TextBox>
 					        </FooterTemplate>

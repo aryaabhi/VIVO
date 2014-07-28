@@ -33,7 +33,9 @@ Public Class VivoClass
                 strQuery = "select DepartmentID, Department from vDepartment order by " + SortExpression
 
             Case "Category"
-                strQuery = "select CategoryID, Category, DepartmentID from vCategory order by " + SortExpression
+                'strQuery = "select CategoryID, Category, DepartmentID from vCategory order by " + SortExpression
+                strQuery = "SELECT CategoryID, Category , vCategory.DepartmentID, Department FROM vCategory " _
+                    & "Inner Join vDepartment ON vCategory.DepartmentID=vDepartment.DepartmentID order by " + SortExpression
 
             Case "ExpenseHead"
                 strQuery = "select ExpenseHeadID, ExpenseHead, DirectIndirect from vExpenseHead order by " + SortExpression
@@ -86,7 +88,8 @@ Public Class VivoClass
                 Case "Category"
                     cmd.CommandText = "insert into vCategory(Category, DepartmentID)" & _
                                         "values(@Field2, @Field3);" & _
-                                        "Select CategoryID,Category,DepartmentID from vCategory"
+                                        "SELECT CategoryID, Category , vCategory.DepartmentID, Department FROM vCategory Inner Join vDepartment ON vCategory.DepartmentID=vDepartment.DepartmentID"
+
                 Case "ExpenseHead"
                     cmd.CommandText = "insert into vExpenseHead(ExpenseHead,DirectIndirect) values(@Field2, @Field3);" & _
                                         "Select ExpenseHeadID,ExpenseHead,DirectIndirect from vExpenseHead"
@@ -150,7 +153,7 @@ Public Class VivoClass
 
                 Case "Category"
                     cmd.CommandText = "update vCategory set Category=@Field2, DepartmentID=@Field3 where CategoryID=@Field1;" _
-                            & "select CategoryID,Category,DepartmentID from vCategory"
+                            & "SELECT CategoryID, Category , vCategory.DepartmentID, Department FROM vCategory Inner Join vDepartment ON vCategory.DepartmentID=vDepartment.DepartmentID"
 
                 Case "ExpenseHead"
                     cmd.CommandText = "update vExpenseHead set ExpenseHead=@Field2, DirectIndirect=@Field3 where ExpenseHeadID= @Field1;" _
@@ -214,7 +217,7 @@ Public Class VivoClass
 
                 Case "Category"
                     cmd.CommandText = "delete from vCategory where CategoryID=@Field1;" & _
-                                        "select CategoryID,Category,DepartmentID from vCategory"
+                                        "SELECT CategoryID, Category , vCategory.DepartmentID, Department FROM vCategory Inner Join vDepartment ON vCategory.DepartmentID=vDepartment.DepartmentID"
 
                 Case "ExpenseHead"
                     cmd.CommandText = "delete from vExpenseHead where ExpenseHeadID= @Field1;" _

@@ -1,10 +1,13 @@
 ﻿Imports CiplaVIVO.VivoClass
+Imports System.Data.SqlClient
 
 Public Class vCategory
     Inherits System.Web.UI.Page
     Dim Viv As New VivoClass
     Public TableName As String = "Category"
     Dim SelectedSort As String
+    Private strConnString As String = ConfigurationManager.ConnectionStrings("SQLConnectionString").ConnectionString
+    Dim con As New SqlConnection(strConnString)
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
@@ -15,9 +18,9 @@ Public Class vCategory
     End Sub
 
     Private Sub BindData()
-        'If Session("Sort") = "" Then Session("Sort") = "CategoryID"
-        'GridView1.DataSource = Viv.BindData("Category", Session("Sort"))
-        GridView1.DataSource = Viv.BindData("Category", "CategoryID")
+        If Session("Sort") = "" Then Session("Sort") = "CategoryID"
+        GridView1.DataSource = Viv.BindData("Category", Session("Sort"))
+        Session("Sort") = ""
         GridView1.DataBind()
     End Sub
 
@@ -63,4 +66,25 @@ Public Class vCategory
         Session("Sort") = SelectedSort
         BindData()
     End Sub
+
+    'Protected Sub GridView1_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles GridView1.RowDataBound
+    'Dim txtuserid As New DropDownList
+    'Dim dl As New Data.DataSet
+    'Dim strsql As String
+    'Dim adpt As SqlDataAdapter
+    '   strsql = "select  * from vDepartment"
+    '   adpt = New SqlDataAdapter(strsql, con)
+    '   adpt.Fill(dl)
+
+    '    If e.Row.RowType = DataControlRowType.DataRow Then
+    '    txtuserid = e.Row.FindControl("DropDownList1")
+    'txtuserid.SelectedValue = DataBinder.Eval(e.Row.DataItem, "departmentID").ToString
+    '   txtuserid.DataSource = dl.Tables(0)
+    '  txtuserid.DataTextField = "department"
+    ' txtuserid.DataValueField = "departmentID"
+    'txtuserid.DataBind()
+
+    '   End If
+    'End Sub
+
 End Class

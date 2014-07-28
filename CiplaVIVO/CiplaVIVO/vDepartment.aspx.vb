@@ -15,9 +15,9 @@ Public Class vDepartment
     End Sub
 
     Private Sub BindData()
-        'If Session("Sort") = "" Then Session("Sort") = "DepartmentID"
-        'GridView1.DataSource = Viv.BindData("Department", Session("Sort"))
-        GridView1.DataSource = Viv.BindData(TableName, "DepartmentID")
+        If Session("Sort") = "" Then Session("Sort") = "DepartmentID"
+        GridView1.DataSource = Viv.BindData(TableName, Session("Sort"))
+        Session("Sort") = ""
         GridView1.DataBind()
     End Sub
 

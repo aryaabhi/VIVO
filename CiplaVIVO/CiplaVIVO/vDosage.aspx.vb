@@ -15,15 +15,15 @@ Public Class vDosage
     End Sub
 
     Private Sub BindData()
-        'If Session("Sort") = "" Then Session("Sort") = "DosageID"
-        'GridView1.DataSource = Viv.BindData("Dosage", Session("Sort"))
-        GridView1.DataSource = Viv.BindData("Dosage", "DosageID")
+        If Session("Sort") = "" Then Session("Sort") = "DosageID"
+        GridView1.DataSource = Viv.BindData(TableName, Session("Sort"))
+        Session("Sort") = ""
         GridView1.DataBind()
     End Sub
 
     Protected Sub AddRecord(ByVal sender As Object, ByVal e As EventArgs)
         Dim Field2 As String = DirectCast(GridView1.FooterRow.FindControl("txtField2"), TextBox).Text
-        GridView1.DataSource = Viv.Insert("", Field2, "", "Dosage")
+        GridView1.DataSource = Viv.Insert("", Field2, "", TableName)
         GridView1.DataBind()
     End Sub
 
@@ -40,13 +40,13 @@ Public Class vDosage
         Dim Field1 As String = DirectCast(GridView1.Rows(e.RowIndex).FindControl("txtField1"), Label).Text
         Dim Field2 As String = DirectCast(GridView1.Rows(e.RowIndex).FindControl("txtField2"), TextBox).Text
         GridView1.EditIndex = -1
-        GridView1.DataSource = Viv.Update(Field1, Field2, "", "Dosage")
+        GridView1.DataSource = Viv.Update(Field1, Field2, "", TableName)
         GridView1.DataBind()
     End Sub
 
     Protected Sub DeleteRecord(ByVal sender As Object, ByVal e As EventArgs)
         Dim lnkRemove As LinkButton = DirectCast(sender, LinkButton)
-        GridView1.DataSource = Viv.Delete(lnkRemove.CommandArgument, "", "", "Dosage")
+        GridView1.DataSource = Viv.Delete(lnkRemove.CommandArgument, "", "", TableName)
         GridView1.DataBind()
     End Sub
 
