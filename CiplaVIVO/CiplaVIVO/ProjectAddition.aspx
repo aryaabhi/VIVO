@@ -1,8 +1,7 @@
 ﻿<%@ Page Language="vb" MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="ProjectAddition.aspx.vb" Inherits="CiplaVIVO.ProjectAddition" %>
 
 	<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">        
-        
-         <div class="row">
+     <div class="row">
                 <div class="col-lg-12">
                     <h4 class="page-header">Add a Project</h4>
                 </div>
@@ -28,8 +27,8 @@
                                         <label>Direct/Indirect/Capex:</label>
                                            <asp:dropdownlist id="cboDIC" Class="form-control" runat="server" OnSelectedIndexChanged="DIC_AfterUpdate" AutoPostBack="True">
                                                 <asp:ListItem Value=""></asp:ListItem>
-	                        					<asp:ListItem Value="Directs">Direct</asp:ListItem>
-                        						<asp:ListItem Value="Indirects">Indirects</asp:ListItem>
+	                        					<asp:ListItem Value="Direct">Direct</asp:ListItem>
+                        						<asp:ListItem Value="Indirect">Indirect</asp:ListItem>
 						                        <asp:ListItem Value="Capex">Capex</asp:ListItem>
 						                    </asp:dropdownlist>
                                       </div>
@@ -52,7 +51,7 @@
 				                   </div>
                                     <div class="form-group">
                                     	<label>Expense Head</label>
-					                    <asp:ListBox id="cboExpenseHead" Class="form-control" SelectionMode="Multiple"  runat="server" DataValueField="Value" DataTextField="Value" AppendDataBoundItems="true"/>
+					                    <asp:dropdownlist id="cboExpenseHead" Class="form-control" runat="server" DataValueField="Value" DataTextField="Value"/>
 				                   </div>
                                     <div class="form-group">
                                         <label>Finance Leader:</label>
@@ -124,8 +123,8 @@
                                 <!-- /.col-lg-4 (nested) -->
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                    	<label>Manufacturing Code</label>
-					                    <asp:ListBox id="cboManfCode" Class="form-control" SelectionMode="Multiple"  runat="server" DataValueField="Value" DataTextField="Value" AppendDataBoundItems="true"/>
+                                    	<label>Bulk Code</label>
+					                    <asp:ListBox id="cboBulkCode" Class="form-control" SelectionMode="Multiple"  runat="server" DataValueField="Value" DataTextField="Value" AppendDataBoundItems="true"/>
 				                   </div>
                                 </div>
                                 <!-- /.col-lg-4 (nested) -->
@@ -167,11 +166,11 @@
                                         </div>
                                     <div class="form-group">
 					                    <label>Total Annual Savings:</label>
-					                    <asp:textbox id="txtRecoverableLosses" Class="form-control" runat="server">0</asp:textbox>
+					                    <asp:textbox id="txtAnnualSavings" onkeypress="return onlyNumbers();" Class="form-control" runat="server"></asp:textbox>
 				                    </div>
 				                    <div class="form-group">
-					                    <label>Risk Rating (in %):</label>
-					                    <asp:dropdownlist id="txtProbability" Class="form-control" runat="server">
+					                    <label>Probability (Risk) Rating (in %):</label>
+					                    <asp:dropdownlist id="cboProbability" Class="form-control" runat="server">
 						                    <asp:ListItem Value="0">0% - Nil to Low</asp:ListItem>
 						                    <asp:ListItem Value="25">25% - Low Probability</asp:ListItem>
 						                    <asp:ListItem Value="50">50% - Medium</asp:ListItem>
@@ -180,7 +179,7 @@
 					                    </asp:dropdownlist>
 				                    </div>
                                     <div class="form-group">
-                                         <asp:Button id="CalculateTDC" onclick="PerformCalculation" Visible="false" Class="btn btn-primary" runat="server" CausesValidation="False" Text="Calculate Adjusted Value"></asp:Button>
+                                         <asp:Button id="CalculateTDC" onclick="PerformCalculation" Class="btn btn-primary" runat="server" CausesValidation="False" Text="Calculate Adjusted Value"></asp:Button>
 			                        </div>
                                     <div class="form-group">
                                         <label>Probability Adjusted Amount (in $M):</label>
@@ -207,14 +206,14 @@
                                        </div>
                                     <div class="form-group">
 					                    <label>Any one off saving included?</label>
-					                    <asp:textbox id="txtOneOffRecoverable" Class="form-control" runat="server">0</asp:textbox>
+					                    <asp:textbox id="txtOneOffSaving" onkeypress="return onlyNumbers();" Class="form-control" runat="server"></asp:textbox>
                                      </div>
                                     <div class="form-group">
 					                    <label>Status:</label>
 					                    <asp:dropdownlist id="cboStatus" Class="form-control" runat="server" DataTextField="Status" DataValueField="Status"/>
 				                    </div>
                                     <div class="form-group">
-					                    <asp:textbox id="AccountingMonth" Visible="false" Class="form-control" runat="server" ReadOnly="True"/>
+					                    <asp:textbox id="txtAccountingMonth" Visible="true" Class="form-control" runat="server" ReadOnly="True"/>
 				                    </div>
 				                    <div class="form-group">
                                         <label>Time Adjusted Amount (in $M):</label>
@@ -231,11 +230,11 @@
                                             </div>
                                             <div class="col-lg-4">
 					                            <label>Month:</label>
-					                            <asp:dropdownlist id="cboTenureEndMonth" Class="form-control" runat="server" DataValueField="MonthInteger" DataTextField="MonthLiteral"/>
+					                            <asp:dropdownlist id="cboSavingsEndMonth" Class="form-control" runat="server" DataValueField="MonthInteger" DataTextField="MonthLiteral"/>
 					                        </div>
                                             <div class="col-lg-4">
                                                 <label>Year:</label>
-					                            <asp:dropdownlist id="cboTenureEndYear" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral"/>
+					                            <asp:dropdownlist id="cboSavingsEndYear" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral"/>
 				                            </div>
                                           </div>
                                       </div>
@@ -248,7 +247,7 @@
 					                    <asp:checkbox id="chkCommitted" Class="form-control" runat="server"></asp:checkbox>
 				                    </div>
                                     <div class="form-group">
-					                    <asp:textbox id="AccountingYear" Visible="false" Class="form-control" runat="server" ReadOnly="True"/>
+					                    <asp:textbox id="txtAccountingYear" Visible="true" Class="form-control" runat="server" ReadOnly="True"/>
 				                    </div>
                                     <div class="form-group">
 					                    <label>Total (Time &amp; Prob.) Adjusted Amount (in $M):</label>
@@ -296,14 +295,15 @@
                                     <div class="col-lg-3">
 					                    <label>Capex</label>
 					                </div>
+                                    
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox1" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtCapexCost" onkeypress="return onlyNumbers();" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
-					                <asp:dropdownlist id="Dropdownlist3" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
+					                <asp:dropdownlist id="cboCapexCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
 				                    </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox4" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtCapexJust" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                 </div>
                             </div>
@@ -313,13 +313,13 @@
 					                    <label>Working Capital</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox5" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtWorkCapCost" onkeypress="return onlyNumbers();" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
-					                <asp:dropdownlist id="Dropdownlist1" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
+					                <asp:dropdownlist id="cboWorkCapCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
 				                    </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox6" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtWorkCapJust" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                 </div>
                             </div>
@@ -336,13 +336,13 @@
 					                    <label>Regulatory Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox2" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtRegulatoryCost"  onkeypress="return onlyNumbers();" onchange="javascript:Add();" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
-					                <asp:dropdownlist id="Dropdownlist2" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
+					                <asp:dropdownlist id="cboRegulatoryCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
 				                    </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox3" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtRegulatoryJust" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                 </div>
                             </div>
@@ -353,13 +353,13 @@
 					                    <label>Sample Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox7" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtSampleCost"  onkeypress="return onlyNumbers();" onchange="javascript:Add();" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
-					                <asp:dropdownlist id="Dropdownlist4" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
+					                <asp:dropdownlist id="cboSampleCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
 				                    </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox8" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtSampleJust" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                 </div>
                             </div>
@@ -370,13 +370,13 @@
 					                    <label>R&D Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox9" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtRDCost"  onkeypress="return onlyNumbers();" onchange="javascript:Add();" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
-					                <asp:dropdownlist id="Dropdownlist5" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
+					                <asp:dropdownlist id="cboRDCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
 				                    </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox10" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtRDJust" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                 </div>
                             </div>
@@ -387,13 +387,13 @@
 					                    <label>QA/QC Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox11" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtQACost"  onkeypress="return onlyNumbers();" onchange="javascript:Add();" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
-					                <asp:dropdownlist id="Dropdownlist6" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
+					                <asp:dropdownlist id="cboQACurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
 				                    </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox12" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtQAJust" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                 </div>
                             </div>
@@ -404,13 +404,13 @@
 					                    <label>Audit Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox13" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtAuditCost"  onkeypress="return onlyNumbers();" onchange="javascript:Add();" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
-					                <asp:dropdownlist id="Dropdownlist7" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
+					                <asp:dropdownlist id="cboAuditCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
 				                    </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox14" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtAuditJust" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                 </div>
                             </div>
@@ -421,13 +421,13 @@
 					                    <label>Other Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox15" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtOtherCost"  onkeypress="return onlyNumbers();" onchange="javascript:Add();" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
-					                <asp:dropdownlist id="Dropdownlist8" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
+					                <asp:dropdownlist id="cboOtherCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
 				                    </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox16" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtOtherJust" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                 </div>
                             </div>
@@ -435,16 +435,16 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-3">
-					                    <label>Total Cost</label>
+					                    <label>Total Opex Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="txtCostAmt" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtTotalCost"  Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
-					                <asp:dropdownlist id="Dropdownlist9" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
+					                <asp:dropdownlist id="cboTotalCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
 				                    </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="Textbox18" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtTotalJust" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                 </div>
                             </div>
@@ -461,6 +461,7 @@
                 <div class="form-group">
 					<asp:button id="SaveProject" onclick="SaveNewProject" Class="btn btn-primary" runat="server" Text="Save Project"></asp:button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<asp:button id="Cancel" Class="btn btn-danger" runat="server" Text="Cancel" CausesValidation="False"></asp:button>
+                    <br />
+                    <asp:textbox id="TestOut" Class="form-control" runat="server">0</asp:textbox>
 				</div>
 </asp:Content>
-                               

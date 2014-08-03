@@ -479,6 +479,8 @@ Namespace SCLE.User
             '---------------------------------- Cash Part
             If (chkBoxChecked3 = 1) Then
 
+                cmd.Parameters.Add("@Field1", SqlDbType.VarChar).Value = Field1
+
                 MyCommand.Parameters.Add(New SqlParameter("@CashElement", SqlDbType.NVarChar, 50))
                 MyCommand.Parameters("@CashElement").Value = cboCashElement.SelectedItem.Text
                 MyCommand.Parameters.Add(New SqlParameter("@CashSubElement", SqlDbType.NVarChar, 50))

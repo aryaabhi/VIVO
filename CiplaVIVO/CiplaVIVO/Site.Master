@@ -7,6 +7,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no"/>
     <title><%: Page.Title %> - CIPLA VIVO</title>
+    
+   
+    
+                               
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
@@ -161,6 +165,7 @@
 
         <div id="page-wrapper">
               <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                
                 </asp:ContentPlaceHolder>
         </div>
         <!-- /#page-wrapper -->
@@ -183,7 +188,8 @@
     <script src="~/scripts/plugins/dataTables/dataTables.bootstrap.js"></script>
     <!-- SB Admin Scripts - Include with every page -->
     <script src="scripts/sb-admin.js"></script>
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <!-- Page-Level Scripts - AddProject -->
+    <script src="scripts/sumtotal.js"></script>
     
 
     </body>

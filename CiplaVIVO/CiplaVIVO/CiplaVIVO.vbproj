@@ -131,23 +131,11 @@
   <ItemGroup>
     <Content Include="AddPage.html" />
     <Content Include="Content\bootstrap-responsive.css" />
-    <Content Include="tblBusinessUnit.xml" />
-    <Content Include="tblCashElement.xml" />
-    <Content Include="tblCashSubElement.xml" />
-    <Content Include="tblCurrency.xml" />
-    <Content Include="tblCVCCustomer.xml" />
-    <Content Include="tblCVCElement.xml" />
-    <Content Include="tblCVCSupplier.xml" />
-    <Content Include="tblDepartment.xml" />
-    <Content Include="tblLossType.xml" />
+    <Content Include="ListOfFields.txt" />
+    <Content Include="Scripts\sumtotal.js" />
     <Content Include="tblMonths.xml" />
-    <Content Include="tblOtherBusiness.xml" />
-    <Content Include="tblPersonnel.xml" />
     <Content Include="tblReportTags.xml" />
-    <Content Include="tblSCSupplyChain.xml" />
     <Content Include="tblStatus.xml" />
-    <Content Include="tblTDCElements.xml" />
-    <Content Include="tblTDCSubElements.xml" />
     <Content Include="tblYears.xml" />
     <Content Include="vExpenseHead.aspx" />
     <Content Include="vBulkCode.aspx" />

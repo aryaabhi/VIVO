@@ -37,8 +37,15 @@ Public Class VivoClass
                 strQuery = "SELECT CategoryID, Category , vCategory.DepartmentID, Department FROM vCategory " _
                     & "Inner Join vDepartment ON vCategory.DepartmentID=vDepartment.DepartmentID order by " + SortExpression
 
+            Case "CategoryDrop"
+                strQuery = "SELECT CategoryID, Category , vCategory.DepartmentID, Department FROM vCategory " _
+                    & "Inner Join vDepartment ON vCategory.DepartmentID=vDepartment.DepartmentID where vCategory.DepartmentID=" + SortExpression
+
             Case "ExpenseHead"
                 strQuery = "select ExpenseHeadID, ExpenseHead, DirectIndirect from vExpenseHead order by " + SortExpression
+
+            Case "ExpenseHeadDrop"
+                strQuery = "select ExpenseHeadID, ExpenseHead from vExpenseHead where DirectIndirect='" + SortExpression + "'"
 
             Case "Personnel"
                 strQuery = "select PersonnelID, Personnel, PersonnelEmail from vPersonnel order by " + SortExpression
@@ -122,9 +129,6 @@ Public Class VivoClass
                     cmd.CommandText = "insert into vDosage(Dosage) values(@Field2);" & _
                                         "Select DosageID,Dosage from vDosage"
 
-
-
-
             End Select
 
             cmd.Parameters.Add("@Field1", SqlDbType.VarChar).Value = Field1
@@ -186,8 +190,6 @@ Public Class VivoClass
                 Case "Dosage"
                     cmd.CommandText = "update vDosage set Dosage=@Field2 where DosageID= @Field1;" _
                             & "Select DosageID,Dosage from vDosage"
-
-
 
             End Select
 
