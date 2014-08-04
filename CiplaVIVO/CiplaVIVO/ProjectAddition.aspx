@@ -20,22 +20,21 @@
                                 <div class="col-lg-4">
                                    <div class="form-group">
                                         <label>Business Unit:</label>
-                                        <asp:dropdownlist id="cboBusinessUnit" Class="form-control" runat="server" DataValueField="value" DataTextField="value"/>
+                                        <asp:dropdownlist id="cboBusinessUnit" Class="form-control" SelectionMode="Multiple"  runat="server" DataValueField="value" DataTextField="value"/>
                                     </div>
                                      
-                                    <div class="form-group">
-                                        <label>Direct/Indirect/Capex:</label>
-                                           <asp:dropdownlist id="cboDIC" Class="form-control" runat="server" OnSelectedIndexChanged="DIC_AfterUpdate" AutoPostBack="True">
-                                                <asp:ListItem Value=""></asp:ListItem>
-	                        					<asp:ListItem Value="Direct">Direct</asp:ListItem>
-                        						<asp:ListItem Value="Indirect">Indirect</asp:ListItem>
-						                        <asp:ListItem Value="Capex">Capex</asp:ListItem>
-						                    </asp:dropdownlist>
-                                      </div>
+                                   <div class="form-group">
+                                        <label>Category:</label>
+					                    <asp:ListBox id="cboCategory" Class="form-control" SelectionMode="Multiple" runat="server" DataValueField="Value" DataTextField="Value" AppendDataBoundItems="true"/>
+                                    </div>
 
                                     <div class="form-group">
 					                    <label>Project Name:</label>
 					                    <asp:textbox id="txtProjectName" Class="form-control" runat="server"/>
+				                    </div>
+                                    <div class="form-group">
+					                    <label>Project Summary:</label>
+					                    <asp:textbox id="txtProjectSummary" Class="form-control" runat="server"/>
 				                    </div>
 				                    <div class="form-group">
                                         <label>Project Leader:</label>
@@ -57,13 +56,28 @@
                                         <label>Finance Leader:</label>
 					                    <asp:dropdownlist id="cboFinanceLeader" Class="form-control" runat="server" DataValueField="PersonnelID" DataTextField="Name"/>
 				                    </div>
+                                    <div class="form-group">
+                                        <label>Project Classification:</label>
+                                           <asp:dropdownlist id="cboProjectClassification" Class="form-control" runat="server">
+                                                <asp:ListItem Value=""></asp:ListItem>
+	                        					<asp:ListItem Value="Risk Mitigation">Risk Mitigation</asp:ListItem>
+                        						<asp:ListItem Value="Cost Saving">Cost Saving</asp:ListItem>
+						                        <asp:ListItem Value="Compliance">Compliance</asp:ListItem>
+                                                <asp:ListItem Value="Inventory Salvage">Inventory Salvage</asp:ListItem>
+						                    </asp:dropdownlist>
+                                      </div>
                                 </div>
                                 <!-- /.col-lg-4 (nested) -->
                                 <div class="col-lg-4">
                                     <div class="form-group">
-                                        <label>Category:</label>
-					                    <asp:ListBox id="cboCategory" Class="form-control" SelectionMode="Multiple" runat="server" DataValueField="Value" DataTextField="Value" AppendDataBoundItems="true"/>
-                                    </div>
+                                        <label>Direct/Indirect/Capex:</label>
+                                           <asp:dropdownlist id="cboDIC" Class="form-control" runat="server" OnSelectedIndexChanged="DIC_AfterUpdate" AutoPostBack="True">
+                                                <asp:ListItem Value=""></asp:ListItem>
+	                        					<asp:ListItem Value="Direct">Direct</asp:ListItem>
+                        						<asp:ListItem Value="Indirect">Indirect</asp:ListItem>
+						                        <asp:ListItem Value="Capex">Capex</asp:ListItem>
+						                    </asp:dropdownlist>
+                                      </div>
                                     <div class="form-group">
                                         <label>P&L/Capex</label>
                                         <asp:RadioButtonList ID="plcapex" CssClass="radio-inline" runat="server">
@@ -163,7 +177,22 @@
 					                            <asp:dropdownlist id="cboProjectStartYear" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
 				                            </div>
                                        </div>
-                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+					                            <label>Project Begin:</label>
+					                         </div>
+                                             <div class="col-lg-4">
+                                                 <label>Month:</label>
+					                            <asp:dropdownlist id="cboProjectEndMonth" Class="form-control" runat="server" DataValueField="MonthInteger" DataTextField="MonthLiteral"/>
+					                         </div>
+                                             <div class="col-lg-4">
+					                            <label>Year:</label>
+					                            <asp:dropdownlist id="cboProjectEndYear" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral"/>
+				                            </div>
+                                       </div>
+                                    </div>
                                     <div class="form-group">
 					                    <label>Total Annual Savings:</label>
 					                    <asp:textbox id="txtAnnualSavings" onkeypress="return onlyNumbers();" Class="form-control" runat="server"></asp:textbox>
@@ -242,6 +271,11 @@
 					                    <label>Currency:</label>
 					                    <asp:dropdownlist id="cboCurrency" Class="form-control" runat="server" DataTextField="Currency" DataValueField="value"/>
 				                    </div>
+                                    <div class="form-group">
+					                    <label>Stage</label>
+					                    <asp:textbox id="txtStage" Class="form-control" runat="server"></asp:textbox>
+                                     </div>
+                                    
                                     <div class="form-group">
 					                    <label>Committed to Forecast (F&amp;A Use only):</label>
 					                    <asp:checkbox id="chkCommitted" Class="form-control" runat="server"></asp:checkbox>

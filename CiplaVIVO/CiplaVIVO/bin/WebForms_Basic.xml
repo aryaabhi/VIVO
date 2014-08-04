@@ -167,9 +167,9 @@ cboBusinessUnit control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.cboDIC">
+</member><member name="F:CiplaVIVO.ProjectAddition.cboCategory">
 	<summary>
-cboDIC control.
+cboCategory control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -178,6 +178,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:CiplaVIVO.ProjectAddition.txtProjectName">
 	<summary>
 txtProjectName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.txtProjectSummary">
+	<summary>
+txtProjectSummary control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -215,9 +223,17 @@ cboFinanceLeader control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.cboCategory">
+</member><member name="F:CiplaVIVO.ProjectAddition.cboProjectClassification">
 	<summary>
-cboCategory control.
+cboProjectClassification control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.cboDIC">
+	<summary>
+cboDIC control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -290,6 +306,22 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:CiplaVIVO.ProjectAddition.cboProjectStartYear">
 	<summary>
 cboProjectStartYear control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.cboProjectEndMonth">
+	<summary>
+cboProjectEndMonth control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.cboProjectEndYear">
+	<summary>
+cboProjectEndYear control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -394,6 +426,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:CiplaVIVO.ProjectAddition.cboCurrency">
 	<summary>
 cboCurrency control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.txtStage">
+	<summary>
+txtStage control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -650,6 +690,14 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:CiplaVIVO.ProjectAddition.Cancel">
 	<summary>
 Cancel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.TestOut">
+	<summary>
+TestOut control.
 </summary>
 	<remarks>
 Auto-generated field.
