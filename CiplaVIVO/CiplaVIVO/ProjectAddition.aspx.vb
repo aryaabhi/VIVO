@@ -17,7 +17,6 @@ Public Class ProjectAddition
     Dim Viv As New VivoClass
     Private strConnString As String = ConfigurationManager.ConnectionStrings("SQLConnectionString").ConnectionString
     Dim con As New SqlConnection(strConnString)
-   
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'RequestedSubGBU = Request.QueryString("subGBU")
@@ -191,6 +190,9 @@ Public Class ProjectAddition
         cboSavingsEndYear.DataBind()
         cboSavingsEndYear.Items.FindByValue(DateTime.Now.Year).Selected = True
 
+        '--------------------Update category
+        DIC_Update()
+
     End Sub
 
     Sub Department_AfterUpdate(ByVal sender As Object, ByVal e As System.EventArgs)
@@ -358,172 +360,181 @@ Public Class ProjectAddition
         '-- data points for tProject
         MyCommand.Parameters.Add(New SqlParameter("@ProjectName", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@ProjectName").Value = txtProjectName.Text
-        strSQL = strSQL + "*" + txtProjectName.Text
-        MyCommand.Parameters.Add(New SqlParameter("@DepartmentID", SqlDbType.Int, 4))
-        MyCommand.Parameters("@DepartmentID").Value = System.Convert.ToInt64(cboDepartment.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboDepartment.SelectedItem.Value
+        strSQL += "*" + txtProjectName.Text
+        MyCommand.Parameters.Add(New SqlParameter("@DepartmentID", SqlDbType.Int, 2))
+        MyCommand.Parameters("@DepartmentID").Value = System.Convert.ToInt32(cboDepartment.SelectedItem.Value)
+        strSQL += "*" + cboDepartment.SelectedItem.Value
         MyCommand.Parameters.Add(New SqlParameter("@Direct_Indirect_Capex", SqlDbType.NChar, 10))
         MyCommand.Parameters("@Direct_Indirect_Capex").Value = cboDIC.SelectedItem.Value
-        strSQL = strSQL + "*" + cboDIC.SelectedItem.Value
+        strSQL += "*" + cboDIC.SelectedItem.Value
         MyCommand.Parameters.Add(New SqlParameter("@PL_Capex", SqlDbType.NChar, 10))
         MyCommand.Parameters("@PL_Capex").Value = plcapex.SelectedItem.Value
-        strSQL = strSQL + "*" + plcapex.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@ProjectLeader", SqlDbType.Int, 4))
-        MyCommand.Parameters("@ProjectLeader").Value = System.Convert.ToInt64(cboProjectLeader.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboProjectLeader.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@FinanceLeader", SqlDbType.Int, 4))
-        MyCommand.Parameters("@FinanceLeader").Value = System.Convert.ToInt64(cboFinanceLeader.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboFinanceLeader.SelectedItem.Value
+        strSQL += "*" + plcapex.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@ProjectLeader", SqlDbType.Int, 2))
+        MyCommand.Parameters("@ProjectLeader").Value = System.Convert.ToInt32(cboProjectLeader.SelectedItem.Value)
+        strSQL += "*" + cboProjectLeader.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@FinanceLeader", SqlDbType.Int, 2))
+        MyCommand.Parameters("@FinanceLeader").Value = System.Convert.ToInt32(cboFinanceLeader.SelectedItem.Value)
+        strSQL += "*" + cboFinanceLeader.SelectedItem.Value
         MyCommand.Parameters.Add(New SqlParameter("@ExpenseHeadID", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@ExpenseHeadID").Value = cboExpenseHead.SelectedItem.Value
-        strSQL = strSQL + "*" + cboExpenseHead.SelectedItem.Value
+        strSQL += "*" + cboExpenseHead.SelectedItem.Value
         MyCommand.Parameters.Add(New SqlParameter("@ProjectClassification", SqlDbType.NVarChar, 50))
         MyCommand.Parameters("@ProjectClassification").Value = cboProjectClassification.SelectedItem.Value
-        strSQL = strSQL + "*" + cboProjectClassification.SelectedItem.Value
+        strSQL += "*" + cboProjectClassification.SelectedItem.Value
         MyCommand.Parameters.Add(New SqlParameter("@ProjectSummary", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@ProjectSummary").Value = txtProjectSummary.Text
-        strSQL = strSQL + "*" + txtProjectSummary.Text
+        strSQL += "*" + txtProjectSummary.Text
+        MyCommand.Parameters.Add(New SqlParameter("@BusinessUnit", SqlDbType.NVarChar, 200))
+        MyCommand.Parameters("@BusinessUnit").Value = cboBusinessUnit.SelectedItem.Text
+        strSQL += "*" + cboBusinessUnit.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@BusinessUnitID", SqlDbType.Int, 2))
+        MyCommand.Parameters("@BusinessUnitID").Value = System.Convert.ToInt32(cboBusinessUnit.SelectedItem.Value)
+        strSQL += "*" + txtProjectSummary.Text
+
+
         '-- data points for tProjectSavings
-        MyCommand.Parameters.Add(New SqlParameter("@ProjectBeginMonth", SqlDbType.Int, 4))
-        MyCommand.Parameters("@ProjectBeginMonth").Value = System.Convert.ToInt64(cboProjectStartMonth.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboProjectStartMonth.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@ProjectBeginYear", SqlDbType.Int, 4))
-        MyCommand.Parameters("@ProjectBeginYear").Value = System.Convert.ToInt64(cboProjectStartYear.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboProjectStartYear.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@SavingBeginMonth", SqlDbType.Int, 4))
-        MyCommand.Parameters("@SavingBeginMonth").Value = System.Convert.ToInt64(cboSavingsStartMonth.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboSavingsStartMonth.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@SavingBeginYear", SqlDbType.Int, 4))
-        MyCommand.Parameters("@SavingBeginYear").Value = System.Convert.ToInt64(cboSavingsStartYear.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboSavingsStartYear.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@SavingsEndMonth", SqlDbType.Int, 4))
-        MyCommand.Parameters("@SavingsEndMonth").Value = System.Convert.ToInt64(cboSavingsEndMonth.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboSavingsEndMonth.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@SavingsEndYear", SqlDbType.Int, 4))
-        MyCommand.Parameters("@SavingsEndYear").Value = System.Convert.ToInt64(cboSavingsEndYear.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboSavingsEndYear.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@ProjectBeginMonth", SqlDbType.Int, 2))
+        MyCommand.Parameters("@ProjectBeginMonth").Value = System.Convert.ToInt32(cboProjectStartMonth.SelectedItem.Value)
+        strSQL += "*" + cboProjectStartMonth.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@ProjectBeginYear", SqlDbType.Int, 2))
+        MyCommand.Parameters("@ProjectBeginYear").Value = System.Convert.ToInt32(cboProjectStartYear.SelectedItem.Value)
+        strSQL += "*" + cboProjectStartYear.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@SavingBeginMonth", SqlDbType.Int, 2))
+        MyCommand.Parameters("@SavingBeginMonth").Value = System.Convert.ToInt32(cboSavingsStartMonth.SelectedItem.Value)
+        strSQL += "*" + cboSavingsStartMonth.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@SavingBeginYear", SqlDbType.Int, 2))
+        MyCommand.Parameters("@SavingBeginYear").Value = System.Convert.ToInt32(cboSavingsStartYear.SelectedItem.Value)
+        strSQL += "*" + cboSavingsStartYear.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@SavingsEndMonth", SqlDbType.Int, 2))
+        MyCommand.Parameters("@SavingsEndMonth").Value = System.Convert.ToInt32(cboSavingsEndMonth.SelectedItem.Value)
+        strSQL += "*" + cboSavingsEndMonth.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@SavingsEndYear", SqlDbType.Int, 2))
+        MyCommand.Parameters("@SavingsEndYear").Value = System.Convert.ToInt32(cboSavingsEndYear.SelectedItem.Value)
+        strSQL += "*" + cboSavingsEndYear.SelectedItem.Value
         MyCommand.Parameters.Add(New SqlParameter("@TotalAnnualSavings", SqlDbType.Float, 8))
         MyCommand.Parameters("@TotalAnnualSavings").Value = System.Convert.ToDouble(txtAnnualSavings.Text)
-        strSQL = strSQL + "*" + txtAnnualSavings.Text
+        strSQL += "*" + txtAnnualSavings.Text
         MyCommand.Parameters.Add(New SqlParameter("@OneOffSavings", SqlDbType.Float, 8))
         MyCommand.Parameters("@OneOffSavings").Value = System.Convert.ToDouble(txtOneOffSaving.Text)
-        strSQL = strSQL + "*" + txtOneOffSaving.Text
-        MyCommand.Parameters.Add(New SqlParameter("@Currency", SqlDbType.Int, 4))
-        MyCommand.Parameters("@Currency").Value = System.Convert.ToInt64(cboCurrency.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboCurrency.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@Risk", SqlDbType.Int, 4))
-        MyCommand.Parameters("@Risk").Value = System.Convert.ToInt64(cboProbability.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboProbability.SelectedItem.Value
+        strSQL += "*" + txtOneOffSaving.Text
+        MyCommand.Parameters.Add(New SqlParameter("@Currency", SqlDbType.Int, 2))
+        MyCommand.Parameters("@Currency").Value = System.Convert.ToInt32(cboCurrency.SelectedItem.Value)
+        strSQL += "*" + cboCurrency.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@Risk", SqlDbType.Int, 2))
+        MyCommand.Parameters("@Risk").Value = System.Convert.ToInt32(cboProbability.SelectedItem.Value)
+        strSQL += "*" + cboProbability.SelectedItem.Value
         MyCommand.Parameters.Add(New SqlParameter("@Status", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@Status").Value = cboStatus.SelectedItem.Value
-        strSQL = strSQL + "*" + cboStatus.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@CommittedToForecast", SqlDbType.Bit))
-        MyCommand.Parameters("@CommittedToForecast").Value = checkBox
-        strSQL = strSQL + "*" + checkBox.ToString
-        MyCommand.Parameters.Add(New SqlParameter("@ProjectEndMonth", SqlDbType.Int, 4))
-        MyCommand.Parameters("@ProjectEndMonth").Value = System.Convert.ToInt64(cboProjectEndMonth.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboProjectEndMonth.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@ProjectEndYear", SqlDbType.Int, 4))
-        MyCommand.Parameters("@ProjectEndYear").Value = System.Convert.ToInt64(cboProjectEndYear.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboProjectEndYear.SelectedItem.Value
+        strSQL += "*" + cboStatus.SelectedItem.Value
+        'MyCommand.Parameters.Add(New SqlParameter("@CommittedToForecast", SqlDbType.Bit))
+        'MyCommand.Parameters("@CommittedToForecast").Value = checkBox
+        'strSQL += "*" + checkBox.ToString
+        MyCommand.Parameters.Add(New SqlParameter("@ProjectEndMonth", SqlDbType.Int, 2))
+        MyCommand.Parameters("@ProjectEndMonth").Value = System.Convert.ToInt32(cboProjectEndMonth.SelectedItem.Value)
+        strSQL += "*" + cboProjectEndMonth.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@ProjectEndYear", SqlDbType.Int, 2))
+        MyCommand.Parameters("@ProjectEndYear").Value = System.Convert.ToInt32(cboProjectEndYear.SelectedItem.Value)
+        strSQL += "*" + cboProjectEndYear.SelectedItem.Value
         MyCommand.Parameters.Add(New SqlParameter("@Stage", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@Stage").Value = txtStage.Text
-        strSQL = strSQL + "*" + txtStage.Text
+        strSQL += "*" + txtStage.Text
         '-- data points for tProjectSavingsCal
-        MyCommand.Parameters.Add(New SqlParameter("@FiscalYear", SqlDbType.Int, 4))
-        MyCommand.Parameters("@FiscalYear").Value = System.Convert.ToInt64(txtAccountingYear.Text)
-        strSQL = strSQL + "*" + txtAccountingYear.Text
+        MyCommand.Parameters.Add(New SqlParameter("@FiscalYear", SqlDbType.Int, 2))
+        MyCommand.Parameters("@FiscalYear").Value = System.Convert.ToInt32(txtAccountingYear.Text)
+        strSQL += "*" + txtAccountingYear.Text
         MyCommand.Parameters.Add(New SqlParameter("@ProbabilityAdjAmt", SqlDbType.Float, 8))
         MyCommand.Parameters("@ProbabilityAdjAmt").Value = System.Convert.ToDouble(txtProbabilityAdjustedAmt.Text)
-        strSQL = strSQL + "*" + txtProbabilityAdjustedAmt.Text
+        strSQL += "*" + txtProbabilityAdjustedAmt.Text
         MyCommand.Parameters.Add(New SqlParameter("@TimeAdjAmt", SqlDbType.Float, 8))
         MyCommand.Parameters("@TimeAdjAmt").Value = System.Convert.ToDouble(txtTimeAdjustedAmount.Text)
-        strSQL = strSQL + "*" + txtTimeAdjustedAmount.Text
+        strSQL += "*" + txtTimeAdjustedAmount.Text
         MyCommand.Parameters.Add(New SqlParameter("@TotalAdjAmt", SqlDbType.Float, 8))
         MyCommand.Parameters("@TotalAdjAmt").Value = System.Convert.ToDouble(txtTotalAdjustedAmount.Text)
-        strSQL = strSQL + "*" + txtTotalAdjustedAmount.Text
+        strSQL += "*" + txtTotalAdjustedAmount.Text
         '-- data points for tProjectsCost
         MyCommand.Parameters.Add(New SqlParameter("@Capex", SqlDbType.Float, 8))
         MyCommand.Parameters("@Capex").Value = System.Convert.ToDouble(txtCapexCost.Text)
-        strSQL = strSQL + "*" + txtCapexCost.Text
+        strSQL += "*" + txtCapexCost.Text
         MyCommand.Parameters.Add(New SqlParameter("@WorkingCapital", SqlDbType.Float, 8))
         MyCommand.Parameters("@WorkingCapital").Value = System.Convert.ToDouble(txtWorkCapCost.Text)
-        strSQL = strSQL + "*" + txtWorkCapCost.Text
+        strSQL += "*" + txtWorkCapCost.Text
         MyCommand.Parameters.Add(New SqlParameter("@RegulatoryCost", SqlDbType.Float, 8))
         MyCommand.Parameters("@RegulatoryCost").Value = System.Convert.ToDouble(txtRegulatoryCost.Text)
-        strSQL = strSQL + "*" + txtRegulatoryCost.Text
+        strSQL += "*" + txtRegulatoryCost.Text
         MyCommand.Parameters.Add(New SqlParameter("@SampleCost", SqlDbType.Float, 8))
         MyCommand.Parameters("@SampleCost").Value = System.Convert.ToDouble(txtSampleCost.Text)
-        strSQL = strSQL + "*" + txtSampleCost.Text
+        strSQL += "*" + txtSampleCost.Text
         MyCommand.Parameters.Add(New SqlParameter("@RDcost", SqlDbType.Float, 8))
         MyCommand.Parameters("@RDcost").Value = System.Convert.ToDouble(txtRDCost.Text)
-        strSQL = strSQL + "*" + txtRDCost.Text
+        strSQL += "*" + txtRDCost.Text
         MyCommand.Parameters.Add(New SqlParameter("@QAQCCost", SqlDbType.Float, 8))
         MyCommand.Parameters("@QAQCCost").Value = System.Convert.ToDouble(txtQACost.Text)
-        strSQL = strSQL + "*" + txtQACost.Text
+        strSQL += "*" + txtQACost.Text
         MyCommand.Parameters.Add(New SqlParameter("@AuditCost", SqlDbType.Float, 8))
         MyCommand.Parameters("@AuditCost").Value = System.Convert.ToDouble(txtAuditCost.Text)
-        strSQL = strSQL + "*" + txtAuditCost.Text
+        strSQL += "*" + txtAuditCost.Text
         MyCommand.Parameters.Add(New SqlParameter("@OtherCost", SqlDbType.Float, 8))
         MyCommand.Parameters("@OtherCost").Value = System.Convert.ToDouble(txtOtherCost.Text)
-        strSQL = strSQL + "*" + txtOtherCost.Text
+        strSQL += "*" + txtOtherCost.Text
         MyCommand.Parameters.Add(New SqlParameter("@TotalCost", SqlDbType.Float, 8))
         MyCommand.Parameters("@TotalCost").Value = System.Convert.ToDouble(txtTotalCost.Text)
-        strSQL = strSQL + "*" + txtTotalCost.Text
-        MyCommand.Parameters.Add(New SqlParameter("@CapexCurrency", SqlDbType.Int, 4))
-        MyCommand.Parameters("@CapexCurrency").Value = System.Convert.ToInt64(cboCapexCurrency.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboCapexCurrency.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@WorkingCapitalCurrency", SqlDbType.Int, 4))
-        MyCommand.Parameters("@WorkingCapitalCurrency").Value = System.Convert.ToInt64(cboWorkCapCurrency.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboWorkCapCurrency.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@RegulatoryCostCurrency", SqlDbType.Int, 4))
-        MyCommand.Parameters("@RegulatoryCostCurrency").Value = System.Convert.ToInt64(cboRegulatoryCurrency.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboRegulatoryCurrency.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@SampleCostCurrency", SqlDbType.Int, 4))
-        MyCommand.Parameters("@SampleCostCurrency").Value = System.Convert.ToInt64(cboSampleCurrency.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboSampleCurrency.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@RDcostCurrency", SqlDbType.Int, 4))
-        MyCommand.Parameters("@RDcostCurrency").Value = System.Convert.ToInt64(cboRDCurrency.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboRDCurrency.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@QAQCCostCurrency", SqlDbType.Int, 4))
-        MyCommand.Parameters("@QAQCCostCurrency").Value = System.Convert.ToInt64(cboQACurrency.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboQACurrency.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@AuditCostCurrency", SqlDbType.Int, 4))
-        MyCommand.Parameters("@AuditCostCurrency").Value = System.Convert.ToInt64(cboAuditCurrency.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboAuditCurrency.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@OtherCostCurrency", SqlDbType.Int, 4))
-        MyCommand.Parameters("@OtherCostCurrency").Value = System.Convert.ToInt64(cboOtherCurrency.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboOtherCurrency.SelectedItem.Value
-        MyCommand.Parameters.Add(New SqlParameter("@TotalCostCurrency", SqlDbType.Int, 4))
-        MyCommand.Parameters("@TotalCostCurrency").Value = System.Convert.ToInt64(cboTotalCurrency.SelectedItem.Value)
-        strSQL = strSQL + "*" + cboTotalCurrency.SelectedItem.Value
+        strSQL += "*" + txtTotalCost.Text
+        MyCommand.Parameters.Add(New SqlParameter("@CapexCurrency", SqlDbType.Int, 2))
+        MyCommand.Parameters("@CapexCurrency").Value = System.Convert.ToInt32(cboCapexCurrency.SelectedItem.Value)
+        strSQL += "*" + cboCapexCurrency.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@WorkingCapitalCurrency", SqlDbType.Int, 2))
+        MyCommand.Parameters("@WorkingCapitalCurrency").Value = System.Convert.ToInt32(cboWorkCapCurrency.SelectedItem.Value)
+        strSQL += "*" + cboWorkCapCurrency.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@RegulatoryCostCurrency", SqlDbType.Int, 2))
+        MyCommand.Parameters("@RegulatoryCostCurrency").Value = System.Convert.ToInt32(cboRegulatoryCurrency.SelectedItem.Value)
+        strSQL += "*" + cboRegulatoryCurrency.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@SampleCostCurrency", SqlDbType.Int, 2))
+        MyCommand.Parameters("@SampleCostCurrency").Value = System.Convert.ToInt32(cboSampleCurrency.SelectedItem.Value)
+        strSQL += "*" + cboSampleCurrency.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@RDcostCurrency", SqlDbType.Int, 2))
+        MyCommand.Parameters("@RDcostCurrency").Value = System.Convert.ToInt32(cboRDCurrency.SelectedItem.Value)
+        strSQL += "*" + cboRDCurrency.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@QAQCCostCurrency", SqlDbType.Int, 2))
+        MyCommand.Parameters("@QAQCCostCurrency").Value = System.Convert.ToInt32(cboQACurrency.SelectedItem.Value)
+        strSQL += "*" + cboQACurrency.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@AuditCostCurrency", SqlDbType.Int, 2))
+        MyCommand.Parameters("@AuditCostCurrency").Value = System.Convert.ToInt32(cboAuditCurrency.SelectedItem.Value)
+        strSQL += "*" + cboAuditCurrency.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@OtherCostCurrency", SqlDbType.Int, 2))
+        MyCommand.Parameters("@OtherCostCurrency").Value = System.Convert.ToInt32(cboOtherCurrency.SelectedItem.Value)
+        strSQL += "*" + cboOtherCurrency.SelectedItem.Value
+        MyCommand.Parameters.Add(New SqlParameter("@TotalCostCurrency", SqlDbType.Int, 2))
+        MyCommand.Parameters("@TotalCostCurrency").Value = System.Convert.ToInt32(cboTotalCurrency.SelectedItem.Value)
+        strSQL += "*" + cboTotalCurrency.SelectedItem.Value
         MyCommand.Parameters.Add(New SqlParameter("@CapexJustification", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@CapexJustification").Value = txtCapexJust.Text
-        strSQL = strSQL + "*" + txtCapexJust.Text
+        strSQL += "*" + txtCapexJust.Text
         MyCommand.Parameters.Add(New SqlParameter("@WorkingCapitalJustification", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@WorkingCapitalJustification").Value = txtWorkCapJust.Text
-        strSQL = strSQL + "*" + txtWorkCapJust.Text
+        strSQL += "*" + txtWorkCapJust.Text
         MyCommand.Parameters.Add(New SqlParameter("@RegulatoryCostJustification", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@RegulatoryCostJustification").Value = txtRegulatoryJust.Text
-        strSQL = strSQL + "*" + txtRegulatoryJust.Text
+        strSQL += "*" + txtRegulatoryJust.Text
         MyCommand.Parameters.Add(New SqlParameter("@SampleCostJustification", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@SampleCostJustification").Value = txtSampleJust.Text
-        strSQL = strSQL + "*" + txtSampleJust.Text
+        strSQL += "*" + txtSampleJust.Text
         MyCommand.Parameters.Add(New SqlParameter("@RDcostJustification", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@RDcostJustification").Value = txtRDJust.Text
-        strSQL = strSQL + "*" + txtRDJust.Text
+        strSQL += "*" + txtRDJust.Text
         MyCommand.Parameters.Add(New SqlParameter("@QAQCCostJustification", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@QAQCCostJustification").Value = txtQAJust.Text
-        strSQL = strSQL + "*" + txtQAJust.Text
+        strSQL += "*" + txtQAJust.Text
         MyCommand.Parameters.Add(New SqlParameter("@AuditCostJustification", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@AuditCostJustification").Value = txtAuditJust.Text
-        strSQL = strSQL + "*" + txtAuditJust.Text
+        strSQL += "*" + txtAuditJust.Text
         MyCommand.Parameters.Add(New SqlParameter("@OtherCostJustification", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@OtherCostJustification").Value = txtOtherJust.Text
-        strSQL = strSQL + "*" + txtOtherJust.Text
+        strSQL += "*" + txtOtherJust.Text
         MyCommand.Parameters.Add(New SqlParameter("@TotalCostJustification", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@TotalCostJustification").Value = txtTotalJust.Text
-        strSQL = strSQL + "*" + txtTotalJust.Text
+        strSQL += "*" + txtTotalJust.Text
+
         '-- data points for uProjectTherapy
         MyCommand.Parameters.Add(New SqlParameter("@TherapyID", SqlDbType.NVarChar, 200))
         strIN = ""
@@ -533,7 +544,7 @@ Public Class ProjectAddition
             End If
         Next
         MyCommand.Parameters("@TherapyID").Value = strIN
-        strSQL = strSQL + "*" + strIN
+        strSQL += "*" + strIN
         '-- data points for uProjectPersonnel
         MyCommand.Parameters.Add(New SqlParameter("@PersonnelID", SqlDbType.NVarChar, 200))
         strIN = ""
@@ -543,7 +554,8 @@ Public Class ProjectAddition
             End If
         Next
         MyCommand.Parameters("@PersonnelID").Value = strIN
-        strSQL = strSQL + "*" + strIN
+        strSQL += "*" + strIN
+
         '-- data points for uProjectPackCode
         MyCommand.Parameters.Add(New SqlParameter("@PackCodeID", SqlDbType.NVarChar, 200))
         strIN = ""
@@ -553,7 +565,8 @@ Public Class ProjectAddition
             End If
         Next
         MyCommand.Parameters("@PackCodeID").Value = strIN
-        strSQL = strSQL + "*" + strIN
+        strSQL += "*" + strIN
+
         '-- data points for uProjectMfgCode
         MyCommand.Parameters.Add(New SqlParameter("@MfgCodeID", SqlDbType.NVarChar, 200))
         strIN = ""
@@ -563,17 +576,8 @@ Public Class ProjectAddition
             End If
         Next
         MyCommand.Parameters("@MfgCodeID").Value = strIN
-        strSQL = strSQL + "*" + strIN
-        '-- data points for uProjectBusinessunit
-        MyCommand.Parameters.Add(New SqlParameter("@BusinessUnitID", SqlDbType.Int, 4))
-        strIN = ""
-        For Each li In cboBusinessUnit.Items
-            If li.Selected = True Then
-                strIN = strIN & li.Value & "|"
-            End If
-        Next
-        MyCommand.Parameters("@BusinessUnitID").Value = strIN
-        strSQL = strSQL + "*" + strIN
+        strSQL += "*" + strIN
+
         '-- data points for uProjectDosage
         MyCommand.Parameters.Add(New SqlParameter("@DosageID", SqlDbType.NVarChar, 200))
         strIN = ""
@@ -583,7 +587,8 @@ Public Class ProjectAddition
             End If
         Next
         MyCommand.Parameters("@DosageID").Value = strIN
-        strSQL = strSQL + "*" + strIN
+        strSQL += "*" + strIN
+
         '-- data points for uProjectCategory
         MyCommand.Parameters.Add(New SqlParameter("@CategoryID", SqlDbType.NVarChar, 200))
         strIN = ""
@@ -593,23 +598,45 @@ Public Class ProjectAddition
             End If
         Next
         MyCommand.Parameters("@CategoryID").Value = strIN
-        strSQL = strSQL + "*" + strIN
+        strSQL += "*" + strIN
+
         '-- data points for uProjectBulkCode
         MyCommand.Parameters.Add(New SqlParameter("@BulkCodeID", SqlDbType.NVarChar, 200))
+        MyCommand.Parameters("@BulkCodeID").Value = GetListItems(cboBulkCode)
+        strSQL += "*" + strIN
+
+        TestOut.Text = strSQL
+        MyCommand.Connection.Open()
+        Try
+            MyCommand.ExecuteNonQuery()
+        Catch Exp As SqlException
+            Dim errorMessages As String = ""
+            Dim i As Integer
+            For i = 0 To Exp.Errors.Count - 1
+                errorMessages += "Index #" & i.ToString() & ControlChars.NewLine _
+                               & "Message: " & Exp.Errors(i).Message & ControlChars.NewLine _
+                               & "LineNumber: " & Exp.Errors(i).LineNumber & ControlChars.NewLine _
+                               & "Source: " & Exp.Errors(i).Source & ControlChars.NewLine _
+                               & "Procedure: " & Exp.Errors(i).Procedure & ControlChars.NewLine
+            Next i
+            TestOut.Text = TestOut.Text + errorMessages
+        End Try
+        MyCommand.Connection.Close()
+
+        'Response.Redirect("default.aspx")
+
+    End Sub
+
+    Private Function GetListItems(ByVal listItem As ListBox) As String
+        Dim strIN As String
         strIN = ""
-        For Each li In cboBulkCode.Items
+        For Each li In listItem.Items
             If li.Selected = True Then
                 strIN = strIN & li.Value & "|"
             End If
         Next
-        MyCommand.Parameters("@BulkCodeID").Value = strIN
-        strSQL = strSQL + "*" + strIN
-
-        TestOut.Text = strSQL
-        '---here cut paste the code from text file
-        'Response.Redirect("default.aspx")
-        
-    End Sub
+        Return strIN
+    End Function
 
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click

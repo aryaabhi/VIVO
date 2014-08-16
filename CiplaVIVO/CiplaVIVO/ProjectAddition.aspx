@@ -59,10 +59,9 @@
                                     <div class="form-group">
                                         <label>Project Classification:</label>
                                            <asp:dropdownlist id="cboProjectClassification" Class="form-control" runat="server">
-                                                <asp:ListItem Value=""></asp:ListItem>
-	                        					<asp:ListItem Value="Risk Mitigation">Risk Mitigation</asp:ListItem>
-                        						<asp:ListItem Value="Cost Saving">Cost Saving</asp:ListItem>
-						                        <asp:ListItem Value="Compliance">Compliance</asp:ListItem>
+                                                <asp:ListItem Value="Cost Saving">Cost Saving</asp:ListItem>
+						                        <asp:ListItem Value="Risk Mitigation">Risk Mitigation</asp:ListItem>
+                        						<asp:ListItem Value="Compliance">Compliance</asp:ListItem>
                                                 <asp:ListItem Value="Inventory Salvage">Inventory Salvage</asp:ListItem>
 						                    </asp:dropdownlist>
                                       </div>
@@ -72,8 +71,7 @@
                                     <div class="form-group">
                                         <label>Direct/Indirect/Capex:</label>
                                            <asp:dropdownlist id="cboDIC" Class="form-control" runat="server" OnSelectedIndexChanged="DIC_AfterUpdate" AutoPostBack="True">
-                                                <asp:ListItem Value=""></asp:ListItem>
-	                        					<asp:ListItem Value="Direct">Direct</asp:ListItem>
+                                                <asp:ListItem Value="Direct">Direct</asp:ListItem>
                         						<asp:ListItem Value="Indirect">Indirect</asp:ListItem>
 						                        <asp:ListItem Value="Capex">Capex</asp:ListItem>
 						                    </asp:dropdownlist>
