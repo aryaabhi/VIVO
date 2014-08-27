@@ -7,6 +7,9 @@
                 </div>
                 <!-- /.col-lg-12 -->
          </div>
+         <div>
+		    <asp:ValidationSummary runat=server ForeColor="red" HeaderText="There were errors on the page:" />
+		</div>
         <!-- /.row -->
          <!-- PANEL 1 -->
         <div class="row">
@@ -29,6 +32,7 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <asp:RequiredFieldValidator runat=server ForeColor="red" ControlToValidate=txtProjectName ErrorMessage="Project Name is required."> * </asp:RequiredFieldValidator>
 					                    <label>Project Name:</label>
 					                    <asp:textbox id="txtProjectName" Class="form-control" runat="server"/>
 				                    </div>
@@ -105,7 +109,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Optional Project Fields
+                            Optional Project Fields (Press Ctrl key to select/unselect multiple items in each box)
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -179,7 +183,7 @@
                                     <div class="form-group">
                                         <div class="row">
                                             <div class="col-lg-4">
-					                            <label>Project Begin:</label>
+					                            <label>Project Ends:</label>
 					                         </div>
                                              <div class="col-lg-4">
                                                  <label>Month:</label>
@@ -192,6 +196,7 @@
                                        </div>
                                     </div>
                                     <div class="form-group">
+                                        <asp:RequiredFieldValidator runat=server ForeColor="red" ControlToValidate=txtAnnualSavings ErrorMessage="Annual Savings is required."> * </asp:RequiredFieldValidator>
 					                    <label>Total Annual Savings:</label>
 					                    <asp:textbox id="txtAnnualSavings" onkeypress="return onlyNumbers();" Class="form-control" runat="server"></asp:textbox>
 				                    </div>
@@ -233,7 +238,7 @@
                                        </div>
                                     <div class="form-group">
 					                    <label>Any one off saving included?</label>
-					                    <asp:textbox id="txtOneOffSaving" onkeypress="return onlyNumbers();" Class="form-control" runat="server"></asp:textbox>
+					                    <asp:textbox id="txtOneOffSaving" onkeypress="return onlyNumbers();" Class="form-control" runat="server">0</asp:textbox>
                                      </div>
                                     <div class="form-group">
 					                    <label>Status:</label>
@@ -470,7 +475,7 @@
 					                    <label>Total Opex Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="txtTotalCost"  Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtTotalCost" onkeypress="return onlyNumbers();"  Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
 					                <asp:dropdownlist id="cboTotalCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>

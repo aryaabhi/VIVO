@@ -12,13 +12,13 @@ Public Class VivoClass
 
     Private Function GetData(ByVal cmd As SqlCommand) As DataTable
         Dim dt As New DataTable()
-        Dim con As New SqlConnection(strConnString)
-        Dim sda As New SqlDataAdapter()
-        cmd.CommandType = CommandType.Text
-        cmd.Connection = con
-        con.Open()
-        sda.SelectCommand = cmd
-        sda.Fill(dt)
+        Using con As New SqlConnection(strConnString)
+            Dim sda As New SqlDataAdapter()
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = con
+            sda.SelectCommand = cmd
+            sda.Fill(dt)
+        End Using
         Return dt
     End Function
 
@@ -68,9 +68,30 @@ Public Class VivoClass
             Case "Dosage"
                 strQuery = "select DosageID, Dosage from vDosage order by " + SortExpression
 
+            Case "Dosage"
+                strQuery = "select DosageID, Dosage from vDosage order by " + SortExpression
 
-            Case Else
-                strQuery = ""
+            Case "uProjectBulkCode"
+                strQuery = "select * from uProjectBulkCode where ProjectID= " + SortExpression
+
+            Case "uProjectCategory"
+                strQuery = "select * from uProjectCategory where ProjectID= " + SortExpression
+
+            Case "uProjectDosage"
+                strQuery = "select * from uProjectDosage where ProjectID= " + SortExpression
+
+            Case "uProjectMfgCode"
+                strQuery = "select * from uProjectMfgCode where ProjectID= " + SortExpression
+
+            Case "uProjectPackCode"
+                strQuery = "select * from uProjectPackCode where ProjectID= " + SortExpression
+
+            Case "uProjectPersonnel"
+                strQuery = "select * from uProjectPersonnel where ProjectID= " + SortExpression
+
+            Case "uProjectTherapy"
+                strQuery = "select * from uProjectTherapy where ProjectID= " + SortExpression
+
 
         End Select
 

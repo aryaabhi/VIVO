@@ -12,20 +12,320 @@ Public Class ProjectAddition
     Dim dt As New DataTable()
     Dim dv As DataView
     Dim strFilePath As String
-    'Dim RequestedSubGBU As String
-    'Dim RequestedBusiness As String
+    Dim RequestedProjectID As String
     Dim Viv As New VivoClass
     Private strConnString As String = ConfigurationManager.ConnectionStrings("SQLConnectionString").ConnectionString
     Dim con As New SqlConnection(strConnString)
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'RequestedSubGBU = Request.QueryString("subGBU")
-        'RequestedBusiness = Request.QueryString("Business")
-
+        RequestedProjectID = Request.QueryString("ProjectID")
+        
         If Not IsPostBack Then
             PopulateDropDown()
-            'SetInitialFields()
+            If (RequestedProjectID <> "") Then
+                PopulateInitialValues()
+            End If
         End If
+    End Sub
+
+
+    Sub PopulateInitialValues()
+        Dim DS As DataSet
+        Dim objCommand As SqlCommand
+        Dim rsSelectProject As SqlDataReader
+        Dim SQLText As String
+        Dim ProjectSavingsID As Integer
+        Dim ProjectCostID As Integer
+
+        '----------------------------FOR tProjects
+
+        SQLText = "Select * from tProjects where tProjects.ProjectID = " & RequestedProjectID
+
+        objCommand = New SqlCommand(SQLText, con)
+        con.Open()
+
+        rsSelectProject = objCommand.ExecuteReader(CommandBehavior.CloseConnection)
+        rsSelectProject.Read()
+
+        txtProjectName.Text = rsSelectProject("ProjectName")
+
+        If Not cboDepartment.Items.FindByValue(rsSelectProject("DepartmentID")) Is Nothing Then
+            cboDepartment.Items.FindByValue(rsSelectProject("DepartmentID")).Selected = True
+            '--------------------Update category
+            Department_Update()
+        End If
+
+        If Not cboDIC.Items.FindByText(rsSelectProject("Direct_Indirect_Capex")) Is Nothing Then
+            cboDIC.Items.FindByText(rsSelectProject("Direct_Indirect_Capex")).Selected = True
+            DIC_Update()
+        End If
+
+        If Not plcapex.Items.FindByText(rsSelectProject("PL_Capex")) Is Nothing Then
+            plcapex.Items.FindByText(rsSelectProject("PL_Capex")).Selected = True
+        End If
+
+        If Not cboProjectLeader.Items.FindByValue(rsSelectProject("ProjectLeader")) Is Nothing Then
+            cboProjectLeader.Items.FindByValue(rsSelectProject("ProjectLeader")).Selected = True
+        End If
+
+        If Not cboFinanceLeader.Items.FindByValue(rsSelectProject("FinanceLeader")) Is Nothing Then
+            cboFinanceLeader.Items.FindByValue(rsSelectProject("FinanceLeader")).Selected = True
+        End If
+        
+        If Not IsDBNull(rsSelectProject("ExpenseHeadID")) Then
+            If Not cboExpenseHead.Items.FindByValue(rsSelectProject("ExpenseHeadID")) Is Nothing Then
+                cboExpenseHead.Items.FindByValue(rsSelectProject("ExpenseHeadID")).Selected = True
+            End If
+        End If
+
+        If Not IsDBNull(rsSelectProject("ProjectClassification")) Then
+            If Not cboProjectClassification.Items.FindByText(rsSelectProject("ProjectClassification")) Is Nothing Then
+                cboProjectClassification.Items.FindByText(rsSelectProject("ProjectClassification")).Selected = True
+            End If
+        End If
+
+        If Not IsDBNull(rsSelectProject("ProjectSummary")) Then
+            txtProjectSummary.Text = rsSelectProject("ProjectSummary")
+        End If
+
+        If Not IsDBNull(rsSelectProject("BusinessUnitID")) Then
+            If Not cboBusinessUnit.Items.FindByValue(rsSelectProject("BusinessUnitID")) Is Nothing Then
+                cboBusinessUnit.Items.FindByValue(rsSelectProject("BusinessUnitID")).Selected = True
+            End If
+        End If
+
+        rsSelectProject.Close()
+        con.Close()
+        '----------------------------FOR tProjectSavings
+
+        SQLText = "Select * from tProjectSavings where tProjectSavings.ProjectID = " & RequestedProjectID
+
+        objCommand = New SqlCommand(SQLText, con)
+        con.Open()
+
+        rsSelectProject = objCommand.ExecuteReader(CommandBehavior.CloseConnection)
+        rsSelectProject.Read()
+
+        ProjectSavingsID = rsSelectProject("ProjectSavingsID")
+
+        If Not cboProjectStartMonth.Items.FindByValue(rsSelectProject("ProjectBeginMonth")) Is Nothing Then
+            cboProjectStartMonth.Items.FindByValue(rsSelectProject("ProjectBeginMonth")).Selected = True
+        End If
+
+        If Not cboProjectStartYear.Items.FindByValue(rsSelectProject("ProjectBeginYear")) Is Nothing Then
+            cboProjectStartYear.Items.FindByValue(rsSelectProject("ProjectBeginYear")).Selected = True
+        End If
+
+        If Not cboSavingsStartMonth.Items.FindByValue(rsSelectProject("SavingBeginMonth")) Is Nothing Then
+            cboSavingsStartMonth.Items.FindByValue(rsSelectProject("SavingBeginMonth")).Selected = True
+        End If
+
+        If Not cboSavingsStartYear.Items.FindByValue(rsSelectProject("SavingBeginYear")) Is Nothing Then
+            cboSavingsStartYear.Items.FindByValue(rsSelectProject("SavingBeginYear")).Selected = True
+        End If
+
+        If Not cboSavingsEndMonth.Items.FindByValue(rsSelectProject("SavingsEndMonth")) Is Nothing Then
+            cboSavingsEndMonth.Items.FindByValue(rsSelectProject("SavingsEndMonth")).Selected = True
+        End If
+
+        If Not cboSavingsEndYear.Items.FindByValue(rsSelectProject("SavingsEndYear")) Is Nothing Then
+            cboSavingsEndYear.Items.FindByValue(rsSelectProject("SavingsEndYear")).Selected = True
+        End If
+
+        txtAnnualSavings.Text = rsSelectProject("TotalAnnualSavings")
+
+        txtOneOffSaving.Text = rsSelectProject("OneOffSavings")
+
+        If Not cboCurrency.Items.FindByValue(rsSelectProject("Currency")) Is Nothing Then
+            cboCurrency.Items.FindByValue(rsSelectProject("Currency")).Selected = True
+        End If
+
+        If Not cboProbability.Items.FindByValue(rsSelectProject("Risk")) Is Nothing Then
+            cboProbability.Items.FindByValue(rsSelectProject("Risk")).Selected = True
+        End If
+
+        If Not cboStatus.Items.FindByValue(rsSelectProject("Status")) Is Nothing Then
+            cboStatus.Items.FindByValue(rsSelectProject("Status")).Selected = True
+        End If
+
+        If Not IsDBNull(rsSelectProject("CommittedToForecast")) Then
+            chkCommitted.Checked = rsSelectProject("CommittedToForecast")
+        End If
+
+        If Not IsDBNull(rsSelectProject("ProjectEndMonth")) Then
+            If Not cboProjectEndMonth.Items.FindByValue(rsSelectProject("ProjectEndMonth")) Is Nothing Then
+                cboProjectEndMonth.Items.FindByValue(rsSelectProject("ProjectEndMonth")).Selected = True
+            End If
+        End If
+
+        If Not IsDBNull(rsSelectProject("ProjectEndYear")) Then
+            If Not cboProjectEndYear.Items.FindByValue(rsSelectProject("ProjectEndYear")) Is Nothing Then
+                cboProjectEndYear.Items.FindByValue(rsSelectProject("ProjectEndYear")).Selected = True
+            End If
+        End If
+
+        If Not IsDBNull(rsSelectProject("Stage")) Then
+            txtStage.Text = rsSelectProject("Stage")
+        End If
+
+        rsSelectProject.Close()
+        con.Close()
+        '----------------------------FOR tProjectsCost
+        SQLText = "Select * from tProjectsCost where tProjectsCost.ProjectID = " & RequestedProjectID
+
+        objCommand = New SqlCommand(SQLText, con)
+        con.Open()
+
+        rsSelectProject = objCommand.ExecuteReader(CommandBehavior.CloseConnection)
+        rsSelectProject.Read()
+
+        ProjectCostID = rsSelectProject("ProjectCostID")
+
+        txtCapexCost.Text = rsSelectProject("Capex")
+        txtWorkCapCost.Text = rsSelectProject("WorkingCapital")
+        txtRegulatoryCost.Text = rsSelectProject("RegulatoryCost")
+        txtSampleCost.Text = rsSelectProject("SampleCost")
+        txtRDCost.Text = rsSelectProject("RDCost")
+        txtQACost.Text = rsSelectProject("QAQCCost")
+        txtAuditCost.Text = rsSelectProject("AuditCost")
+        txtOtherCost.Text = rsSelectProject("OtherCost")
+        txtTotalCost.Text = rsSelectProject("TotalCost")
+
+        If Not cboCapexCurrency.Items.FindByValue(rsSelectProject("CapexCurrency")) Is Nothing Then
+            cboCapexCurrency.Items.FindByValue(rsSelectProject("CapexCurrency")).Selected = True
+        End If
+
+
+        If Not cboWorkCapCurrency.Items.FindByValue(rsSelectProject("WorkingCapitalCurrency")) Is Nothing Then
+            cboWorkCapCurrency.Items.FindByValue(rsSelectProject("WorkingCapitalCurrency")).Selected = True
+        End If
+
+
+        If Not cboRegulatoryCurrency.Items.FindByValue(rsSelectProject("RegulatoryCostCurrency")) Is Nothing Then
+            cboRegulatoryCurrency.Items.FindByValue(rsSelectProject("RegulatoryCostCurrency")).Selected = True
+        End If
+
+
+        If Not cboSampleCurrency.Items.FindByValue(rsSelectProject("SampleCostCurrency")) Is Nothing Then
+            cboSampleCurrency.Items.FindByValue(rsSelectProject("SampleCostCurrency")).Selected = True
+        End If
+
+
+        If Not cboRDCurrency.Items.FindByValue(rsSelectProject("RDCostCurrency")) Is Nothing Then
+            cboRDCurrency.Items.FindByValue(rsSelectProject("RDCostCurrency")).Selected = True
+        End If
+
+
+        If Not cboQACurrency.Items.FindByValue(rsSelectProject("QAQCCostCurrency")) Is Nothing Then
+            cboQACurrency.Items.FindByValue(rsSelectProject("QAQCCostCurrency")).Selected = True
+        End If
+
+
+        If Not cboAuditCurrency.Items.FindByValue(rsSelectProject("AuditCostCurrency")) Is Nothing Then
+            cboAuditCurrency.Items.FindByValue(rsSelectProject("AuditCostCurrency")).Selected = True
+        End If
+
+
+        If Not cboOtherCurrency.Items.FindByValue(rsSelectProject("OtherCostCurrency")) Is Nothing Then
+            cboOtherCurrency.Items.FindByValue(rsSelectProject("OtherCostCurrency")).Selected = True
+        End If
+
+
+        If Not cboTotalCurrency.Items.FindByValue(rsSelectProject("TotalCostCurrency")) Is Nothing Then
+            cboTotalCurrency.Items.FindByValue(rsSelectProject("TotalCostCurrency")).Selected = True
+        End If
+
+        txtCapexJust.Text = rsSelectProject("CapexJustification")
+        txtWorkCapJust.Text = rsSelectProject("WorkingCapitalJustification")
+        txtRegulatoryJust.Text = rsSelectProject("RegulatoryCostJustification")
+        txtSampleJust.Text = rsSelectProject("SampleCostJustification")
+        txtRDJust.Text = rsSelectProject("RDCostJustification")
+        txtQAJust.Text = rsSelectProject("QAQCCostJustification")
+        txtAuditJust.Text = rsSelectProject("AuditCostJustification")
+        txtOtherJust.Text = rsSelectProject("OtherCostJustification")
+        txtTotalJust.Text = rsSelectProject("TotalCostJustification")
+
+        rsSelectProject.Close()
+        con.Close()
+        '----------------------------FOR uProjectBulkCode
+        dt = Viv.BindData("uProjectBulkCode", RequestedProjectID)
+        FillListBox(dt, cboBulkCode, "BulkCodeID")
+        
+        '----------------------------FOR uProjectDosage
+        dt = Viv.BindData("uProjectDosage", RequestedProjectID)
+        FillListBox(dt, cboDosage, "DosageID")
+
+        '----------------------------FOR uProjectMfgCode
+        dt = Viv.BindData("uProjectMfgCode", RequestedProjectID)
+        FillListBox(dt, cboMfgCode, "MfgCodeID")
+
+        '----------------------------FOR uProjectPackCode
+        dt = Viv.BindData("uProjectPackCode", RequestedProjectID)
+        FillListBox(dt, cboPackcode, "PackCodeID")
+
+        '----------------------------FOR uProjectPersonnel
+        dt = Viv.BindData("uProjectPersonnel", RequestedProjectID)
+        FillListBox(dt, cboTeamMembers, "PersonnelID")
+
+        '----------------------------FOR uProjectTherapy
+        dt = Viv.BindData("uProjectTherapy", RequestedProjectID)
+        FillListBox(dt, cboTherapy, "TherapyID")
+
+        '----------------------------FOR uProjectCategory
+        dt = Viv.BindData("uProjectCategory", RequestedProjectID)
+        FillListBox(dt, cboCategory, "CategoryID")
+
+
+
+        ' Calculations of time, probability and total adjusted is done on run time again.
+        PerformCalculation()
+
+        'If chkCommitted.Checked = True Then
+        'ReadOnlyIfChecked()
+        'End If
+
+    End Sub
+
+    Sub FillListBox(ByVal dt As DataTable, ByVal cbo As ListBox, ByVal ColumnName As String)
+        If (dt.Rows.Count > 0) Then
+            For index As Integer = 0 To dt.Rows.Count - 1
+                cbo.Items.FindByValue(dt.Rows(index).Item(ColumnName)).Selected = True
+            Next
+        End If
+    End Sub
+
+    Sub CmtForecast_Changed(ByVal sender As Object, ByVal e As System.EventArgs)
+        If chkCommitted.Checked = False Then
+            ReadOnlyIfNotChecked()
+        ElseIf chkCommitted.Checked = True Then
+            ReadOnlyIfChecked()
+        End If
+    End Sub
+
+    Sub ReadOnlyIfNotChecked()
+        txtProjectName.ReadOnly = False
+        cboProjectStartMonth.Enabled = True
+        cboCategory.Enabled = True
+        txtProjectName.ReadOnly = False
+        cboProjectLeader.Enabled = True
+        cboStatus.Enabled = True
+        cboProjectStartYear.Enabled = True
+        cboProjectStartMonth.Enabled = True
+        cboSavingsStartYear.Enabled = True
+        cboSavingsStartMonth.Enabled = True
+    End Sub
+
+    Sub ReadOnlyIfChecked()
+        txtProjectName.ReadOnly = True
+        cboProjectStartMonth.Enabled = False
+        cboCategory.Enabled = False
+        txtProjectName.ReadOnly = True
+        cboProjectLeader.Enabled = False
+        cboStatus.Enabled = False
+        cboProjectStartYear.Enabled = False
+        cboProjectStartMonth.Enabled = False
+        cboSavingsStartYear.Enabled = False
+        cboSavingsStartMonth.Enabled = False
     End Sub
 
     Sub PopulateDropDown()
@@ -157,42 +457,50 @@ Public Class ProjectAddition
         myDataSet.ReadXml(Server.MapPath("tblMonths.xml"))
         cboProjectStartMonth.DataSource = myDataSet.Tables("tblMonths").DefaultView
         cboProjectStartMonth.DataBind()
-        cboProjectStartMonth.Items.FindByValue(DateTime.Now.Month).Selected = True
 
         cboProjectEndMonth.DataSource = myDataSet.Tables("tblMonths").DefaultView
         cboProjectEndMonth.DataBind()
-        cboProjectEndMonth.Items.FindByValue(DateTime.Now.Month).Selected = True
 
         cboSavingsStartMonth.DataSource = myDataSet.Tables("tblMonths").DefaultView
         cboSavingsStartMonth.DataBind()
-        cboSavingsStartMonth.Items.FindByValue(DateTime.Now.Month).Selected = True
 
         cboSavingsEndMonth.DataSource = myDataSet.Tables("tblMonths").DefaultView
         cboSavingsEndMonth.DataBind()
-        cboSavingsEndMonth.Items.FindByValue(DateTime.Now.Month).Selected = True
 
         '---------cbo of Years -> cboProjectStartYear + cboSavingsStartYear + cboTenureEndYear
         myDataSet = New DataSet
         myDataSet.ReadXml(Server.MapPath("tblYears.xml"))
         cboProjectStartYear.DataSource = myDataSet.Tables("tblYears").DefaultView
         cboProjectStartYear.DataBind()
-        cboProjectStartYear.Items.FindByValue(DateTime.Now.Year).Selected = True
 
         cboProjectEndYear.DataSource = myDataSet.Tables("tblYears").DefaultView
         cboProjectEndYear.DataBind()
-        cboProjectEndYear.Items.FindByValue(DateTime.Now.Year).Selected = True
 
         cboSavingsStartYear.DataSource = myDataSet.Tables("tblYears").DefaultView
         cboSavingsStartYear.DataBind()
-        cboSavingsStartYear.Items.FindByValue(DateTime.Now.Year).Selected = True
 
         cboSavingsEndYear.DataSource = myDataSet.Tables("tblYears").DefaultView
         cboSavingsEndYear.DataBind()
-        cboSavingsEndYear.Items.FindByValue(DateTime.Now.Year).Selected = True
 
-        '--------------------Update category
+        '-----------------Set default value only if this is Project Addition (not Modification)
+        If (RequestedProjectID = "") Then
+            cboDosage.Items.FindByText("All").Selected = True
+            cboMfgCode.Items.FindByText("All").Selected = True
+            cboTherapy.Items.FindByText("All").Selected = True
+            cboPackcode.Items.FindByText("All").Selected = True
+            cboBulkCode.Items.FindByText("All").Selected = True
+            cboProjectStartMonth.Items.FindByValue(DateTime.Now.Month).Selected = True
+            cboProjectEndMonth.Items.FindByValue(DateTime.Now.Month).Selected = True
+            cboSavingsStartMonth.Items.FindByValue(DateTime.Now.Month).Selected = True
+            cboSavingsEndMonth.Items.FindByValue(DateTime.Now.Month).Selected = True
+            cboProjectStartYear.Items.FindByValue(DateTime.Now.Year).Selected = True
+            cboProjectEndYear.Items.FindByValue(DateTime.Now.Year).Selected = True
+            cboSavingsStartYear.Items.FindByValue(DateTime.Now.Year).Selected = True
+            cboSavingsEndYear.Items.FindByValue(DateTime.Now.Year).Selected = True
+        End If
+
+        '------------------------Update Direct/Indirect linked box
         DIC_Update()
-
     End Sub
 
     Sub Department_AfterUpdate(ByVal sender As Object, ByVal e As System.EventArgs)
@@ -324,12 +632,9 @@ Public Class ProjectAddition
         txtTotalAdjustedAmount.Text = CStr(Math.Round(System.Convert.ToDouble(txtTimeAdjustedAmount.Text) * System.Convert.ToDouble(cboProbability.SelectedItem.Value) / 100))
     End Sub
 
-
-    Sub SaveNewProject(ByVal sender As Object, ByVal e As System.EventArgs)
+    Sub SaveAProject()
         Dim MyCommand As SqlCommand
         Dim strSQL As String
-        Dim strIN As String
-        Dim li As ListItem
         Dim checkBox As Integer
 
         PerformCalculation()
@@ -353,11 +658,20 @@ Public Class ProjectAddition
             txtTotalAdjustedAmount.Text = "0"
         End If
 
-        MyCommand = New SqlCommand("InsertProject", con)
+        If (RequestedProjectID <> "") Then
+            MyCommand = New SqlCommand("UpdateProject", con)
+        Else
+            MyCommand = New SqlCommand("InsertProject", con)
+            RequestedProjectID = 0
+        End If
+
         MyCommand.CommandType = CommandType.StoredProcedure
 
-        
+
         '-- data points for tProject
+        MyCommand.Parameters.Add(New SqlParameter("@ProjectID", SqlDbType.Int, 2))
+        MyCommand.Parameters("@ProjectID").Value = RequestedProjectID
+
         MyCommand.Parameters.Add(New SqlParameter("@ProjectName", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@ProjectName").Value = txtProjectName.Text
         strSQL += "*" + txtProjectName.Text
@@ -391,7 +705,6 @@ Public Class ProjectAddition
         MyCommand.Parameters.Add(New SqlParameter("@BusinessUnitID", SqlDbType.Int, 2))
         MyCommand.Parameters("@BusinessUnitID").Value = System.Convert.ToInt32(cboBusinessUnit.SelectedItem.Value)
         strSQL += "*" + txtProjectSummary.Text
-
 
         '-- data points for tProjectSavings
         MyCommand.Parameters.Add(New SqlParameter("@ProjectBeginMonth", SqlDbType.Int, 2))
@@ -427,8 +740,8 @@ Public Class ProjectAddition
         MyCommand.Parameters.Add(New SqlParameter("@Status", SqlDbType.NVarChar, 200))
         MyCommand.Parameters("@Status").Value = cboStatus.SelectedItem.Value
         strSQL += "*" + cboStatus.SelectedItem.Value
-        'MyCommand.Parameters.Add(New SqlParameter("@CommittedToForecast", SqlDbType.Bit))
-        'MyCommand.Parameters("@CommittedToForecast").Value = checkBox
+        MyCommand.Parameters.Add(New SqlParameter("@CommittedToForecast", SqlDbType.Bit))
+        MyCommand.Parameters("@CommittedToForecast").Value = checkBox
         'strSQL += "*" + checkBox.ToString
         MyCommand.Parameters.Add(New SqlParameter("@ProjectEndMonth", SqlDbType.Int, 2))
         MyCommand.Parameters("@ProjectEndMonth").Value = System.Convert.ToInt32(cboProjectEndMonth.SelectedItem.Value)
@@ -537,73 +850,38 @@ Public Class ProjectAddition
 
         '-- data points for uProjectTherapy
         MyCommand.Parameters.Add(New SqlParameter("@TherapyID", SqlDbType.NVarChar, 200))
-        strIN = ""
-        For Each li In cboTherapy.Items
-            If li.Selected = True Then
-                strIN = strIN & li.Value & "|"
-            End If
-        Next
-        MyCommand.Parameters("@TherapyID").Value = strIN
-        strSQL += "*" + strIN
+        MyCommand.Parameters("@TherapyID").Value = GetListItems(cboTherapy, 1)
+        strSQL += "*" + MyCommand.Parameters("@TherapyID").Value
+
         '-- data points for uProjectPersonnel
         MyCommand.Parameters.Add(New SqlParameter("@PersonnelID", SqlDbType.NVarChar, 200))
-        strIN = ""
-        For Each li In cboTeamMembers.Items
-            If li.Selected = True Then
-                strIN = strIN & li.Value & "|"
-            End If
-        Next
-        MyCommand.Parameters("@PersonnelID").Value = strIN
-        strSQL += "*" + strIN
+        MyCommand.Parameters("@PersonnelID").Value = GetListItems(cboTeamMembers, 0)
+        strSQL += "*" + MyCommand.Parameters("@PersonnelID").Value
 
         '-- data points for uProjectPackCode
         MyCommand.Parameters.Add(New SqlParameter("@PackCodeID", SqlDbType.NVarChar, 200))
-        strIN = ""
-        For Each li In cboPackcode.Items
-            If li.Selected = True Then
-                strIN = strIN & li.Value & "|"
-            End If
-        Next
-        MyCommand.Parameters("@PackCodeID").Value = strIN
-        strSQL += "*" + strIN
+        MyCommand.Parameters("@PackCodeID").Value = GetListItems(cboPackcode, 1)
+        strSQL += "*" + MyCommand.Parameters("@PackCodeID").Value
 
         '-- data points for uProjectMfgCode
         MyCommand.Parameters.Add(New SqlParameter("@MfgCodeID", SqlDbType.NVarChar, 200))
-        strIN = ""
-        For Each li In cboMfgCode.Items
-            If li.Selected = True Then
-                strIN = strIN & li.Value & "|"
-            End If
-        Next
-        MyCommand.Parameters("@MfgCodeID").Value = strIN
-        strSQL += "*" + strIN
+        MyCommand.Parameters("@MfgCodeID").Value = GetListItems(cboMfgCode, 1)
+        strSQL += "*" + MyCommand.Parameters("@MfgCodeID").Value
 
         '-- data points for uProjectDosage
         MyCommand.Parameters.Add(New SqlParameter("@DosageID", SqlDbType.NVarChar, 200))
-        strIN = ""
-        For Each li In cboDosage.Items
-            If li.Selected = True Then
-                strIN = strIN & li.Value & "|"
-            End If
-        Next
-        MyCommand.Parameters("@DosageID").Value = strIN
-        strSQL += "*" + strIN
+        MyCommand.Parameters("@DosageID").Value = GetListItems(cboDosage, 1)
+        strSQL += "*" + MyCommand.Parameters("@DosageID").Value
 
         '-- data points for uProjectCategory
         MyCommand.Parameters.Add(New SqlParameter("@CategoryID", SqlDbType.NVarChar, 200))
-        strIN = ""
-        For Each li In cboCategory.Items
-            If li.Selected = True Then
-                strIN = strIN & li.Value & "|"
-            End If
-        Next
-        MyCommand.Parameters("@CategoryID").Value = strIN
-        strSQL += "*" + strIN
+        MyCommand.Parameters("@CategoryID").Value = GetListItems(cboCategory, 0)
+        strSQL += "*" + MyCommand.Parameters("@CategoryID").Value
 
         '-- data points for uProjectBulkCode
         MyCommand.Parameters.Add(New SqlParameter("@BulkCodeID", SqlDbType.NVarChar, 200))
-        MyCommand.Parameters("@BulkCodeID").Value = GetListItems(cboBulkCode)
-        strSQL += "*" + strIN
+        MyCommand.Parameters("@BulkCodeID").Value = GetListItems(cboBulkCode, 1)
+        strSQL += "*" + MyCommand.Parameters("@BulkCodeID").Value
 
         TestOut.Text = strSQL
         MyCommand.Connection.Open()
@@ -624,17 +902,29 @@ Public Class ProjectAddition
         MyCommand.Connection.Close()
 
         'Response.Redirect("default.aspx")
-
     End Sub
 
-    Private Function GetListItems(ByVal listItem As ListBox) As String
-        Dim strIN As String
-        strIN = ""
+    Sub SaveNewProject(ByVal sender As Object, ByVal e As System.EventArgs)
+        If Page.IsValid Then
+            SaveAProject()
+        End If
+    End Sub
+
+    Private Function GetListItems(ByVal listItem As ListBox, ByVal OptionCode As Integer) As String
+        Dim strIN As String = ""
+        Dim checkAll As Integer = 0
+        
+        If (listItem.SelectedIndex = -1 And OptionCode = 1) Then
+            listItem.Items.FindByText("All").Selected = True
+            checkAll = 1
+        End If
+
         For Each li In listItem.Items
             If li.Selected = True Then
                 strIN = strIN & li.Value & "|"
             End If
         Next
+
         Return strIN
     End Function
 

@@ -132,7 +132,7 @@
     <Content Include="AddPage.html" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="ListOfFields.txt" />
-    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\sumtotal.js" />
     <Content Include="tblMonths.xml" />
     <Content Include="tblReportTags.xml" />
