@@ -140,6 +140,7 @@
     <Content Include="tblYears.xml" />
     <Content Include="vExpenseHead.aspx" />
     <Content Include="vBulkCode.aspx" />
+    <Content Include="rReportAll.aspx" />
     <Content Include="vPersonnel.aspx" />
     <Content Include="vCurrency.aspx" />
     <Content Include="vTherapy.aspx" />
@@ -327,6 +328,13 @@
     </Compile>
     <Compile Include="vBulkCode.aspx.vb">
       <DependentUpon>vBulkCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rReportAll.aspx.designer.vb">
+      <DependentUpon>rReportAll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rReportAll.aspx.vb">
+      <DependentUpon>rReportAll.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="vPersonnel.aspx.designer.vb">

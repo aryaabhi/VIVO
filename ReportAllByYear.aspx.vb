@@ -22,17 +22,11 @@ Namespace SCLE.User
         End Sub
 
 #End Region
-
-        Dim DS As DataSet
-        Dim MyConnection As SqlConnection
-        Dim MyCommand As SqlDataAdapter
         Dim StatusExistance As Boolean
         Dim SelectedYear As String
-        Dim connstring As String
 
+        
         Sub Page_Load(ByVal Src As Object, ByVal E As EventArgs) Handles MyBase.Load
-            connstring = ConfigurationManager.ConnectionStrings("SQLConnectionString").ToString
-            MyConnection = New SqlConnection(connstring)
             Year_Refresh_Display()
         End Sub
 
@@ -58,12 +52,18 @@ Namespace SCLE.User
         End Sub
 
         Sub ShowDataGrid()
+            Dim DS As DataSet
+            Dim MyConnection As SqlConnection
+            Dim MyCommand As SqlDataAdapter
+            Dim connstring As String
+            connstring = ConfigurationManager.ConnectionStrings("SQLConnectionString").ToString
+            MyConnection = New SqlConnection(connstring)
+
             MyCommand = New SqlDataAdapter("ProjectsSelectYearWithStat", MyConnection)
             MyCommand.SelectCommand.CommandType = CommandType.StoredProcedure
 
             MyCommand.SelectCommand.Parameters.Add(New SqlParameter("@Year", SqlDbType.Char, 4))
             MyCommand.SelectCommand.Parameters("@Year").Value = SelectedYear
-
 
             DS = New DataSet
             MyCommand.Fill(DS, "tblProjects")

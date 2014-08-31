@@ -22,6 +22,24 @@ Public Class VivoClass
         Return dt
     End Function
 
+    Public Function ShowDataGrid(ByVal StoreProcName As String, ByVal SelectedYear As Integer, ByVal SortExpression As String) As DataTable
+        Dim dt As New DataTable()
+        Using con As New SqlConnection(strConnString)
+            Dim sda As SqlDataAdapter
+            sda = New SqlDataAdapter(StoreProcName, con)
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure
+            Select Case StoreProcName
+                Case "cReportAll"
+                    sda.SelectCommand.Parameters.Add(New SqlParameter("@Year", SqlDbType.Int, 2))
+                    sda.SelectCommand.Parameters("@Year").Value = SelectedYear
+
+            End Select
+            sda.Fill(dt)
+        End Using
+        dt.DefaultView.Sort = SortExpression
+        Return dt
+    End Function
+
     Public Function BindData(ByVal TableName As String, ByVal SortExpression As String) As DataTable
         Dim strQuery As String = ""
 
@@ -92,6 +110,8 @@ Public Class VivoClass
             Case "uProjectTherapy"
                 strQuery = "select * from uProjectTherapy where ProjectID= " + SortExpression
 
+            Case "ReportAll"
+                strQuery = "select * from tProjects  order by " + SortExpression
 
         End Select
 
@@ -283,6 +303,22 @@ Public Class VivoClass
         Catch ex As Exception
             Return Nothing
         End Try
+    End Function
+
+    Public Function DeleteProject(ByVal ProjectID As Integer) As Integer
+        Dim cmd As New SqlCommand
+        Dim rowsAffected As Integer
+        Using con As New SqlConnection(strConnString)
+            cmd.CommandText = "cDeleteProject"
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add(New SqlParameter("@ProjectID", SqlDbType.Int, 2))
+            cmd.Parameters("@ProjectID").Value = ProjectID
+            cmd.Connection = con
+            con.Open()
+            rowsAffected = cmd.ExecuteNonQuery()
+            con.Close()
+        End Using
+        Return rowsAffected
     End Function
 
 End Class

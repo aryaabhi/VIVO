@@ -498,7 +498,6 @@ Public Class ProjectAddition
             cboSavingsStartYear.Items.FindByValue(DateTime.Now.Year).Selected = True
             cboSavingsEndYear.Items.FindByValue(DateTime.Now.Year).Selected = True
         End If
-
         '------------------------Update Direct/Indirect linked box
         DIC_Update()
     End Sub
@@ -659,9 +658,9 @@ Public Class ProjectAddition
         End If
 
         If (RequestedProjectID <> "") Then
-            MyCommand = New SqlCommand("UpdateProject", con)
+            MyCommand = New SqlCommand("cUpdateProject", con)
         Else
-            MyCommand = New SqlCommand("InsertProject", con)
+            MyCommand = New SqlCommand("cInsertProject", con)
             RequestedProjectID = 0
         End If
 
@@ -705,6 +704,8 @@ Public Class ProjectAddition
         MyCommand.Parameters.Add(New SqlParameter("@BusinessUnitID", SqlDbType.Int, 2))
         MyCommand.Parameters("@BusinessUnitID").Value = System.Convert.ToInt32(cboBusinessUnit.SelectedItem.Value)
         strSQL += "*" + txtProjectSummary.Text
+        MyCommand.Parameters.Add(New SqlParameter("@Active", SqlDbType.Bit))
+        MyCommand.Parameters("@Active").Value = 1
 
         '-- data points for tProjectSavings
         MyCommand.Parameters.Add(New SqlParameter("@ProjectBeginMonth", SqlDbType.Int, 2))
