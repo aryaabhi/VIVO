@@ -69,10 +69,10 @@
                                     <a href="ProjectAddition?ProjectID=">Add a Project</a>
                                 </li>
                                 <li>
-                                    <a href="ReportAllbyYear.aspx">Edit a Project</a>
+                                    <a href="rReportall.aspx">Edit a Project</a>
                                 </li>
                                 <li>
-                                    <a href="ReportAllbyYear.aspx">Delete a Project</a>
+                                    <a href="rReportall.aspx">Delete a Project</a>
                                 </li>
                                 <li>
                                     <a href="ProjectCopy.aspx">Copy a Project</a>
@@ -187,7 +187,6 @@
     <!-- Page-Level Scripts - AddProject -->
     <script src="scripts/sumtotal.js"></script>
     <script src="scripts/jquery-ui.min.js"></script>
-    
     </body>
 </html>
 

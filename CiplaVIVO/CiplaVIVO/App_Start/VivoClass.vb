@@ -51,7 +51,6 @@ Public Class VivoClass
                 strQuery = "select DepartmentID, Department from vDepartment order by " + SortExpression
 
             Case "Category"
-                'strQuery = "select CategoryID, Category, DepartmentID from vCategory order by " + SortExpression
                 strQuery = "SELECT CategoryID, Category , vCategory.DepartmentID, Department FROM vCategory " _
                     & "Inner Join vDepartment ON vCategory.DepartmentID=vDepartment.DepartmentID order by " + SortExpression
 
@@ -86,9 +85,6 @@ Public Class VivoClass
             Case "Dosage"
                 strQuery = "select DosageID, Dosage from vDosage order by " + SortExpression
 
-            Case "Dosage"
-                strQuery = "select DosageID, Dosage from vDosage order by " + SortExpression
-
             Case "uProjectBulkCode"
                 strQuery = "select * from uProjectBulkCode where ProjectID= " + SortExpression
 
@@ -109,9 +105,6 @@ Public Class VivoClass
 
             Case "uProjectTherapy"
                 strQuery = "select * from uProjectTherapy where ProjectID= " + SortExpression
-
-            Case "ReportAll"
-                strQuery = "select * from tProjects  order by " + SortExpression
 
         End Select
 

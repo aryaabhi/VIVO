@@ -6,7 +6,39 @@ CiplaVIVO
 </name>
 </assembly>
 <members>
-<member name="F:CiplaVIVO.Site_Mobile.MainContent">
+<member name="F:CiplaVIVO.rReportAllDT.HeaderLabel">
+	<summary>
+HeaderLabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAllDT.cboYear">
+	<summary>
+cboYear control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAllDT.Go">
+	<summary>
+Go control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAllDT.GridView1">
+	<summary>
+GridView1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.Site_Mobile.MainContent">
 	<summary>
 MainContent control.
 </summary>

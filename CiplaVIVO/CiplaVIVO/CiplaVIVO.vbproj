@@ -132,6 +132,7 @@
     <Content Include="AddPage.html" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="ListOfFields.txt" />
+    <Content Include="rReportAllDT.aspx" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\sumtotal.js" />
     <Content Include="tblMonths.xml" />
@@ -301,6 +302,13 @@
     <Compile Include="ProjectAddition.aspx.vb">
       <DependentUpon>ProjectAddition.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="rReportAllDT.aspx.designer.vb">
+      <DependentUpon>rReportAllDT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="rReportAllDT.aspx.vb">
+      <DependentUpon>rReportAllDT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.vb">
       <DependentUpon>Site.Master</DependentUpon>
