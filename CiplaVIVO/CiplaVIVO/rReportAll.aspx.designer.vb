@@ -41,11 +41,119 @@ Partial Public Class rReportAll
     Protected WithEvents Go As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''GridView1 control.
+    '''ReportParam control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents ReportParam As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''Listbox1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Listbox1 As Global.System.Web.UI.WebControls.ListBox
+
+    '''<summary>
+    '''Listbox2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Listbox2 As Global.System.Web.UI.WebControls.ListBox
+
+    '''<summary>
+    '''Filters control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Filters As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''AddFilterBtn control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents AddFilterBtn As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''lstReportTags control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lstReportTags As Global.System.Web.UI.WebControls.ListBox
+
+    '''<summary>
+    '''Add control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Add As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Remove control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Remove As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''lstReport control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lstReport As Global.System.Web.UI.WebControls.ListBox
+
+    '''<summary>
+    '''buttonSearch control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents buttonSearch As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''txtCustomReport control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtCustomReport As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ProjectGrid control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ProjectGrid As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''SumGrid control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents SumGrid As Global.System.Web.UI.WebControls.GridView
 End Class

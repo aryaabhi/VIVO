@@ -411,7 +411,7 @@ Namespace SCLE.User
             End If
         End Sub
 
-        Sub cmdExtend_Click(ByVal sender As Object, ByVal e As System.EventArgs)
+        Sub cmdExtend_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles buttonExtend.Click
             searchParam.Visible = False
             ReportParam.Visible = True
         End Sub
@@ -863,5 +863,6 @@ Namespace SCLE.User
             End If
         End Sub
 
+        
     End Class
 End Namespace

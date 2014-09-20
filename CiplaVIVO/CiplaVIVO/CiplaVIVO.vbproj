@@ -132,6 +132,7 @@
     <Content Include="AddPage.html" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="ListOfFields.txt" />
+    <Content Include="Rough.aspx" />
     <Content Include="rReportAllDT.aspx" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\sumtotal.js" />
@@ -150,8 +151,6 @@
     <Content Include="vDosage.aspx" />
     <Content Include="vDepartment.aspx" />
     <Content Include="vBusinessUnit.aspx" />
-    <Content Include="zblank.html" />
-    <Content Include="zbuttons.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\chosen-sprite%402x.png" />
@@ -163,7 +162,6 @@
     <Content Include="Content\plugins\social-buttons\social-buttons.css" />
     <Content Include="Content\plugins\timeline\timeline.css" />
     <Content Include="Content\sb-admin.css" />
-    <Content Include="zflot.html" />
     <Content Include="font-awesome\css\font-awesome.css" />
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
@@ -173,16 +171,10 @@
     <Content Include="fonts\linecons\linecons.dev.svg" />
     <Content Include="fonts\linecons\linecons.svg" />
     <Content Include="fonts\linecons\lte-ie7.js" />
-    <Content Include="zforms.html" />
-    <Content Include="zgrid.html" />
     <Content Include="imgs\2014_05_28_logo.png" />
     <Content Include="imgs\chosen-sprite%402x.png" />
     <Content Include="imgs\chosen-sprite.png" />
     <Content Include="imgs\loadingAnim.gif" />
-    <Content Include="zindex.html" />
-    <Content Include="zmorris.html" />
-    <Content Include="znotifications.html" />
-    <Content Include="zpanels-wells.html" />
     <Content Include="ProjectAddition.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -215,9 +207,7 @@
     <Content Include="Scripts\plugins\morris\morris.js" />
     <Content Include="Scripts\plugins\morris\raphael-2.1.0.min.js" />
     <Content Include="Scripts\sb-admin.js" />
-    <Content Include="ztables.html" />
     <Content Include="Test.aspx" />
-    <Content Include="ztypography.html" />
     <Content Include="vCategory.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -255,7 +245,6 @@
     <Content Include="font-awesome\scss\_spinning.scss" />
     <Content Include="font-awesome\scss\_stacked.scss" />
     <Content Include="font-awesome\scss\_variables.scss" />
-    <None Include="zProject_Readme.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -301,7 +290,14 @@
     </Compile>
     <Compile Include="ProjectAddition.aspx.vb">
       <DependentUpon>ProjectAddition.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rough.aspx.designer.vb">
+      <DependentUpon>Rough.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rough.aspx.vb">
+      <DependentUpon>Rough.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="rReportAllDT.aspx.designer.vb">
       <DependentUpon>rReportAllDT.aspx</DependentUpon>
@@ -322,7 +318,7 @@
     </Compile>
     <Compile Include="Test.aspx.vb">
       <DependentUpon>Test.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="vExpenseHead.aspx.designer.vb">
       <DependentUpon>vExpenseHead.aspx</DependentUpon>

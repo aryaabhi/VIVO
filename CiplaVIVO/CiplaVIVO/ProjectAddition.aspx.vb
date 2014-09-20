@@ -30,7 +30,6 @@ Public Class ProjectAddition
 
 
     Sub PopulateInitialValues()
-        Dim DS As DataSet
         Dim objCommand As SqlCommand
         Dim rsSelectProject As SqlDataReader
         Dim SQLText As String

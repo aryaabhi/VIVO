@@ -23,7 +23,8 @@ Public Class vCurrency
 
     Protected Sub AddRecord(ByVal sender As Object, ByVal e As EventArgs)
         Dim Field2 As String = DirectCast(GridView1.FooterRow.FindControl("txtField2"), TextBox).Text
-        GridView1.DataSource = Viv.Insert("", Field2, "", TableName)
+        Dim Field3 As String = DirectCast(GridView1.FooterRow.FindControl("txtField3"), TextBox).Text
+        GridView1.DataSource = Viv.Insert("", Field2, Field3, TableName)
         GridView1.DataBind()
     End Sub
 
@@ -39,8 +40,9 @@ Public Class vCurrency
     Protected Sub UpdateRecord(ByVal sender As Object, ByVal e As GridViewUpdateEventArgs)
         Dim Field1 As String = DirectCast(GridView1.Rows(e.RowIndex).FindControl("txtField1"), Label).Text
         Dim Field2 As String = DirectCast(GridView1.Rows(e.RowIndex).FindControl("txtField2"), TextBox).Text
+        Dim Field3 As String = DirectCast(GridView1.Rows(e.RowIndex).FindControl("txtField3"), TextBox).Text
         GridView1.EditIndex = -1
-        GridView1.DataSource = Viv.Update(Field1, Field2, "", TableName)
+        GridView1.DataSource = Viv.Update(Field1, Field2, Field3, TableName)
         GridView1.DataBind()
     End Sub
 

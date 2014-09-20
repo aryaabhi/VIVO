@@ -22,8 +22,12 @@ Public Class VivoClass
         Return dt
     End Function
 
-    Public Function ShowDataGrid(ByVal StoreProcName As String, ByVal SelectedYear As Integer, ByVal SortExpression As String) As DataTable
+    ' Fill datagrid based on reporting needs
+    Public Function ShowDataGrid_View(ByVal StoreProcName As String, ByVal SelectedYear As Integer, ByVal SortExpression As String, ByVal SearchString As String, ByVal SQLSelect As String) As DataView
         Dim dt As New DataTable()
+        Dim dv As New DataView()
+        Dim search As String = ""
+
         Using con As New SqlConnection(strConnString)
             Dim sda As SqlDataAdapter
             sda = New SqlDataAdapter(StoreProcName, con)
@@ -32,14 +36,54 @@ Public Class VivoClass
                 Case "cReportAll"
                     sda.SelectCommand.Parameters.Add(New SqlParameter("@Year", SqlDbType.Int, 2))
                     sda.SelectCommand.Parameters("@Year").Value = SelectedYear
+                Case "cReportCustom"
+                    sda.SelectCommand.Parameters.Add(New SqlParameter("@Year", SqlDbType.Int, 2))
+                    sda.SelectCommand.Parameters("@Year").Value = SelectedYear
+                    sda.SelectCommand.Parameters.Add(New SqlParameter("@SqlSelect", SqlDbType.NVarChar))
+                    sda.SelectCommand.Parameters("@SqlSelect").Value = SQLSelect
+                Case "cReportAllSum"
+                    sda.SelectCommand.Parameters.Add(New SqlParameter("@Year", SqlDbType.Int, 2))
+                    sda.SelectCommand.Parameters("@Year").Value = SelectedYear
+            End Select
+            sda.Fill(dt)
+        End Using
+        dv = dt.DefaultView
+        If (SearchString.Length > 0) Then
+            Dim dc As New DataColumn
+            For Each dc In dv.Table.Columns
+                If dc.DataType.Name = "String" Then
+                    search += dc.ColumnName + " LIKE '%" + SearchString + "%' OR "
+                End If
+            Next
+            search = Left(search, search.Length - 3)
+            dv.RowFilter = search
+        End If
+        dv.Sort = SortExpression
+        Return dv
 
+    End Function
+
+    ' Fill datagrid based on reporting needs
+    Public Function ShowDataGrid(ByVal StoreProcName As String, ByVal SelectedYear As Integer, ByVal SortExpression As String) As DataTable
+        Dim dt As New DataTable()
+       
+        Using con As New SqlConnection(strConnString)
+            Dim sda As SqlDataAdapter
+            sda = New SqlDataAdapter(StoreProcName, con)
+            sda.SelectCommand.CommandType = CommandType.StoredProcedure
+            Select Case StoreProcName
+                Case "cReportAllSum"
+                    sda.SelectCommand.Parameters.Add(New SqlParameter("@Year", SqlDbType.Int, 2))
+                    sda.SelectCommand.Parameters("@Year").Value = SelectedYear
             End Select
             sda.Fill(dt)
         End Using
         dt.DefaultView.Sort = SortExpression
         Return dt
+
     End Function
 
+    ' Get data into datagrid for all single and dual columns
     Public Function BindData(ByVal TableName As String, ByVal SortExpression As String) As DataTable
         Dim strQuery As String = ""
 
@@ -105,6 +149,12 @@ Public Class VivoClass
 
             Case "uProjectTherapy"
                 strQuery = "select * from uProjectTherapy where ProjectID= " + SortExpression
+
+            Case "tProjects"
+                strQuery = "select * from tProjects order by " + SortExpression
+
+            Case "TagNames"
+                strQuery = "select * from vTagNames"
 
         End Select
 

@@ -16,7 +16,7 @@
 			<asp:panel id="prebuilt" Runat="server" Visible="true">
 				<TABLE borderColor="#000000" cellSpacing="2" cellPadding="2" width="100%" border="1">
 					<TR>
-						<TD class="Heading" align="center" width="100%" colSpan="6">SEARCH PROJECTS TO 
+						<TD class="Heading" align="center" width="100%">SEARCH PROJECTS TO 
 							CREATE REPORT</TD>
 					</TR>
 					<TR>
@@ -195,33 +195,34 @@
 							<asp:button id="buttonExtend" onclick="cmdExtend_Click" runat="server" Text="Select Report Parameters"></asp:button></TD>
 					</TR>
 				</TABLE>
-			</asp:panel><asp:panel id="ReportParam" Runat="server" Visible="False">
+			</asp:panel>
+            <asp:panel id="ReportParam" Runat="server" Visible="False">
 				<TABLE borderColor="#000000" cellSpacing="2" cellPadding="2" width="100%" border="1">
 					<TR>
-						<TD class="Heading" align="center" width="100%" colSpan="6">SELECT REPORT 
+						<TD class="Heading" align="center" width="100%" colSpan="3">SELECT REPORT 
 							PARAMETERS TO CREATE REPORT</TD>
 					</TR>
 					<TR>
-						<TD style="WIDTH: 446px" align="center" colSpan="2">
+						<TD style="WIDTH: 446px" align="center">
 							<asp:listbox id="lstReportTags" runat="server" DataTextField="EMPS" DataValueField="EMPSTag"
 								CssClass="txtBox" Width="416px" SelectionMode="Multiple" BackColor="#E0E0E0" Height="181px"></asp:listbox></TD>
-						<TD style="WIDTH: 102px" align="center" colSpan="2">
+						<TD style="WIDTH: 102px" align="center">
 							<P>
 								<asp:Button id="Add" onclick="cmdAdd_Click" runat="server" Text="Add >>"></asp:Button></P>
 							<P>
 								<asp:Button id="Remove" onclick="cmdRemove_Click" runat="server" Text="Remove <<"></asp:Button></P>
 						</TD>
-						<TD align="center" colSpan="2">
+						<TD align="center">
 							<asp:listbox id="lstReport" runat="server" DataTextField="EMPS" DataValueField="EMPSTag" CssClass="txtBox"
 								Width="391px" BackColor="PowderBlue" Height="181px"></asp:listbox></TD>
 					</TR>
 					<TR>
-						<TD align="center" colSpan="6">Provide unique name to custom report for future 
+						<TD align="center" colSpan="3">Provide unique name to custom report for future 
 							(Optional)
 							<asp:textbox id="txtCustomReport" runat="server" CssClass="txtBox"></asp:textbox></TD>
 					</TR>
 					<TR>
-						<TD align="center" colSpan="6">
+						<TD align="center" colSpan="3">
 							<asp:button id="btnBack" onclick="cmdBack_Click" runat="server" Text="Back to Search Parameters"></asp:button>
 							<asp:button id="buttonSearch" onclick="cmdSearch_Click" runat="server" Text="Search"></asp:button>&nbsp;
 							<asp:Label id="msgText" runat="server"></asp:Label></TD>

@@ -137,6 +137,9 @@
                                  <li>
                                     <a href="vPersonnel.aspx">Manage Team Member</a>
                                 </li>
+                                 <li>
+                                    <a href="vCurrency.aspx">Manage Currency</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

@@ -1,6 +1,6 @@
 ﻿Imports CiplaVIVO.VivoClass
 
-Public Class rReportAllDT
+Public Class Rough
     Inherits System.Web.UI.Page
     Dim Viv As New VivoClass
     Public TableName As String = "ReportAll"

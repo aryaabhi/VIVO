@@ -373,7 +373,7 @@
 					                    <label>Regulatory Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="txtRegulatoryCost"  onkeypress="return onlyNumbers();" onchange="javascript:Add();" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtRegulatoryCost"  onkeypress="return onlyNumbers();"  Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
 					                <asp:dropdownlist id="cboRegulatoryCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
@@ -390,7 +390,7 @@
 					                    <label>Sample Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="txtSampleCost"  onkeypress="return onlyNumbers();" onchange="javascript:Add();" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtSampleCost" onkeypress="return onlyNumbers();" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
 					                <asp:dropdownlist id="cboSampleCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
@@ -407,7 +407,7 @@
 					                    <label>R&D Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="txtRDCost"  onkeypress="return onlyNumbers();" onchange="javascript:Add();" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtRDCost"  onkeypress="return onlyNumbers();" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
 					                <asp:dropdownlist id="cboRDCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
@@ -424,7 +424,7 @@
 					                    <label>QA/QC Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="txtQACost"  onkeypress="return onlyNumbers();" onchange="javascript:Add();" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtQACost"  onkeypress="return onlyNumbers();" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
 					                <asp:dropdownlist id="cboQACurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
@@ -441,7 +441,7 @@
 					                    <label>Audit Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="txtAuditCost"  onkeypress="return onlyNumbers();" onchange="javascript:Add();" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtAuditCost"  onkeypress="return onlyNumbers();" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
 					                <asp:dropdownlist id="cboAuditCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>
@@ -458,7 +458,7 @@
 					                    <label>Other Cost</label>
 					                </div>
                                     <div class="col-lg-3">
-                                        <asp:textbox id="txtOtherCost"  onkeypress="return onlyNumbers();" onchange="javascript:Add();" Class="form-control" runat="server">0</asp:textbox>
+                                        <asp:textbox id="txtOtherCost"  onkeypress="return onlyNumbers();" Class="form-control" runat="server">0</asp:textbox>
                                     </div>
                                     <div class="col-lg-3">
 					                <asp:dropdownlist id="cboOtherCurrency" Class="form-control" runat="server" DataValueField="YearInteger" DataTextField="YearLiteral" OnSelectedIndexChanged="ProjectYear_AfterUpdate" AutoPostBack="True"/>

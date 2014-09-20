@@ -6,7 +6,7 @@ CiplaVIVO
 </name>
 </assembly>
 <members>
-<member name="F:CiplaVIVO.rReportAllDT.HeaderLabel">
+<member name="F:CiplaVIVO.Rough.HeaderLabel">
 	<summary>
 HeaderLabel control.
 </summary>
@@ -14,7 +14,7 @@ HeaderLabel control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.rReportAllDT.cboYear">
+</member><member name="F:CiplaVIVO.Rough.cboYear">
 	<summary>
 cboYear control.
 </summary>
@@ -22,7 +22,7 @@ cboYear control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.rReportAllDT.Go">
+</member><member name="F:CiplaVIVO.Rough.Go">
 	<summary>
 Go control.
 </summary>
@@ -30,7 +30,7 @@ Go control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.rReportAllDT.GridView1">
+</member><member name="F:CiplaVIVO.Rough.GridView1">
 	<summary>
 GridView1 control.
 </summary>
@@ -103,6 +103,38 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member><member name="F:CiplaVIVO.vBulkCode.GridView1">
+	<summary>
+GridView1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAllDT.HeaderLabel">
+	<summary>
+HeaderLabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAllDT.cboYear">
+	<summary>
+cboYear control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAllDT.Go">
+	<summary>
+Go control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAllDT.GridView1">
 	<summary>
 GridView1 control.
 </summary>
@@ -207,9 +239,105 @@ Go control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.rReportAll.GridView1">
+</member><member name="F:CiplaVIVO.rReportAll.ReportParam">
 	<summary>
-GridView1 control.
+ReportParam control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAll.Listbox1">
+	<summary>
+Listbox1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAll.Listbox2">
+	<summary>
+Listbox2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAll.Filters">
+	<summary>
+Filters control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAll.AddFilterBtn">
+	<summary>
+AddFilterBtn control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAll.lstReportTags">
+	<summary>
+lstReportTags control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAll.Add">
+	<summary>
+Add control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAll.Remove">
+	<summary>
+Remove control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAll.lstReport">
+	<summary>
+lstReport control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAll.buttonSearch">
+	<summary>
+buttonSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAll.txtCustomReport">
+	<summary>
+txtCustomReport control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAll.ProjectGrid">
+	<summary>
+ProjectGrid control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAll.SumGrid">
+	<summary>
+SumGrid control.
 </summary>
 	<remarks>
 Auto-generated field.

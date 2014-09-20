@@ -40,6 +40,18 @@
 					            <asp:TextBox ID="txtField2" runat="server"></asp:TextBox>
 					        </FooterTemplate>
 					    </asp:TemplateField>
+
+                        <asp:TemplateField HeaderText = "Exchange Rate" SortExpression="CurrencyExchange" FooterStyle-CssClass="hidden-phone">
+					        <ItemTemplate>
+					            <asp:Label ID="txtField3" runat="server" Text='<%# Eval("CurrencyExchange")%>'></asp:Label>
+					        </ItemTemplate>
+					        <EditItemTemplate>
+					            <asp:TextBox ID="txtField3" runat="server" Text='<%# Eval("CurrencyExchange")%>'></asp:TextBox>
+					        </EditItemTemplate> 
+					        <FooterTemplate>
+					            <asp:TextBox ID="txtField3" runat="server"></asp:TextBox>
+					        </FooterTemplate>
+					    </asp:TemplateField>
 					
 					    <asp:TemplateField ItemStyle-CssClass="hidden-phone" HeaderStyle-CssClass="hidden-phone" FooterStyle-CssClass="hidden-phone">
 					        <ItemTemplate>
