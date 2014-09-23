@@ -127,10 +127,24 @@ Public Class rReportAll
         SelectedYear = DateTime.Now.Year
 
         '---------cboBusinessUnit
-        lstReportTags.DataSource = Viv.BindData("TagNames", "")
+        lstReportTags.DataSource = Viv.BindData("vTagNames", "")
         lstReportTags.DataValueField = "tagfield"
         lstReportTags.DataTextField = "tag"
         lstReportTags.DataBind()
+
+        lstFiltersTags.DataSource = Viv.BindData("VTagFilter", "")
+        lstFiltersTags.DataValueField = "tagfield"
+        lstFiltersTags.DataTextField = "tag"
+        lstFiltersTags.DataBind()
+       
+        
+    End Sub
+
+    Sub cmdChangeListReport(ByVal sender As Object, ByVal e As System.EventArgs)
+        lstFilters.DataSource = Viv.BindData(lstFiltersTags.SelectedItem.Text, lstFiltersTags.SelectedValue)
+        lstFilters.DataValueField = lstFiltersTags.SelectedValue
+        lstFilters.DataTextField = lstFiltersTags.SelectedItem.Text
+        lstFilters.DataBind()
     End Sub
 
     Sub cmdAdd_Click(ByVal sender As Object, ByVal e As System.EventArgs)
@@ -165,7 +179,6 @@ Public Class rReportAll
     End Sub
 
     Sub SaveReportParameters()
-        Dim i As Integer
         Dim strIN As String = "TProjects.ProjectID , tProjectSavings.Status,"
         Dim li As ListItem
         Dim SelectionCheck As Boolean = False

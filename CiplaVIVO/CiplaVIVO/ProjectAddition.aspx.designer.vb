@@ -14,24 +14,6 @@ Option Explicit On
 Partial Public Class ProjectAddition
 
     '''<summary>
-    '''cboBusinessUnit control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents cboBusinessUnit As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''cboCategory control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents cboCategory As Global.System.Web.UI.WebControls.ListBox
-
-    '''<summary>
     '''txtProjectName control.
     '''</summary>
     '''<remarks>
@@ -39,15 +21,6 @@ Partial Public Class ProjectAddition
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtProjectName As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''txtProjectSummary control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtProjectSummary As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''cboProjectLeader control.
@@ -59,24 +32,6 @@ Partial Public Class ProjectAddition
     Protected WithEvents cboProjectLeader As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''cboDepartment control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents cboDepartment As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''cboExpenseHead control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents cboExpenseHead As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''cboFinanceLeader control.
     '''</summary>
     '''<remarks>
@@ -86,13 +41,40 @@ Partial Public Class ProjectAddition
     Protected WithEvents cboFinanceLeader As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''cboProjectClassification control.
+    '''cboTeamMembers control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents cboProjectClassification As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents cboTeamMembers As Global.System.Web.UI.WebControls.ListBox
+
+    '''<summary>
+    '''cboDepartment control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboDepartment As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''cboCategory control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboCategory As Global.System.Web.UI.WebControls.ListBox
+
+    '''<summary>
+    '''cboBusinessUnit control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboBusinessUnit As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''cboDIC control.
@@ -104,6 +86,15 @@ Partial Public Class ProjectAddition
     Protected WithEvents cboDIC As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''cboExpenseHead control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboExpenseHead As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''plcapex control.
     '''</summary>
     '''<remarks>
@@ -113,13 +104,22 @@ Partial Public Class ProjectAddition
     Protected WithEvents plcapex As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
-    '''cboTeamMembers control.
+    '''cboProjectClassification control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents cboTeamMembers As Global.System.Web.UI.WebControls.ListBox
+    Protected WithEvents cboProjectClassification As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''txtProjectSummary control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtProjectSummary As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''cboDosage control.
@@ -203,42 +203,6 @@ Partial Public Class ProjectAddition
     Protected WithEvents cboProjectEndYear As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''txtAnnualSavings control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtAnnualSavings As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''cboProbability control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents cboProbability As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''CalculateTDC control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CalculateTDC As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''txtProbabilityAdjustedAmt control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtProbabilityAdjustedAmt As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''cboSavingsStartMonth control.
     '''</summary>
     '''<remarks>
@@ -255,42 +219,6 @@ Partial Public Class ProjectAddition
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cboSavingsStartYear As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''txtOneOffSaving control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtOneOffSaving As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''cboStatus control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents cboStatus As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
-    '''txtAccountingMonth control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtAccountingMonth As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''txtTimeAdjustedAmount control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtTimeAdjustedAmount As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''cboSavingsEndMonth control.
@@ -311,6 +239,24 @@ Partial Public Class ProjectAddition
     Protected WithEvents cboSavingsEndYear As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''txtAnnualSavings control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtAnnualSavings As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtOneOffSaving control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtOneOffSaving As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''cboCurrency control.
     '''</summary>
     '''<remarks>
@@ -318,6 +264,33 @@ Partial Public Class ProjectAddition
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cboCurrency As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''cboStatus control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboStatus As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''cboProbability control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cboProbability As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''CalculateTDC control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CalculateTDC As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''txtStage control.
@@ -338,13 +311,22 @@ Partial Public Class ProjectAddition
     Protected WithEvents chkCommitted As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
-    '''txtAccountingYear control.
+    '''txtTimeAdjustedAmount control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtAccountingYear As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtTimeAdjustedAmount As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtProbabilityAdjustedAmt control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtProbabilityAdjustedAmt As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''txtTotalAdjustedAmount control.
@@ -354,6 +336,24 @@ Partial Public Class ProjectAddition
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtTotalAdjustedAmount As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtAccountingMonth control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtAccountingMonth As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''txtAccountingYear control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtAccountingYear As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''txtCapexCost control.
@@ -597,6 +597,33 @@ Partial Public Class ProjectAddition
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtTotalJust As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''FileUpload1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents FileUpload1 As Global.System.Web.UI.WebControls.FileUpload
+
+    '''<summary>
+    '''FileLink control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents FileLink As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
+    '''downloadFile control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents downloadFile As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''SaveProject control.

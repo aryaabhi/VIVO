@@ -6,39 +6,7 @@ CiplaVIVO
 </name>
 </assembly>
 <members>
-<member name="F:CiplaVIVO.Rough.HeaderLabel">
-	<summary>
-HeaderLabel control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.Rough.cboYear">
-	<summary>
-cboYear control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.Rough.Go">
-	<summary>
-Go control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.Rough.GridView1">
-	<summary>
-GridView1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.Site_Mobile.MainContent">
+<member name="F:CiplaVIVO.Site_Mobile.MainContent">
 	<summary>
 MainContent control.
 </summary>
@@ -73,6 +41,38 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:CiplaVIVO._Default.SearchButton">
 	<summary>
 SearchButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.Rough.HeaderLabel">
+	<summary>
+HeaderLabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.Rough.cboYear">
+	<summary>
+cboYear control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.Rough.Go">
+	<summary>
+Go control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.Rough.GridView1">
+	<summary>
+GridView1 control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -215,14 +215,6 @@ GridView1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.rReportAll.HeaderLabel">
-	<summary>
-HeaderLabel control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
 </member><member name="F:CiplaVIVO.rReportAll.cboYear">
 	<summary>
 cboYear control.
@@ -247,17 +239,17 @@ ReportParam control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.rReportAll.Listbox1">
+</member><member name="F:CiplaVIVO.rReportAll.lstFiltersTags">
 	<summary>
-Listbox1 control.
+lstFiltersTags control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.rReportAll.Listbox2">
+</member><member name="F:CiplaVIVO.rReportAll.lstFilters">
 	<summary>
-Listbox2 control.
+lstFilters control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -327,6 +319,14 @@ txtCustomReport control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:CiplaVIVO.rReportAll.HeaderLabel">
+	<summary>
+HeaderLabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:CiplaVIVO.rReportAll.ProjectGrid">
 	<summary>
 ProjectGrid control.
@@ -359,33 +359,9 @@ GridView1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.cboBusinessUnit">
-	<summary>
-cboBusinessUnit control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.cboCategory">
-	<summary>
-cboCategory control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
 </member><member name="F:CiplaVIVO.ProjectAddition.txtProjectName">
 	<summary>
 txtProjectName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.txtProjectSummary">
-	<summary>
-txtProjectSummary control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -399,22 +375,6 @@ cboProjectLeader control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.cboDepartment">
-	<summary>
-cboDepartment control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.cboExpenseHead">
-	<summary>
-cboExpenseHead control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
 </member><member name="F:CiplaVIVO.ProjectAddition.cboFinanceLeader">
 	<summary>
 cboFinanceLeader control.
@@ -423,9 +383,33 @@ cboFinanceLeader control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.cboProjectClassification">
+</member><member name="F:CiplaVIVO.ProjectAddition.cboTeamMembers">
 	<summary>
-cboProjectClassification control.
+cboTeamMembers control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.cboDepartment">
+	<summary>
+cboDepartment control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.cboCategory">
+	<summary>
+cboCategory control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.cboBusinessUnit">
+	<summary>
+cboBusinessUnit control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -439,6 +423,14 @@ cboDIC control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.cboExpenseHead">
+	<summary>
+cboExpenseHead control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:CiplaVIVO.ProjectAddition.plcapex">
 	<summary>
 plcapex control.
@@ -447,9 +439,17 @@ plcapex control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.cboTeamMembers">
+</member><member name="F:CiplaVIVO.ProjectAddition.cboProjectClassification">
 	<summary>
-cboTeamMembers control.
+cboProjectClassification control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.txtProjectSummary">
+	<summary>
+txtProjectSummary control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -527,38 +527,6 @@ cboProjectEndYear control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.txtAnnualSavings">
-	<summary>
-txtAnnualSavings control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.cboProbability">
-	<summary>
-cboProbability control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.CalculateTDC">
-	<summary>
-CalculateTDC control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.txtProbabilityAdjustedAmt">
-	<summary>
-txtProbabilityAdjustedAmt control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
 </member><member name="F:CiplaVIVO.ProjectAddition.cboSavingsStartMonth">
 	<summary>
 cboSavingsStartMonth control.
@@ -570,38 +538,6 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:CiplaVIVO.ProjectAddition.cboSavingsStartYear">
 	<summary>
 cboSavingsStartYear control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.txtOneOffSaving">
-	<summary>
-txtOneOffSaving control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.cboStatus">
-	<summary>
-cboStatus control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.txtAccountingMonth">
-	<summary>
-txtAccountingMonth control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.txtTimeAdjustedAmount">
-	<summary>
-txtTimeAdjustedAmount control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -623,9 +559,49 @@ cboSavingsEndYear control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.txtAnnualSavings">
+	<summary>
+txtAnnualSavings control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.txtOneOffSaving">
+	<summary>
+txtOneOffSaving control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:CiplaVIVO.ProjectAddition.cboCurrency">
 	<summary>
 cboCurrency control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.cboStatus">
+	<summary>
+cboStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.cboProbability">
+	<summary>
+cboProbability control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.CalculateTDC">
+	<summary>
+CalculateTDC control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -647,9 +623,17 @@ chkCommitted control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:CiplaVIVO.ProjectAddition.txtAccountingYear">
+</member><member name="F:CiplaVIVO.ProjectAddition.txtTimeAdjustedAmount">
 	<summary>
-txtAccountingYear control.
+txtTimeAdjustedAmount control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.txtProbabilityAdjustedAmt">
+	<summary>
+txtProbabilityAdjustedAmt control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -658,6 +642,22 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:CiplaVIVO.ProjectAddition.txtTotalAdjustedAmount">
 	<summary>
 txtTotalAdjustedAmount control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.txtAccountingMonth">
+	<summary>
+txtAccountingMonth control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.txtAccountingYear">
+	<summary>
+txtAccountingYear control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -874,6 +874,30 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:CiplaVIVO.ProjectAddition.txtTotalJust">
 	<summary>
 txtTotalJust control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.FileUpload1">
+	<summary>
+FileUpload1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.FileLink">
+	<summary>
+FileLink control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.ProjectAddition.downloadFile">
+	<summary>
+downloadFile control.
 </summary>
 	<remarks>
 Auto-generated field.

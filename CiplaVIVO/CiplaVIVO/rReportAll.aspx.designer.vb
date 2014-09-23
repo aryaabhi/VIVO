@@ -14,15 +14,6 @@ Option Explicit On
 Partial Public Class rReportAll
 
     '''<summary>
-    '''HeaderLabel control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents HeaderLabel As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''cboYear control.
     '''</summary>
     '''<remarks>
@@ -50,22 +41,22 @@ Partial Public Class rReportAll
     Protected WithEvents ReportParam As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''Listbox1 control.
+    '''lstFiltersTags control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Listbox1 As Global.System.Web.UI.WebControls.ListBox
+    Protected WithEvents lstFiltersTags As Global.System.Web.UI.WebControls.ListBox
 
     '''<summary>
-    '''Listbox2 control.
+    '''lstFilters control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Listbox2 As Global.System.Web.UI.WebControls.ListBox
+    Protected WithEvents lstFilters As Global.System.Web.UI.WebControls.ListBox
 
     '''<summary>
     '''Filters control.
@@ -138,6 +129,15 @@ Partial Public Class rReportAll
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtCustomReport As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''HeaderLabel control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HeaderLabel As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ProjectGrid control.

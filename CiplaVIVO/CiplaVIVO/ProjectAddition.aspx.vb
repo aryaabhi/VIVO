@@ -3,6 +3,7 @@ Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Xml
 Imports System.Xml.XPath
+Imports System.Net.Mail
 Imports CiplaVIVO.VivoClass
 
 
@@ -14,6 +15,7 @@ Public Class ProjectAddition
     Dim strFilePath As String
     Dim RequestedProjectID As String
     Dim Viv As New VivoClass
+    Dim currencyHash As Hashtable = New Hashtable()
     Private strConnString As String = ConfigurationManager.ConnectionStrings("SQLConnectionString").ConnectionString
     Dim con As New SqlConnection(strConnString)
 
@@ -279,6 +281,9 @@ Public Class ProjectAddition
         ' Calculations of time, probability and total adjusted is done on run time again.
         PerformCalculation()
 
+        'Attachment
+        Download_file()
+
         'If chkCommitted.Checked = True Then
         'ReadOnlyIfChecked()
         'End If
@@ -393,6 +398,12 @@ Public Class ProjectAddition
         '---------cboQACurrency + cboAuditCurrency+ cboOtherCurrency + cboTotalCurrency
 
         dt = Viv.BindData("Currency", "CurrencyID")
+
+        If (dt.Rows.Count > 0) Then
+            For Each row As DataRow In dt.Rows
+                currencyHash.Add(row("CurrencyID"), row("CurrencyExchange"))
+            Next
+        End If
 
         cboCurrency.DataSource = dt
         cboCurrency.DataValueField = "CurrencyID"
@@ -634,6 +645,8 @@ Public Class ProjectAddition
         Dim MyCommand As SqlCommand
         Dim strSQL As String
         Dim checkBox As Integer
+        Dim returnIndex As Integer
+
 
         PerformCalculation()
 
@@ -886,7 +899,8 @@ Public Class ProjectAddition
         TestOut.Text = strSQL
         MyCommand.Connection.Open()
         Try
-            MyCommand.ExecuteNonQuery()
+            returnIndex = MyCommand.ExecuteScalar()
+
         Catch Exp As SqlException
             Dim errorMessages As String = ""
             Dim i As Integer
@@ -901,6 +915,14 @@ Public Class ProjectAddition
         End Try
         MyCommand.Connection.Close()
 
+        ' Attachment Upload
+        If FileUpload1.HasFile Then
+            Uploadfile(returnIndex)
+        End If
+
+        'Email activation
+        'SendEmailNow(returnIndex)
+
         'Response.Redirect("default.aspx")
     End Sub
 
@@ -913,7 +935,7 @@ Public Class ProjectAddition
     Private Function GetListItems(ByVal listItem As ListBox, ByVal OptionCode As Integer) As String
         Dim strIN As String = ""
         Dim checkAll As Integer = 0
-        
+
         If (listItem.SelectedIndex = -1 And OptionCode = 1) Then
             listItem.Items.FindByText("All").Selected = True
             checkAll = 1
@@ -928,6 +950,157 @@ Public Class ProjectAddition
         Return strIN
     End Function
 
+
+    Protected Sub Uploadfile(ByVal returnIndex As Integer)
+        Dim MyCommand As SqlCommand
+        Dim intFileSize As Integer
+        Dim strFileName As String
+        Dim contentType As String
+        Dim FileStream As Stream
+
+        ' Gets the Size of the File
+        intFileSize = FileUpload1.PostedFile.ContentLength
+
+        contentType = FileUpload1.PostedFile.ContentType.ToString()
+
+        ' Gets the file Name
+        strFileName = FileUpload1.PostedFile.FileName.Substring(FileUpload1.PostedFile.FileName.LastIndexOf("\") + 1)
+
+        ' Reads the Image
+        FileStream = FileUpload1.PostedFile.InputStream
+
+        TestOut.Text = "Filesize = " + intFileSize.ToString + " File Name = " + strFileName
+
+
+        Dim FileContent(intFileSize) As Byte
+        Dim intStatus As Integer
+
+        intStatus = FileStream.Read(FileContent, 0, intFileSize)
+
+        ' Create Instance of Connection and Command Object
+        MyCommand = New SqlCommand("dbo.cInsertProjectAttachment", con)
+        MyCommand.CommandType = CommandType.StoredProcedure
+
+        MyCommand.Parameters.Add(New SqlParameter("@ProjectId", SqlDbType.Int))
+        MyCommand.Parameters("@ProjectId").Value = returnIndex
+
+        MyCommand.Parameters.Add(New SqlParameter("@FileNames", SqlDbType.NVarChar, 250))
+        MyCommand.Parameters("@FileNames").Value = strFileName
+
+        MyCommand.Parameters.Add(New SqlParameter("@ContentType", SqlDbType.NVarChar, 50))
+        MyCommand.Parameters("@ContentType").Value = contentType
+
+        MyCommand.Parameters.Add(New SqlParameter("@Attachment", SqlDbType.VarBinary))
+        MyCommand.Parameters("@Attachment").Value = FileContent
+
+        MyCommand.Connection.Open()
+
+        Try
+            MyCommand.ExecuteNonQuery()
+        Catch Exp As SqlException
+            Dim errorMessages As String = [String].Empty
+
+            Dim i As Integer
+
+            For i = 0 To Exp.Errors.Count - 1
+                errorMessages += "Index #" & i.ToString() & ControlChars.NewLine _
+                              & "Message: " & Exp.Errors(i).Message & ControlChars.NewLine _
+                             & "LineNumber: " & Exp.Errors(i).LineNumber & ControlChars.NewLine _
+                            & "Source: " & Exp.Errors(i).Source & ControlChars.NewLine _
+                           & "Procedure: " & Exp.Errors(i).Procedure & ControlChars.NewLine
+            Next i
+            'Label1.Text = errorMessages
+        End Try
+
+        MyCommand.Connection.Close()
+
+
+    End Sub
+
+    Sub SendEmailNow(ByVal returnIndex As Integer)
+
+        Dim MyCommand As SqlCommand
+        Dim EmailAddress As String
+        Dim MessageBody As String
+
+        MyCommand = New SqlCommand("dbo.GetEmailAddress", con)
+        MyCommand.CommandType = CommandType.StoredProcedure
+
+        MyCommand.Parameters.Add(New SqlParameter("@Username", SqlDbType.NVarChar, 256))
+        MyCommand.Parameters("@Username").Value = cboProjectLeader.Text
+
+        MyCommand.Connection.Open()
+        EmailAddress = MyCommand.ExecuteScalar()
+        MyCommand.Connection.Close()
+
+        MessageBody = cboProjectLeader.Text & " has assigned a new Issue to you. <br /><br />" & _
+                    " To view the issue, either log-on to CIPLA VIVO and read the project or follow the link below:<br /><br />" & _
+                    "<a href = http://CIPLAVIVO.com/ProjectAddition.aspx?ProjectID=" & returnIndex & "> Click Here </a>"
+
+        Dim strFrom = "admin@ciplavivo.com"
+        Dim strTo = EmailAddress
+        Dim MailMsg As New MailMessage(New MailAddress(strFrom.Trim()), New MailAddress(strTo))
+        MailMsg.BodyEncoding = Encoding.Default
+        MailMsg.IsBodyHtml = True
+        MailMsg.Subject = "New Project submitted by " & cboProjectLeader.Text & " at CiplaVIVO.com"
+        MailMsg.Body = MessageBody
+        MailMsg.Priority = MailPriority.Normal
+        MailMsg.IsBodyHtml = True
+
+        'Smtpclient to send the mail message
+        Dim SmtpMail As New SmtpClient
+        SmtpMail.Send(MailMsg)
+    End Sub
+
+    Protected Sub Download_file()
+        Dim objCommand As SqlCommand
+        Dim rsSelectAttachment As SqlDataReader
+        Dim SQLText As String
+
+        SQLText = "Select FileNames from dbo.tProjectAttachment where ProjectID = " & RequestedProjectID
+
+        objCommand = New SqlCommand(SQLText, con)
+        con.Open()
+
+        rsSelectAttachment = objCommand.ExecuteReader(CommandBehavior.CloseConnection)
+        rsSelectAttachment.Read()
+
+        If rsSelectAttachment.HasRows() Then
+            FileLink.Visible = True
+            FileLink.Text = rsSelectAttachment("FileNames")
+            downloadFile.Visible = True
+        End If
+
+        rsSelectAttachment.Close()
+        con.Close()
+
+    End Sub
+
+    Protected Sub downloadFile_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles downloadFile.Click
+
+        Dim objCommand As SqlCommand
+        Dim rsSelectAttachment As SqlDataReader
+        Dim SQLText As String
+
+        '----------------------------FOR Issues
+
+        SQLText = "Select * from dbo.tProjectAttachment where ProjectID = " & RequestedProjectID
+
+        objCommand = New SqlCommand(SQLText, con)
+        con.Open()
+
+        rsSelectAttachment = objCommand.ExecuteReader(CommandBehavior.CloseConnection)
+        rsSelectAttachment.Read()
+
+        Response.ContentType = rsSelectAttachment("ContentType")
+        Response.AppendHeader("Content-Disposition", "attachment; FileName=" + rsSelectAttachment("FileNames").ToString)
+        Response.BinaryWrite(rsSelectAttachment("Attachment"))
+        Response.End()
+
+        rsSelectAttachment.Close()
+        con.Close()
+
+    End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
         Response.Redirect("default.aspx")

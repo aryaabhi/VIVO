@@ -153,8 +153,11 @@ Public Class VivoClass
             Case "tProjects"
                 strQuery = "select * from tProjects order by " + SortExpression
 
-            Case "TagNames"
+            Case "vTagNames"
                 strQuery = "select * from vTagNames"
+
+            Case "VTagFilter"
+                strQuery = "select * from VTagFilter"
 
         End Select
 
