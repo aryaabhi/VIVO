@@ -8,6 +8,7 @@ Public Class rReportAll
     Dim SelectedYear As String
     Protected search_Word As String = [String].Empty
     Protected SQLSelect As String = [String].Empty
+    Protected SQLWhere As String = [String].Empty
     Dim StatusFlag As Boolean = False
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
@@ -15,6 +16,7 @@ Public Class rReportAll
             SelectedSort = Session("Sort")
             BindDateDropDown()
             SequenceOfCommands()
+            Session("SelectWhere") = [String].Empty
         End If
     End Sub
 
@@ -22,9 +24,9 @@ Public Class rReportAll
         'Project Gridview
         If Session("Sort") = "" Then Session("Sort") = "ProjectID"
         If SQLSelect.Length > 0 Then
-            ProjectGrid.DataSource = Viv.ShowDataGrid_View("cReportCustom", System.Convert.ToInt32(SelectedYear), Session("Sort"), search_Word, SQLSelect)
+            ProjectGrid.DataSource = Viv.ShowDataGrid_View("cReportCustom", System.Convert.ToInt32(SelectedYear), Session("Sort"), search_Word, SQLSelect, Session("SelectWhere"))
         Else
-            ProjectGrid.DataSource = Viv.ShowDataGrid_View("cReportAll", System.Convert.ToInt32(SelectedYear), Session("Sort"), search_Word, SQLSelect)
+            ProjectGrid.DataSource = Viv.ShowDataGrid_View("cReportAll", System.Convert.ToInt32(SelectedYear), Session("Sort"), search_Word, SQLSelect, Session("SelectWhere"))
         End If
         ProjectGrid.DataBind()
         
@@ -136,13 +138,11 @@ Public Class rReportAll
         lstFiltersTags.DataValueField = "tagfield"
         lstFiltersTags.DataTextField = "tag"
         lstFiltersTags.DataBind()
-       
-        
     End Sub
 
     Sub cmdChangeListReport(ByVal sender As Object, ByVal e As System.EventArgs)
-        lstFilters.DataSource = Viv.BindData(lstFiltersTags.SelectedItem.Text, lstFiltersTags.SelectedValue)
-        lstFilters.DataValueField = lstFiltersTags.SelectedValue
+        lstFilters.DataSource = Viv.BindData(lstFiltersTags.SelectedItem.Text, lstFiltersTags.SelectedItem.Text + "ID")
+        lstFilters.DataValueField = lstFiltersTags.SelectedItem.Text + "ID"
         lstFilters.DataTextField = lstFiltersTags.SelectedItem.Text
         lstFilters.DataBind()
     End Sub
@@ -168,17 +168,32 @@ Public Class rReportAll
     Sub cmdBack_Click(ByVal sender As Object, ByVal e As System.EventArgs)
     End Sub
 
-    Sub SequenceOfCommands()
-        SaveReportParameters()
-        Year_Refresh_Display()
-    End Sub
-
-
     Sub cmdSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         SequenceOfCommands()
     End Sub
 
-    Sub SaveReportParameters()
+    Sub SequenceOfCommands()
+        SaveReportSelectParameters()
+        Year_Refresh_Display()
+    End Sub
+
+    Sub cmdAdd_Filter(ByVal sender As Object, ByVal e As System.EventArgs)
+        Dim SQLTemp As String = [String].Empty
+        Dim li As ListItem
+        For Each li In lstFilters.Items
+            If li.Selected = True Then
+                SQLTemp += li.Value + " , "
+            End If
+        Next
+
+        If SQLTemp.Length > 0 Then
+            SQLWhere += " AND " + Trim(lstFiltersTags.SelectedValue) + " in (" + Left(SQLTemp, SQLTemp.Length - 3) + ")"
+        End If
+        Session("SelectWhere") += SQLWhere
+        lstFilters.ClearSelection()
+    End Sub
+
+    Sub SaveReportSelectParameters()
         Dim strIN As String = "TProjects.ProjectID , tProjectSavings.Status,"
         Dim li As ListItem
         Dim SelectionCheck As Boolean = False
@@ -203,4 +218,9 @@ Public Class rReportAll
         End If
     End Sub
 
+    Sub OnPressReset(ByVal sender As Object, ByVal e As System.EventArgs)
+        Session("SelectWhere") = [String].Empty
+
+        lstFilters.ClearSelection()
+    End Sub
 End Class

@@ -9,7 +9,7 @@
                     <p align="center">Select Filters for Custom Report </p>
                         </a>
                 </div>
-                <div id="collapseOne" class="panel-collapse collapse">
+                <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
                      <div class="form-group">
                         <div class="row">
@@ -44,6 +44,8 @@
                         <div class ="col-md-3">
                             <div class="form-group">
                         	        <asp:listbox Class="form-control"  id="lstFilters" runat="server" SelectionMode="Multiple" Height="181px"></asp:listbox>
+                                <asp:Button id="AddSearchQuery" onclick="cmdAdd_Filter" runat="server" Text="Add Query"></asp:Button>
+                                <asp:Button id="ResetReportBtn" onclick="OnPressReset" runat="server" Text="Reset Search Criteria"></asp:Button>
                             </div>
                         </div>
                         <div class ="col-md-3">

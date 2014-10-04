@@ -1,8 +1,4 @@
-$(function() {
 
-    $('#side-menu').metisMenu();
-
-});
 
 //Loads the correct sidebar on window load,
 //collapses the sidebar on window resize.
@@ -13,7 +9,7 @@ $(function() {
         if (width < 768) {
             $('div.sidebar-collapse').addClass('collapse')
         } else {
-            $('div.sidebar-collapse').removeClass('collapse')
+            $('div.sidebar-collapse').addClass('collapse')
         }
       
     })

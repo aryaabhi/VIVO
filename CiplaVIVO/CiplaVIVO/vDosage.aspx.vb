@@ -9,6 +9,7 @@ Public Class vDosage
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         If Not IsPostBack Then
+            Session("Sort") = ""
             SelectedSort = Session("Sort")
             BindData()
         End If

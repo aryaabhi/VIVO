@@ -255,6 +255,22 @@ lstFilters control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
+</member><member name="F:CiplaVIVO.rReportAll.AddSearchQuery">
+	<summary>
+AddSearchQuery control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:CiplaVIVO.rReportAll.ResetReportBtn">
+	<summary>
+ResetReportBtn control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:CiplaVIVO.rReportAll.Filters">
 	<summary>
 Filters control.

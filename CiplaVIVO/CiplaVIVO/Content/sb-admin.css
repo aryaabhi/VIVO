@@ -3,7 +3,7 @@
 /* ------------------------------- */
 
 body {
-    padding-top: 100px;
+    padding-top: 10px;
     background-color: #f8f8f8;
 }
 
@@ -30,8 +30,8 @@ body {
 @media(min-width:768px) {
     #page-wrapper {
         position: inherit;
-        margin: 0 0 0 250px;
-        padding: 0 30px;
+        margin: 0 0 0 20px;
+        padding: 0 20px;
         min-height: 1300px;
         border-left: 1px solid #e7e7e7;
     }
@@ -119,44 +119,31 @@ body {
     content: "\f107";
 }
 
-.nav-second-level li,
-.nav-third-level li {
-    border-bottom: none !important;
-}
-
-.nav-second-level li a {
-    padding-left: 37px;
-}
-
-.nav-third-level li a {
-    padding-left: 52px;
-}
-
 @media(min-width:768px) {
     .navbar-static-side {
         z-index: 1;
         position: absolute;
-        width: 250px;
+        width: 20px;
         margin-top: 51px;
     }
 
     .navbar-top-links .dropdown-messages,
     .navbar-top-links .dropdown-tasks,
     .navbar-top-links .dropdown-alerts {
-        margin-left: auto;
+        margin-left: 10px;
     }
 }
 
 @media(max-height:600px) and (max-width:767px) {
     .sidebar-collapse {
-        max-height: 300px;
+        max-height: 10px;
         overflow-y: scroll;
     }
 }
 
 @media(max-height:400px) and (max-width:767px) {
     .sidebar-collapse {
-        max-height: 200px;
+        max-height: 10px;
         overflow-y: scroll;
     }
 }

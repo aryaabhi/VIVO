@@ -23,7 +23,7 @@ Public Class VivoClass
     End Function
 
     ' Fill datagrid based on reporting needs
-    Public Function ShowDataGrid_View(ByVal StoreProcName As String, ByVal SelectedYear As Integer, ByVal SortExpression As String, ByVal SearchString As String, ByVal SQLSelect As String) As DataView
+    Public Function ShowDataGrid_View(ByVal StoreProcName As String, ByVal SelectedYear As Integer, ByVal SortExpression As String, ByVal SearchString As String, ByVal SQLSelect As String, ByVal SQLWhere As String) As DataView
         Dim dt As New DataTable()
         Dim dv As New DataView()
         Dim search As String = ""
@@ -41,6 +41,8 @@ Public Class VivoClass
                     sda.SelectCommand.Parameters("@Year").Value = SelectedYear
                     sda.SelectCommand.Parameters.Add(New SqlParameter("@SqlSelect", SqlDbType.NVarChar))
                     sda.SelectCommand.Parameters("@SqlSelect").Value = SQLSelect
+                    sda.SelectCommand.Parameters.Add(New SqlParameter("@SqlWhere_User", SqlDbType.NVarChar))
+                    sda.SelectCommand.Parameters("@SqlWhere_User").Value = SQLWhere
                 Case "cReportAllSum"
                     sda.SelectCommand.Parameters.Add(New SqlParameter("@Year", SqlDbType.Int, 2))
                     sda.SelectCommand.Parameters("@Year").Value = SelectedYear

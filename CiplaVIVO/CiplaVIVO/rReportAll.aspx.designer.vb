@@ -59,6 +59,24 @@ Partial Public Class rReportAll
     Protected WithEvents lstFilters As Global.System.Web.UI.WebControls.ListBox
 
     '''<summary>
+    '''AddSearchQuery control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents AddSearchQuery As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''ResetReportBtn control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ResetReportBtn As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Filters control.
     '''</summary>
     '''<remarks>
